@@ -1,6 +1,7 @@
 # leaflet.providers
 
 <!-- badges: start -->
+[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/leslie-huang/leaflet.providers?branch=master&svg=true)](https://ci.appveyor.com/project/leslie-huang/leaflet.providers)
 <!-- badges: end -->
 
 The goal of leaflet.providers is to ...
