@@ -2,3 +2,5 @@
 ^\.Rproj\.user$
 /scripts/
 .travis.yml
+^LICENSE\.md$
+^revdep$
