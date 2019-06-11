@@ -5,3 +5,5 @@
 ^LICENSE\.md$
 ^revdep$
 ^appveyor\.yml$
+^\.travis\.yml$
+^cran-comments\.md$
