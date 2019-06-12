@@ -22,15 +22,15 @@ get_current_providers <- function() {
 
   variants <- lapply(providers.details, function(x){names(x$variants)})
 
-  providers <- lapply(names(providers.details), function(provider) {
+  providers <- unlist(lapply(names(providers.details), function(provider) {
     if (is.null(variants[[provider]])) {
       provider
     } else {
       c(provider, paste(provider, variants[[provider]], sep = "."))
     }
-  }) %>% unlist()
+  }))
 
   providers <- setNames(as.list(providers), providers)
 
-  list(providers, providers.details)
+  list("providers" = providers, "providers.details" = providers.details)
 }
