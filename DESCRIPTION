@@ -16,6 +16,5 @@ Suggests:
     spelling,
     magrittr,
     usethis,
-    codecov,
 Language: en-US
 RoxygenNote: 6.1.1
