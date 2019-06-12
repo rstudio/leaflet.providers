@@ -12,12 +12,10 @@ LazyData: true
 Depends:
     R (>= 2.10)
 Imports:
+
+Suggests: 
     V8,
     jsonlite,
-Suggests: 
-    spelling,
-    magrittr,
-    usethis,
 Language: en-US
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1

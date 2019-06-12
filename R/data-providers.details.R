@@ -1,6 +1,10 @@
 #' Leaflet Providers' details.
 #'
 #' A dataset containing Leaflet Providers details.
+#' @docType data
+#' @keywords datasets
+#' @name providers.details
+#' @usage data(providers.details)
 #'
 #' @format A nested list with 27 elements. Each element is a list containing
 #' \describe{

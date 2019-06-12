@@ -1,3 +1,0 @@
-ct$source(system.file("~/Desktop/leaflet/leaflet.js", package = "V8"))
-ct <- v8()
-source(system.file("~/Desktop/leaflet/leaflet.js", package = "V8"))

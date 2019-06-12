@@ -1,7 +1,7 @@
 #' Fetch leaflet providers from Leaflet.js.
 #' @export
 #'
-#' @return List of \code{providers}, \code{providers.details}
+#' @return List of `providers`, `providers.details`
 #'
 #' @examples
 #' get_current_providers()
@@ -22,10 +22,9 @@ get_current_providers <- function() {
 
   providers.details <- jsonlite::fromJSON(providers_json)
 
-  variants <- lapply(providers.details, function(x){
+  variants <- lapply(providers.details, function(x) {
     names(x$variants)
-    }
-    )
+  })
 
   providers <- unlist(lapply(names(providers.details), function(provider) {
     if (is.null(variants[[provider]])) {
@@ -37,5 +36,7 @@ get_current_providers <- function() {
 
   providers <- stats::setNames(as.list(providers), providers)
 
-  list("providers" = providers, "providers.details" = providers.details)
+  list(
+    "providers" = providers,
+    "providers.details" = providers.details)
 }

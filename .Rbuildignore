@@ -10,3 +10,4 @@
 ^codecov\.yml$
 .V8history
 .lintr
+inst/WORDLIST
