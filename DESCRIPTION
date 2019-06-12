@@ -16,3 +16,4 @@ Imports:
 Suggests: 
     spelling
 Language: en-US
+RoxygenNote: 6.1.1
