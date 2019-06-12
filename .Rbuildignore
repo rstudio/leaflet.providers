@@ -8,3 +8,5 @@
 ^\.travis\.yml$
 ^cran-comments\.md$
 ^codecov\.yml$
+.V8history
+.lintr

@@ -30,7 +30,7 @@ get_current_providers <- function() {
     }
   }))
 
-  providers <- setNames(as.list(providers), providers)
+  providers <- stats::setNames(as.list(providers), providers)
 
   list("providers" = providers, "providers.details" = providers.details)
 }
