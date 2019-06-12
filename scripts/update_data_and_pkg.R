@@ -4,8 +4,7 @@ ct <- V8::v8()
 ct$eval("var L = {TileLayer : {extend: function(){return {};}}, Util : {extend: function(){return {};}}, tileLayer : {}}")
 
 # Load providers.js file
-req <- curl::curl("https://unpkg.com/leaflet-providers")
-ct$source(req)
+ct$source("https://unpkg.com/leaflet-providers")
 
 providers_json <- ct$eval("JSON.stringify(L.TileLayer.Provider.providers)")
 
@@ -23,5 +22,9 @@ providers <- purrr::map(names(providers.details), function(provider) {
 
 providers <- setNames(as.list(providers), providers)
 
-devtools::use_data(providers.details, overwrite = TRUE)
-devtools::use_data(providers, overwrite = TRUE)
+usethis::use_data(providers.details, overwrite = TRUE)
+usethis::use_data(providers, overwrite = TRUE)
+
+# Automate pkg components
+
+usethis::use_spell_check()
