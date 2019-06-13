@@ -1,10 +1,11 @@
 #' Fetch leaflet providers from Leaflet.js.
 #' @export
 #'
-#' @return List of `providers`, `providers.details`
+#' @return List of `version number`, `providers`, `providers.details`
 #'
 #' @examples
 #' get_providers()
+#' get_providers("1.8.0")
 #'
 
 get_providers <- function(version_num = NULL) {

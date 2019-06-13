@@ -1,29 +1,33 @@
 todays_data <- get_providers()
 
-usethis::use_data(todays_data$providers.details, overwrite = TRUE)
-usethis::use_data(todays_data$providers, overwrite = TRUE)
+providers <- todays_data$providers
+providers.details <- todays_data$providers.details
+
+usethis::use_data(providers.details, overwrite = TRUE)
+usethis::use_data(providers, overwrite = TRUE)
 
 # Automate pkg components
 
 # Increase release num to match leaflet.js
 desc::desc_set_version(todays_data$version_num)
 
-spelling::spell_check_test(vignettes = TRUE, error = FALSE,
-                           skip_on_cran = TRUE)
-
 # Auto update NEWS.md
 lines <- readLines("NEWS.md")
 filecon <- file("NEWS.md", "wt")
-writeLines(lines[1], con = filecon) # heading already creating by use_version
-new_lines <- paste("\n",
+new_lines <- paste("# leaflet.providers",
+                   todays_data$version_num,
+                   "\n",
                    "* Updated leaflet.providers data on",
                    Sys.Date(),
                    "from",
-                   providers_filepath,
+                   "https://unpkg.com/leaflet-providers",
+                   "using version",
+                   todays_data$version_num,
+                   "of leaflet.js",
                    "\n",
                    sep = " ")
 writeLines(new_lines, con = filecon)
-writeLines(lines[2:length(lines)], con = filecon)
+writeLines(lines, con = filecon)
 close(filecon)
 
 # Auto-update cran-comments.md
@@ -37,5 +41,9 @@ new_lines <- paste("#", Sys.Date(),
 writeLines(new_lines, con = filecon)
 writeLines(lines, con = filecon)
 close(filecon)
+
+spelling::spell_check_test(vignettes = TRUE, error = FALSE,
+                           skip_on_cran = TRUE)
+
 
 revdepcheck::revdep_check()

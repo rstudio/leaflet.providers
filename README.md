@@ -10,7 +10,7 @@ The goal of leaflet.providers is to provide regularly updated data on the third-
 
 ## Installation
 
-You can install the released version of leaflet.providers from [CRAN](https://CRAN.R-project.org), or the development version for Github:
+You can install the released version of leaflet.providers from [CRAN](https://CRAN.R-project.org) or the development version for Github:
 
 ``` r
 # CRAN version
