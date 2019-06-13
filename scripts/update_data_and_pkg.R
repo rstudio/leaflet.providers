@@ -27,4 +27,11 @@ usethis::use_data(providers, overwrite = TRUE)
 
 # Automate pkg components
 
-usethis::use_spell_check()
+spelling::spell_check_test(vignettes = TRUE, error = FALSE,
+                           skip_on_cran = TRUE)
+
+usethis::use_cran_comments()
+
+usethis::use_revdep()
+
+usethis::use_pkgdown()
