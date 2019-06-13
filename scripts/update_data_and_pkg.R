@@ -4,7 +4,8 @@ ct <- V8::v8()
 ct$eval("var L = {TileLayer : {extend: function(){return {};}}, Util : {extend: function(){return {};}}, tileLayer : {}}")
 
 # Load providers.js file
-ct$source("https://unpkg.com/leaflet-providers")
+providers_filepath <- "https://unpkg.com/leaflet-providers"
+ct$source(providers_filepath)
 
 providers_json <- ct$eval("JSON.stringify(L.TileLayer.Provider.providers)")
 
@@ -30,21 +31,19 @@ usethis::use_data(providers, overwrite = TRUE)
 spelling::spell_check_test(vignettes = TRUE, error = FALSE,
                            skip_on_cran = TRUE)
 
-# Auto-update cran-comments.md
-
 # Increment release num.
 desc_lines <- readLines("DESCRIPTION")
 filecon <- file("DESCRIPTION", "w")
 for (line in desc_lines) {
   if (!is.na((stringr::str_extract(line, "Version: ")))) {
     current_vnumber <- stringr::str_remove(line, "Version: ")
-    vnumber_components <- lapply(strsplit(current_vnumber, "\\."), as.numeric)
-    names(vnumber_components[[1]]) <- c("major", "minor", "patch")
+    vnumber_components <- lapply(strsplit(current_vnumber, "\\."), as.numeric)[[1]]
+    names(vnumber_components) <- c("major", "minor", "patch")
 
     # assume updated data is "minor"
-    incremented_vnumber <- paste(vnumber_components[[1]]["major"],
-                                 vnumber_components[[1]]["minor"] + 1,
-                                 vnumber_components[[1]]["patch"],
+    incremented_vnumber <- paste(vnumber_components["major"],
+                                 vnumber_components["minor"] + 1,
+                                 vnumber_components["patch"],
                                  sep = ".")
     updated_line <- paste("Version: ", incremented_vnumber, sep = "")
     writeLines(updated_line, con = filecon, sep = "\n")
@@ -53,10 +52,23 @@ for (line in desc_lines) {
         writeLines(line, con = filecon, sep = "\n")
       }
 }
-
 close(filecon)
 
-# Auto update news
+# Auto update NEWS.md
+lines <- readLines("NEWS.md")
+filecon <- file("NEWS.md", "wt")
+new_lines <- paste("leaflet.providers", incremented_vnumber, "\n\n",
+                   "* Updated leaflet.providers data on",
+                   Sys.Date(),
+                   "from",
+                   providers_filepath,
+                   "\n\n\n",
+                   sep = " ")
+writeLines(new_lines, con = filecon)
+writeLines(lines, con = filecon)
+close(filecon)
+
+# Auto-update cran-comments.md
 
 usethis::use_revdep()
 
