@@ -6,22 +6,28 @@
 [![Codecov test coverage](https://codecov.io/gh/leslie-huang/leaflet.providers/branch/master/graph/badge.svg)](https://codecov.io/gh/leslie-huang/leaflet.providers?branch=master)
 <!-- badges: end -->
 
-The goal of leaflet.providers is to ...
+The goal of leaflet.providers is to provide regularly updated data on the third-party tile providers supported by `leaflet`. This package is to be used with `leaflet`.
 
 ## Installation
 
-You can install the released version of leaflet.providers from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of leaflet.providers from [CRAN](https://CRAN.R-project.org), or the development version for Github:
 
 ``` r
+# CRAN version
 install.packages("leaflet.providers")
+
+# Or Github version
+if (!require('devtools')) install.packages('devtools')
+devtools::install_github('leslie-huang/leaflet.providers')
 ```
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example of the data that is automatically loaded with `leaflet.providers`.
 
 ``` r
 library(leaflet.providers)
-## basic example code
+## View supported tile providers
+names(providers)
 ```
 
