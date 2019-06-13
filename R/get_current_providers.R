@@ -4,10 +4,10 @@
 #' @return List of `providers`, `providers.details`
 #'
 #' @examples
-#' get_current_providers()
+#' get_providers()
 #'
 
-get_current_providers <- function() {
+get_providers <- function(version_num = NULL) {
   ct <- V8::v8()
 
   # create dummy Leaflet object
@@ -16,7 +16,15 @@ get_current_providers <- function() {
           tileLayer : {}}")
 
   # Load providers.js file
-  ct$source("https://unpkg.com/leaflet-providers")
+  if (version_num) {
+    js_path <- paste("https://unpkg.com/leaflet-providers@", version_num, "/leaflet-providers.js", sep = "")
+  }
+  else {
+    js_path <- "https://unpkg.com/leaflet-providers"
+    version_num <- get_current_version_num(js_path)
+  }
+
+  ct$source(js_path)
 
   providers_json <- ct$eval("JSON.stringify(L.TileLayer.Provider.providers)")
 
@@ -37,6 +45,20 @@ get_current_providers <- function() {
   providers <- stats::setNames(as.list(providers), providers)
 
   list(
+    "version_num" = version_num,
     "providers" = providers,
     "providers.details" = providers.details)
+}
+
+#' Helper function that returns the current version number of Leaflet.js
+#'
+#' @return Current version number.
+#'
+#' @examples
+#' get_current_version_num()
+#'
+get_current_version_num <- function(js_path) {
+  pkg_info <- jsonlite::fromJSON(paste(js_path, "/package.json", sep = "")
+                                 )
+  return(pkg_info$version)
 }
