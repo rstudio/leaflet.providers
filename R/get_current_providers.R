@@ -21,7 +21,7 @@ get_providers <- function(version_num = NULL) {
   # Load providers.js file
   if (!is.null(version_num)) {
     js_path <- paste("https://unpkg.com/leaflet-providers@",
-                     version_num, "/leaflet-providers.js", sep = "")
+                     version_num, "/", "leaflet-providers.js", sep = "")
   }
   else {
     js_path <- "https://unpkg.com/leaflet-providers"
