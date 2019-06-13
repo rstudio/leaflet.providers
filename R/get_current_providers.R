@@ -62,7 +62,7 @@ get_providers <- function(version_num = NULL) {
 #' @return Current version number.
 #'
 get_current_version_num <- function(js_path) {
-  pkg_info <- jsonlite::fromJSON(paste(js_path, "/package.json", sep = "")
+  pkg_info <- jsonlite::fromJSON(paste(js_path, "package.json", sep = "/")
                                  )
   return(pkg_info$version)
 }
