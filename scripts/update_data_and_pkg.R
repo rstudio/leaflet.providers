@@ -54,6 +54,8 @@ spelling::spell_check_test(vignettes = TRUE, error = FALSE,
 # revdepcheck::revdep_check() # fails on pkgs not on CRAN
 
 ## Final checks
+devtools::check()
+
 devtools::check_win_oldrelease()
 devtools::check_win_release()
 devtools::check_win_devel()
