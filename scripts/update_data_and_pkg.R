@@ -37,15 +37,16 @@ usethis::use_version(which = "minor")
 # Auto update NEWS.md
 lines <- readLines("NEWS.md")
 filecon <- file("NEWS.md", "wt")
-new_lines <- paste("# leaflet.providers", incremented_vnumber, "\n\n",
+writeLines(lines[1], con = filecon) # heading already creating by use_version
+new_lines <- paste("\n",
                    "* Updated leaflet.providers data on",
                    Sys.Date(),
                    "from",
                    providers_filepath,
-                   "\n\n\n",
+                   "\n",
                    sep = " ")
 writeLines(new_lines, con = filecon)
-writeLines(lines, con = filecon)
+writeLines(lines[2:length(lines)], con = filecon)
 close(filecon)
 
 # Auto-update cran-comments.md
