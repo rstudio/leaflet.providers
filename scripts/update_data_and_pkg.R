@@ -57,7 +57,7 @@ close(filecon)
 # Auto update NEWS.md
 lines <- readLines("NEWS.md")
 filecon <- file("NEWS.md", "wt")
-new_lines <- paste("leaflet.providers", incremented_vnumber, "\n\n",
+new_lines <- paste("# leaflet.providers", incremented_vnumber, "\n\n",
                    "* Updated leaflet.providers data on",
                    Sys.Date(),
                    "from",
@@ -69,7 +69,17 @@ writeLines(lines, con = filecon)
 close(filecon)
 
 # Auto-update cran-comments.md
+lines <- readLines("cran-comments.md")
+filecon <- file("cran-comments.md", "wt")
+new_lines <- paste("#", Sys.Date(),
+                   "\n\n",
+                   "This submission updates `providers` and `providers.details`.",
+                   "\n\n\n",
+                   sep = " ")
+writeLines(new_lines, con = filecon)
+writeLines(lines, con = filecon)
+close(filecon)
 
-usethis::use_revdep()
+revdepcheck::revdep_check()
 
 usethis::use_pkgdown()
