@@ -32,7 +32,7 @@ spelling::spell_check_test(vignettes = TRUE, error = FALSE,
                            skip_on_cran = TRUE)
 
 # Increment release num.
-usethis::use_version(which = "minor")
+usethis::use_version()
 
 # Auto update NEWS.md
 lines <- readLines("NEWS.md")
@@ -55,7 +55,7 @@ filecon <- file("cran-comments.md", "wt")
 new_lines <- paste("#", Sys.Date(),
                    "\n\n",
                    "This submission updates `providers` and `providers.details`.",
-                   "\n\n\n",
+                   "\n",
                    sep = " ")
 writeLines(new_lines, con = filecon)
 writeLines(lines, con = filecon)
