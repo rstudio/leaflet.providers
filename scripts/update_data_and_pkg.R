@@ -62,5 +62,3 @@ writeLines(lines, con = filecon)
 close(filecon)
 
 revdepcheck::revdep_check()
-
-usethis::use_pkgdown()
