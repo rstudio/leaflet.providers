@@ -30,7 +30,27 @@ usethis::use_data(providers, overwrite = TRUE)
 spelling::spell_check_test(vignettes = TRUE, error = FALSE,
                            skip_on_cran = TRUE)
 
-usethis::use_cran_comments()
+# Auto-update cran-comments.md
+
+# Increment release num.
+desc_lines <- readLines("DESCRIPTION")
+sink("DESCRIPTION")
+for (line in desc_lines) {
+  if (!is.na((stringr::str_extract(line, "Version: ")))) {
+    current_vnumber <- stringr::str_remove(line, "Version: ")
+    vnumber_components <- lapply(strsplit(current_vnumber, "\\."), as.numeric)
+    names(vnumber_components[[1]]) <- c("major", "minor", "patch")
+    # assume updated data is "minor"
+    incremented_vnumber <- paste(vnumber_components[[1]]["major"], vnumber_components[[1]]["minor"] + 1, vnumber_components[[1]]["patch"], sep = ".")
+    updated_line <- paste("Version: ", incremented_vnumber, sep = "")
+    cat(updated_line, sep = "\n")
+  }
+      else {
+        cat(line, sep = "\n")
+      }
+}
+sink()
+
 
 usethis::use_revdep()
 
