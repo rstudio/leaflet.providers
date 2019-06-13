@@ -16,7 +16,7 @@ get_providers <- function(version_num = NULL) {
           tileLayer : {}}")
 
   # Load providers.js file
-  if (version_num) {
+  if (!is.null(version_num)) {
     js_path <- paste("https://unpkg.com/leaflet-providers@", version_num, "/leaflet-providers.js", sep = "")
   }
   else {
@@ -50,12 +50,13 @@ get_providers <- function(version_num = NULL) {
     "providers.details" = providers.details)
 }
 
+
 #' Helper function that returns the current version number of Leaflet.js
 #'
 #' @return Current version number.
 #'
 #' @examples
-#' get_current_version_num()
+#' get_current_version_num("https://unpkg.com/leaflet-providers")
 #'
 get_current_version_num <- function(js_path) {
   pkg_info <- jsonlite::fromJSON(paste(js_path, "/package.json", sep = "")
