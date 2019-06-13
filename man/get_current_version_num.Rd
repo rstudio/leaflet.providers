@@ -6,13 +6,12 @@
 \usage{
 get_current_version_num(js_path)
 }
+\arguments{
+\item{js_path}{Path to .js URL from which package info will be extracted.}
+}
 \value{
 Current version number.
 }
 \description{
 Helper function that returns the current version number of Leaflet.js
-}
-\examples{
-get_current_version_num("https://unpkg.com/leaflet-providers")
-
 }

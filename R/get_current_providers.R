@@ -1,6 +1,8 @@
 #' Fetch leaflet providers from Leaflet.js.
 #' @export
 #'
+#' @param version_num Version number with which to update leaflet providers. If `NULL`, fetches most recent version.
+#'
 #' @return List of `version number`, `providers`, `providers.details`
 #'
 #' @examples
@@ -54,10 +56,9 @@ get_providers <- function(version_num = NULL) {
 
 #' Helper function that returns the current version number of Leaflet.js
 #'
-#' @return Current version number.
+#' @param js_path Path to .js URL from which package info will be extracted.
 #'
-#' @examples
-#' get_current_version_num("https://unpkg.com/leaflet-providers")
+#' @return Current version number.
 #'
 get_current_version_num <- function(js_path) {
   pkg_info <- jsonlite::fromJSON(paste(js_path, "/package.json", sep = "")

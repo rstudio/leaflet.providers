@@ -6,6 +6,9 @@
 \usage{
 get_providers(version_num = NULL)
 }
+\arguments{
+\item{version_num}{Version number with which to update leaflet providers. If \code{NULL}, fetches most recent version.}
+}
 \value{
 List of \code{version number}, \code{providers}, \code{providers.details}
 }
