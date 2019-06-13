@@ -34,23 +34,29 @@ spelling::spell_check_test(vignettes = TRUE, error = FALSE,
 
 # Increment release num.
 desc_lines <- readLines("DESCRIPTION")
-sink("DESCRIPTION")
+filecon <- file("DESCRIPTION", "w")
 for (line in desc_lines) {
   if (!is.na((stringr::str_extract(line, "Version: ")))) {
     current_vnumber <- stringr::str_remove(line, "Version: ")
     vnumber_components <- lapply(strsplit(current_vnumber, "\\."), as.numeric)
     names(vnumber_components[[1]]) <- c("major", "minor", "patch")
+
     # assume updated data is "minor"
-    incremented_vnumber <- paste(vnumber_components[[1]]["major"], vnumber_components[[1]]["minor"] + 1, vnumber_components[[1]]["patch"], sep = ".")
+    incremented_vnumber <- paste(vnumber_components[[1]]["major"],
+                                 vnumber_components[[1]]["minor"] + 1,
+                                 vnumber_components[[1]]["patch"],
+                                 sep = ".")
     updated_line <- paste("Version: ", incremented_vnumber, sep = "")
-    cat(updated_line, sep = "\n")
+    writeLines(updated_line, con = filecon, sep = "\n")
   }
       else {
-        cat(line, sep = "\n")
+        writeLines(line, con = filecon, sep = "\n")
       }
 }
-sink()
 
+close(filecon)
+
+# Auto update news
 
 usethis::use_revdep()
 
