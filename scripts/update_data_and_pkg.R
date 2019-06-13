@@ -1,3 +1,6 @@
+# Increment release num.
+usethis::use_version()
+
 ct <- V8::v8()
 
 # create dummy Leaflet object
@@ -30,9 +33,6 @@ usethis::use_data(providers, overwrite = TRUE)
 
 spelling::spell_check_test(vignettes = TRUE, error = FALSE,
                            skip_on_cran = TRUE)
-
-# Increment release num.
-usethis::use_version()
 
 # Auto update NEWS.md
 lines <- readLines("NEWS.md")
