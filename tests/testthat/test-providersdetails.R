@@ -9,5 +9,3 @@ testthat::expect_true(!is.null(providers.details[["OpenStreetMap"]][["variants"]
 testthat::expect_true(!is.null(providers.details[["OpenStreetMap"]][["options"]]))
 
 testthat::expect_true(!is.null(providers.details[["OpenStreetMap"]][["variants"]]["Mapnik"]))
-
-
