@@ -25,7 +25,7 @@ You can install the released version of leaflet.providers from
 
 ``` r
 # CRAN version
-<!-- install.packages("leaflet.providers") -->
+install.packages("leaflet.providers")
 ```
 
 And the development version from [GitHub](https://github.com/) with:

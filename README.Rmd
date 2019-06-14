@@ -28,18 +28,18 @@ The goal of leaflet.providers is to provide regularly updated data on the third-
 
 You can install the released version of leaflet.providers from [CRAN](https://CRAN.R-project.org):
 
-``` r
+``` {r craninstall, eval = FALSE}
 # CRAN version
-<!-- install.packages("leaflet.providers") -->
+install.packages("leaflet.providers")
 ```
-
 
 And the development version from [GitHub](https://github.com/) with:
 
-``` r
+``` {r devtoolsinstall, eval = FALSE}
 # install.packages("devtools")
 devtools::install_github("leslie-huang/leaflet.providers")
 ```
+
 ## Example
 
 This is a basic example of the data that is automatically loaded with `leaflet.providers`.
