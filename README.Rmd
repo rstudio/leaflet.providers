@@ -26,7 +26,7 @@ The goal of leaflet.providers is to provide regularly updated data on the third-
 
 ## Installation
 
-You can install the released version of leaflet.providers from [CRAN](https://CRAN.R-project.org):
+You can install the released version of `leaflet.providers` from [CRAN](https://CRAN.R-project.org):
 
 ``` {r craninstall, eval = FALSE}
 # CRAN version
@@ -49,7 +49,6 @@ This is a basic example of the data that is automatically loaded with `leaflet.p
 ```{r example}
 library(leaflet.providers)
 str(providers)
-
 ```
 
 ### View snippet of providers.details

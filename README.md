@@ -20,7 +20,7 @@ to be used with `leaflet`.
 
 ## Installation
 
-You can install the released version of leaflet.providers from
+You can install the released version of `leaflet.providers` from
 [CRAN](https://CRAN.R-project.org):
 
 ``` r
