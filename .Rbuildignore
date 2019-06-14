@@ -1,6 +1,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
-/scripts/
+^scripts/
 .travis.yml
 ^LICENSE\.md$
 ^revdep$
@@ -11,3 +11,4 @@
 .V8history
 .lintr
 inst/WORDLIST
+^README\.Rmd$

@@ -1,0 +1,58 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# leaflet.providers
+
+<!-- badges: start -->
+
+[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/leslie-huang/leaflet.providers?branch=master&svg=true)](https://ci.appveyor.com/project/leslie-huang/leaflet.providers)
+[![Travis build status](https://travis-ci.org/leslie-huang/leaflet.providers.svg?branch=master)](https://travis-ci.org/leslie-huang/leaflet.providers)
+[![Codecov test coverage](https://codecov.io/gh/leslie-huang/leaflet.providers/branch/master/graph/badge.svg)](https://codecov.io/gh/leslie-huang/leaflet.providers?branch=master)
+
+<!-- badges: end -->
+
+The goal of leaflet.providers is to provide regularly updated data on the third-party tile providers supported by `leaflet`. This package is to be used with `leaflet`.
+
+## Installation
+
+You can install the released version of `leaflet.providers` from [CRAN](https://CRAN.R-project.org):
+
+``` {r craninstall, eval = FALSE}
+# CRAN version
+install.packages("leaflet.providers")
+```
+
+And the development version from [GitHub](https://github.com/) with:
+
+``` {r devtoolsinstall, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("leslie-huang/leaflet.providers")
+```
+
+## Example
+
+This is a basic example of the data that is automatically loaded with `leaflet.providers`.
+
+### View supported tile providers
+
+```{r example}
+library(leaflet.providers)
+str(providers)
+```
+
+### View snippet of providers.details
+
+```{r example2}
+str(providers.details, vec.len = 1, list.len=3)
+```
