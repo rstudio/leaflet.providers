@@ -3,14 +3,11 @@ todays_data <- get_providers()
 providers <- todays_data$providers
 providers.details <- todays_data$providers.details
 
-# Tests
-testthat::expect_gt(length(providers.details), 25)
-testthat::expect_true(!is.null(providers.details["OpenStreetMap"]))
-testthat::expect_gt(length(providers), 150)
-testthat::expect_true(!is.null(providers["OpenStreetMap"]))
-
 usethis::use_data(providers.details, overwrite = TRUE)
 usethis::use_data(providers, overwrite = TRUE)
+
+# Tests
+devtools::test()
 
 ## Automate pkg components
 
