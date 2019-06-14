@@ -13,6 +13,7 @@ Depends:
 Suggests: 
     V8,
     jsonlite,
+    testthat (>= 2.1.0)
 Language: en-US
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
