@@ -1,6 +1,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
-/scripts/
+^scripts/
 .travis.yml
 ^LICENSE\.md$
 ^revdep$
