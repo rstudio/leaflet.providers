@@ -3,10 +3,16 @@ todays_data <- get_providers()
 providers <- todays_data$providers
 providers.details <- todays_data$providers.details
 
+# Tests
+testthat::expect_gt(length(providers.details), 25)
+testthat::expect_true(!is.null(providers.details["OpenStreetMap"]))
+testthat::expect_gt(length(providers), 150)
+testthat::expect_true(!is.null(providers["OpenStreetMap"]))
+
 usethis::use_data(providers.details, overwrite = TRUE)
 usethis::use_data(providers, overwrite = TRUE)
 
-# Automate pkg components
+## Automate pkg components
 
 # Increase release num to match leaflet.js
 desc::desc_set_version(todays_data$version_num)
