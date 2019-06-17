@@ -23,6 +23,4 @@ deploy:
   script: Rscript -e 'pkgdown::deploy_site_github()'
   skip_cleanup: true
   on:
-    condition: |
-      branch IN (master, travis, rc-v1.0.0) AND \
-      type = push
+    all_branches: true
