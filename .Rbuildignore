@@ -12,3 +12,6 @@
 .lintr
 inst/WORDLIST
 ^README\.Rmd$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
