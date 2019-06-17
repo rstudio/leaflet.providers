@@ -18,11 +18,11 @@ addons:
       - libv8-dev
 
 before_cache: Rscript -e 'remotes::install_cran("pkgdown")'
-  deploy:
-    provider: script
-    script: Rscript -e 'pkgdown::deploy_site_github()'
-    skip_cleanup: true
-    on:
-      condition: |
-        branch IN (master, travis, rc-v1.0.0) AND \
-        type = push
+deploy:
+  provider: script
+  script: Rscript -e 'pkgdown::deploy_site_github()'
+  skip_cleanup: true
+  on:
+    condition: |
+      branch IN (master, travis, rc-v1.0.0) AND \
+      type = push
