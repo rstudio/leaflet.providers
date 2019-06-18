@@ -36,13 +36,13 @@ get_providers <- function(version_num = NULL) {
 
   providers_json <- ct$eval("JSON.stringify(L.TileLayer.Provider.providers)")
 
-  providers.details <- jsonlite::fromJSON(providers_json)
+  providers_details <- jsonlite::fromJSON(providers_json)
 
-  variants <- lapply(providers.details, function(x) {
+  variants <- lapply(providers_details, function(x) {
     names(x$variants)
   })
 
-  providers <- unlist(lapply(names(providers.details), function(provider) {
+  providers <- unlist(lapply(names(providers_details), function(provider) {
     if (is.null(variants[[provider]])) {
       provider
     } else {
@@ -61,7 +61,7 @@ get_providers <- function(version_num = NULL) {
   list(
     "version_num" = version_num,
     "providers" = providers,
-    "providers_details" = providers.details,
+    "providers_details" = providers_details,
     "html_dependency" = html_dependency)
 }
 
@@ -82,4 +82,25 @@ get_current_version_num <- function() {
 #'
 
 providers <- function() {
+  todays_data <- get_providers()
+
+  # Move .js file from tmp to /inst
+  js_filename_for_inst <- paste0("inst/providers", todays_data$version_num, ".js")
+
+  file.copy(from = todays_data$html_dependency$src$file,
+            to = js_filename_for_inst
+  )
+
+  html_dependency <- htmltools::htmlDependency(
+    "leaflet-providers",
+    todays_data$version_num,
+    src = js_filename_for_inst,
+  )
+
+  # Returns same list of obj as get_providers() except html_dependency points to /inst file
+  list(
+    "version_num" = todays_data$version_num,
+    "providers" = todays_data$providers,
+    "providers_details" = todays_data$providers_details,
+    "html_dependency" = html_dependency)
 }
