@@ -2,10 +2,10 @@ devtools::load_all()
 todays_data <- get_providers()
 
 providers <- todays_data$providers
-providers.details <- todays_data$providers.details
+providers.details <- todays_data$providers_details
 
-usethis::use_data(providers.details, overwrite = TRUE)
-usethis::use_data(providers, overwrite = TRUE)
+# usethis::use_data(providers.details, overwrite = TRUE)
+# usethis::use_data(providers, overwrite = TRUE)
 
 # Tests
 devtools::test()

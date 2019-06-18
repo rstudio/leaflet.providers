@@ -21,6 +21,10 @@ get_providers <- function(version_num = NULL) {
 
   js_path <- paste0(unpkg_url, "@", version_num)
 
+  js_lines <- readLines(js_path)
+  tmp_file <- tempfile(pattern = "", fileext =".js")
+  writeLines(js_lines, con = tmp_file)
+
   ct <- V8::v8()
 
   # create dummy Leaflet object
@@ -28,7 +32,7 @@ get_providers <- function(version_num = NULL) {
           Util : {extend: function(){return {};}},
           tileLayer : {}}")
 
-  ct$source(js_path)
+  ct$source(tmp_file)
 
   providers_json <- ct$eval("JSON.stringify(L.TileLayer.Provider.providers)")
 
@@ -48,10 +52,17 @@ get_providers <- function(version_num = NULL) {
 
   providers <- stats::setNames(as.list(providers), providers)
 
+  html_dependency <- htmltools::htmlDependency(
+    "leaflet-providers",
+    version_num,
+    src = tmp_file
+  )
+
   list(
     "version_num" = version_num,
     "providers" = providers,
-    "providers.details" = providers.details)
+    "providers_details" = providers.details,
+    "html_dependency" = html_dependency)
 }
 
 
