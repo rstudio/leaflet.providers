@@ -1,11 +1,15 @@
 devtools::load_all()
 todays_data <- get_providers()
 
-providers <- todays_data$providers
-providers.details <- todays_data$providers_details
+dput(todays_data$providers, file="data/providers.R")
+dput(todays_data$providers_details, file="data/providers_details.R")
 
-# usethis::use_data(providers.details, overwrite = TRUE)
-# usethis::use_data(providers, overwrite = TRUE)
+# Move .js file from tmp to /inst
+js_filename_for_inst <- paste0("inst/providers", todays_data$version_num, ".js")
+
+file.copy(from = todays_data$html_dependency$src$file,
+          to = js_filename_for_inst
+          )
 
 # Tests
 devtools::test()

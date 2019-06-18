@@ -55,7 +55,7 @@ get_providers <- function(version_num = NULL) {
   html_dependency <- htmltools::htmlDependency(
     "leaflet-providers",
     version_num,
-    src = tmp_file
+    src = tmp_file,
   )
 
   list(
@@ -74,4 +74,12 @@ get_current_version_num <- function() {
   pkg_info <- jsonlite::fromJSON(paste0(unpkg_url, "/package.json")
                                  )
   return(pkg_info$version)
+}
+
+
+#' Return providers, providers_details, version, and HTML Dependency.
+#'
+#'
+
+providers <- function() {
 }
