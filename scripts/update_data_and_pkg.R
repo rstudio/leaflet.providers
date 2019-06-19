@@ -2,11 +2,11 @@ devtools::load_all()
 todays_data <- get_providers()
 
 providers_file <- file(description = "R/providers_data.R", "w")
-cat("providers_version_num <-", paste0('"', as.character(todays_data$version_num),'"'), file=providers_file)
+cat("providers_version_num <-", paste0('"', as.character(todays_data$version_num),'"'), file= providers_file)
 cat("\n", file = providers_file)
 
 cat("providers_data <- ", file = providers_file)
-dput(todays_data$providers, file=providers_file)
+dput(todays_data$providers, file = providers_file)
 
 cat("\n", file = providers_file)
 
@@ -27,8 +27,6 @@ js_filename_for_inst <- paste0("leaflet-providers_", todays_data$version_num, ".
 file.copy(from = todays_data$html_dependency$src$file,
           to = file.path("inst", js_filename_for_inst)
 )
-
-
 
 # Tests
 devtools::test()
@@ -99,4 +97,3 @@ cat(file = "cran-comments.md",
     "\n",
     paste0(rhub_output$cran_summary(), collapse = "\n")
     )
-
