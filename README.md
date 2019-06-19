@@ -157,7 +157,7 @@ str(providers_data$providers)
 #>   [list output truncated]
 ```
 
-### View snippet of providers.details
+### View snippet of tile providers’ details
 
 ``` r
 str(providers_data$providers_details, vec.len = 1, list.len=3)
