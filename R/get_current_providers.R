@@ -22,7 +22,7 @@ get_providers <- function(version_num = NULL) {
   js_path <- paste0(unpkg_url, "@", version_num)
 
   js_lines <- readLines(js_path)
-  tmp_file <- tempfile(pattern = "", fileext =".js")
+  tmp_file <- tempfile(pattern = "", fileext = ".js")
   writeLines(js_lines, con = tmp_file)
 
   ct <- V8::v8()

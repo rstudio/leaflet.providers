@@ -2,7 +2,7 @@ devtools::load_all()
 todays_data <- get_providers()
 
 providers_file <- file(description = "R/providers_data.R", "w")
-cat("providers_version_num <-", paste0("'", as.character(todays_data$version_num),"'"), file=providers_file)
+cat("providers_version_num <-", paste0('"', as.character(todays_data$version_num),'"'), file=providers_file)
 cat("\n", file = providers_file)
 
 cat("providers_data <- ", file = providers_file)

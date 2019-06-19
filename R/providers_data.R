@@ -1,4 +1,4 @@
-providers_version_num <- '1.8.0'
+providers_version_num <- "1.8.0"
 providers_data <- list(OpenStreetMap = "OpenStreetMap", OpenStreetMap.Mapnik = "OpenStreetMap.Mapnik", 
     OpenStreetMap.DE = "OpenStreetMap.DE", OpenStreetMap.CH = "OpenStreetMap.CH", 
     OpenStreetMap.France = "OpenStreetMap.France", OpenStreetMap.HOT = "OpenStreetMap.HOT", 
