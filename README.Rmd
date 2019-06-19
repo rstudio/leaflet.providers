@@ -57,10 +57,9 @@ providers_data$version_num
 
 ```{r example}
 str(providers_data$providers)
-
 ```
 
-### View snippet of providers.details
+### View snippet of tile providers' details
 
 ```{r example2}
 str(providers_data$providers_details, vec.len = 1, list.len=3)
