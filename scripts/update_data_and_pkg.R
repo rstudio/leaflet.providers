@@ -1,11 +1,32 @@
 devtools::load_all()
 todays_data <- get_providers()
 
-providers <- todays_data$providers
-providers.details <- todays_data$providers.details
+providers_file <- file(description = "R/providers_data.R", "w")
+cat("providers_version_num <-", paste0('"', as.character(todays_data$version_num),'"'), file= providers_file)
+cat("\n", file = providers_file)
 
-usethis::use_data(providers.details, overwrite = TRUE)
-usethis::use_data(providers, overwrite = TRUE)
+cat("providers_data <- ", file = providers_file)
+dput(todays_data$providers, file = providers_file)
+
+cat("\n", file = providers_file)
+
+cat("providers_details_data <- ", file = providers_file)
+dput(todays_data$providers_details, file = providers_file)
+close(providers_file)
+
+# Delete old .js files
+old_files <- list.files(path = "inst", pattern = ".*\\.js", full.names = TRUE)
+
+if (length(old_files) > 0) {
+    unlink(old_files)
+}
+
+# Write .js file to inst/
+js_filename_for_inst <- paste0("leaflet-providers_", todays_data$version_num, ".js")
+
+file.copy(from = todays_data$html_dependency$src$file,
+          to = file.path("inst", js_filename_for_inst)
+)
 
 # Tests
 devtools::test()
@@ -76,4 +97,3 @@ cat(file = "cran-comments.md",
     "\n",
     paste0(rhub_output$cran_summary(), collapse = "\n")
     )
-

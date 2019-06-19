@@ -40,12 +40,21 @@ devtools::install_github("leslie-huang/leaflet.providers")
 This is a basic example of the data that is automatically loaded with
 `leaflet.providers`.
 
-### View supported tile providers
+### View Leaflet.js version number from which the data is derived
 
 ``` r
 library(leaflet.providers)
-str(providers)
-#> List of 155
+providers_data <- providers()
+
+providers_data$version_num
+#> [1] "1.8.0"
+```
+
+### View supported tile providers
+
+``` r
+str(providers_data$providers)
+#> List of 157
 #>  $ OpenStreetMap                      : chr "OpenStreetMap"
 #>  $ OpenStreetMap.Mapnik               : chr "OpenStreetMap.Mapnik"
 #>  $ OpenStreetMap.DE                   : chr "OpenStreetMap.DE"
@@ -67,6 +76,8 @@ str(providers)
 #>  $ Thunderforest.Landscape            : chr "Thunderforest.Landscape"
 #>  $ Thunderforest.Outdoors             : chr "Thunderforest.Outdoors"
 #>  $ Thunderforest.Pioneer              : chr "Thunderforest.Pioneer"
+#>  $ Thunderforest.MobileAtlas          : chr "Thunderforest.MobileAtlas"
+#>  $ Thunderforest.Neighbourhood        : chr "Thunderforest.Neighbourhood"
 #>  $ OpenMapSurfer                      : chr "OpenMapSurfer"
 #>  $ OpenMapSurfer.Roads                : chr "OpenMapSurfer.Roads"
 #>  $ OpenMapSurfer.Hybrid               : chr "OpenMapSurfer.Hybrid"
@@ -143,15 +154,13 @@ str(providers)
 #>  $ HERE.satelliteDay                  : chr "HERE.satelliteDay"
 #>  $ HERE.terrainDay                    : chr "HERE.terrainDay"
 #>  $ HERE.terrainDayMobile              : chr "HERE.terrainDayMobile"
-#>  $ FreeMapSK                          : chr "FreeMapSK"
-#>  $ MtbMap                             : chr "MtbMap"
 #>   [list output truncated]
 ```
 
 ### View snippet of providers.details
 
 ``` r
-str(providers.details, vec.len = 1, list.len=3)
+str(providers_data$providers_details, vec.len = 1, list.len=3)
 #> List of 27
 #>  $ OpenStreetMap   :List of 3
 #>   ..$ url     : chr "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
