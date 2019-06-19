@@ -1,5 +1,5 @@
-context("Structure of providers")
+context("Structure of providers_data")
 
-testthat::expect_gt(length(providers), 150)
+testthat::expect_gt(length(providers_data), 150)
 
-testthat::expect_true(!is.null(providers[["OpenStreetMap"]]))
+testthat::expect_true(!is.null(providers_data[["OpenStreetMap"]]))

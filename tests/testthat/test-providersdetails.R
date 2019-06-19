@@ -1,11 +1,11 @@
-context("Structure of providers.details")
+context("Structure of providers_details_data")
 
-testthat::expect_gt(length(providers.details), 25)
+testthat::expect_gt(length(providers_details_data), 25)
 
-testthat::expect_true(!is.null(providers.details[["OpenStreetMap"]]))
+testthat::expect_true(!is.null(providers_details_data[["OpenStreetMap"]]))
 
-testthat::expect_true(!is.null(providers.details[["OpenStreetMap"]][["url"]]))
-testthat::expect_true(!is.null(providers.details[["OpenStreetMap"]][["variants"]]))
-testthat::expect_true(!is.null(providers.details[["OpenStreetMap"]][["options"]]))
+testthat::expect_true(!is.null(providers_details_data[["OpenStreetMap"]][["url"]]))
+testthat::expect_true(!is.null(providers_details_data[["OpenStreetMap"]][["variants"]]))
+testthat::expect_true(!is.null(providers_details_data[["OpenStreetMap"]][["options"]]))
 
-testthat::expect_true(!is.null(providers.details[["OpenStreetMap"]][["variants"]]["Mapnik"]))
+testthat::expect_true(!is.null(providers_details_data[["OpenStreetMap"]][["variants"]]["Mapnik"]))
