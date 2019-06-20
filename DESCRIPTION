@@ -19,3 +19,5 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
 Imports: 
     htmltools
+URL: https://github.com/leslie-huang/leaflet.providers
+BugReports: https://github.com/leslie-huang/leaflet.providers/issues
