@@ -64,3 +64,15 @@ str(providers_data$providers)
 ```{r example2}
 str(providers_data$providers_details, vec.len = 1, list.len=3)
 ```
+
+### Use up-to-date providers and providers' details
+
+```{r get_providers_ex}
+todays_providers <- get_providers()
+
+# Set custom providers and providers' details
+
+use_providers(todays_providers)
+```
+
+Now that `use_providers` has been called with today's providers, [`leaflet`](http://rstudio.github.io/leaflet) will use the latest providers data.
