@@ -78,7 +78,7 @@
 <!-- badges: start -->
 
 <!-- badges: end -->
-<p>The goal of leaflet.providers is to provide regularly updated data on the third-party tile providers supported by <code>leaflet</code>. This package is to be used with <code>leaflet</code>.</p>
+<p>The goal of leaflet.providers is to provide regularly updated data on the third-party tile providers supported by <code>leaflet</code>. This package is to be used with <code>leaflet</code>. Using <code><a href="reference/use_providers.html">use_providers()</a></code> and <code>get_providers</code>, users may fetch up-to-date providers information to be used in <code>leaflet</code>.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -92,164 +92,712 @@
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
-<p>This is a basic example of the data that is automatically loaded with <code>leaflet.providers</code>.</p>
+<p>This is a basic example of the data that is automatically loaded with <code>leaflet.providers</code> and the available methods.</p>
+<div id="use-up-to-date-providers-and-providers-details" class="section level3">
+<h3 class="hasAnchor">
+<a href="#use-up-to-date-providers-and-providers-details" class="anchor"></a>Use up-to-date providers and providers’ details</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(leaflet.providers)</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">todays_providers &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_providers.html">get_providers</a></span>()</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co"># Set custom providers and providers' details</span></a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="kw"><a href="reference/use_providers.html">use_providers</a></span>(todays_providers)</a></code></pre></div>
+<p>Now that <code>use_providers</code> has been called with today’s providers, <a href="http://rstudio.github.io/leaflet"><code>leaflet</code></a> will use the latest providers data.</p>
+</div>
 <div id="view-leaflet-js-version-number-from-which-the-data-is-derived" class="section level3">
 <h3 class="hasAnchor">
 <a href="#view-leaflet-js-version-number-from-which-the-data-is-derived" class="anchor"></a>View Leaflet.js version number from which the data is derived</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(leaflet.providers)</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">providers_data &lt;-<span class="st"> </span><span class="kw"><a href="reference/providers.html">providers</a></span>()</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb3-4" data-line-number="4">providers_data<span class="op">$</span>version_num</a>
-<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt; [1] "1.8.0"</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">providers_data &lt;-<span class="st"> </span><span class="kw"><a href="reference/providers.html">providers</a></span>()</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">providers_data<span class="op">$</span>version_num</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt; [1] "1.8.0"</span></a></code></pre></div>
 </div>
 <div id="view-supported-tile-providers" class="section level3">
 <h3 class="hasAnchor">
 <a href="#view-supported-tile-providers" class="anchor"></a>View supported tile providers</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/str">str</a></span>(providers_data<span class="op">$</span>providers)</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; List of 157</span></a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt;  $ OpenStreetMap                      : chr "OpenStreetMap"</span></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt;  $ OpenStreetMap.Mapnik               : chr "OpenStreetMap.Mapnik"</span></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt;  $ OpenStreetMap.DE                   : chr "OpenStreetMap.DE"</span></a>
-<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">#&gt;  $ OpenStreetMap.CH                   : chr "OpenStreetMap.CH"</span></a>
-<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">#&gt;  $ OpenStreetMap.France               : chr "OpenStreetMap.France"</span></a>
-<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="co">#&gt;  $ OpenStreetMap.HOT                  : chr "OpenStreetMap.HOT"</span></a>
-<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="co">#&gt;  $ OpenStreetMap.BZH                  : chr "OpenStreetMap.BZH"</span></a>
-<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co">#&gt;  $ OpenSeaMap                         : chr "OpenSeaMap"</span></a>
-<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="co">#&gt;  $ OpenPtMap                          : chr "OpenPtMap"</span></a>
-<a class="sourceLine" id="cb4-12" data-line-number="12"><span class="co">#&gt;  $ OpenTopoMap                        : chr "OpenTopoMap"</span></a>
-<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co">#&gt;  $ OpenRailwayMap                     : chr "OpenRailwayMap"</span></a>
-<a class="sourceLine" id="cb4-14" data-line-number="14"><span class="co">#&gt;  $ OpenFireMap                        : chr "OpenFireMap"</span></a>
-<a class="sourceLine" id="cb4-15" data-line-number="15"><span class="co">#&gt;  $ SafeCast                           : chr "SafeCast"</span></a>
-<a class="sourceLine" id="cb4-16" data-line-number="16"><span class="co">#&gt;  $ Thunderforest                      : chr "Thunderforest"</span></a>
-<a class="sourceLine" id="cb4-17" data-line-number="17"><span class="co">#&gt;  $ Thunderforest.OpenCycleMap         : chr "Thunderforest.OpenCycleMap"</span></a>
-<a class="sourceLine" id="cb4-18" data-line-number="18"><span class="co">#&gt;  $ Thunderforest.Transport            : chr "Thunderforest.Transport"</span></a>
-<a class="sourceLine" id="cb4-19" data-line-number="19"><span class="co">#&gt;  $ Thunderforest.TransportDark        : chr "Thunderforest.TransportDark"</span></a>
-<a class="sourceLine" id="cb4-20" data-line-number="20"><span class="co">#&gt;  $ Thunderforest.SpinalMap            : chr "Thunderforest.SpinalMap"</span></a>
-<a class="sourceLine" id="cb4-21" data-line-number="21"><span class="co">#&gt;  $ Thunderforest.Landscape            : chr "Thunderforest.Landscape"</span></a>
-<a class="sourceLine" id="cb4-22" data-line-number="22"><span class="co">#&gt;  $ Thunderforest.Outdoors             : chr "Thunderforest.Outdoors"</span></a>
-<a class="sourceLine" id="cb4-23" data-line-number="23"><span class="co">#&gt;  $ Thunderforest.Pioneer              : chr "Thunderforest.Pioneer"</span></a>
-<a class="sourceLine" id="cb4-24" data-line-number="24"><span class="co">#&gt;  $ Thunderforest.MobileAtlas          : chr "Thunderforest.MobileAtlas"</span></a>
-<a class="sourceLine" id="cb4-25" data-line-number="25"><span class="co">#&gt;  $ Thunderforest.Neighbourhood        : chr "Thunderforest.Neighbourhood"</span></a>
-<a class="sourceLine" id="cb4-26" data-line-number="26"><span class="co">#&gt;  $ OpenMapSurfer                      : chr "OpenMapSurfer"</span></a>
-<a class="sourceLine" id="cb4-27" data-line-number="27"><span class="co">#&gt;  $ OpenMapSurfer.Roads                : chr "OpenMapSurfer.Roads"</span></a>
-<a class="sourceLine" id="cb4-28" data-line-number="28"><span class="co">#&gt;  $ OpenMapSurfer.Hybrid               : chr "OpenMapSurfer.Hybrid"</span></a>
-<a class="sourceLine" id="cb4-29" data-line-number="29"><span class="co">#&gt;  $ OpenMapSurfer.AdminBounds          : chr "OpenMapSurfer.AdminBounds"</span></a>
-<a class="sourceLine" id="cb4-30" data-line-number="30"><span class="co">#&gt;  $ OpenMapSurfer.ContourLines         : chr "OpenMapSurfer.ContourLines"</span></a>
-<a class="sourceLine" id="cb4-31" data-line-number="31"><span class="co">#&gt;  $ OpenMapSurfer.Hillshade            : chr "OpenMapSurfer.Hillshade"</span></a>
-<a class="sourceLine" id="cb4-32" data-line-number="32"><span class="co">#&gt;  $ OpenMapSurfer.ElementsAtRisk       : chr "OpenMapSurfer.ElementsAtRisk"</span></a>
-<a class="sourceLine" id="cb4-33" data-line-number="33"><span class="co">#&gt;  $ Hydda                              : chr "Hydda"</span></a>
-<a class="sourceLine" id="cb4-34" data-line-number="34"><span class="co">#&gt;  $ Hydda.Full                         : chr "Hydda.Full"</span></a>
-<a class="sourceLine" id="cb4-35" data-line-number="35"><span class="co">#&gt;  $ Hydda.Base                         : chr "Hydda.Base"</span></a>
-<a class="sourceLine" id="cb4-36" data-line-number="36"><span class="co">#&gt;  $ Hydda.RoadsAndLabels               : chr "Hydda.RoadsAndLabels"</span></a>
-<a class="sourceLine" id="cb4-37" data-line-number="37"><span class="co">#&gt;  $ MapBox                             : chr "MapBox"</span></a>
-<a class="sourceLine" id="cb4-38" data-line-number="38"><span class="co">#&gt;  $ Stamen                             : chr "Stamen"</span></a>
-<a class="sourceLine" id="cb4-39" data-line-number="39"><span class="co">#&gt;  $ Stamen.Toner                       : chr "Stamen.Toner"</span></a>
-<a class="sourceLine" id="cb4-40" data-line-number="40"><span class="co">#&gt;  $ Stamen.TonerBackground             : chr "Stamen.TonerBackground"</span></a>
-<a class="sourceLine" id="cb4-41" data-line-number="41"><span class="co">#&gt;  $ Stamen.TonerHybrid                 : chr "Stamen.TonerHybrid"</span></a>
-<a class="sourceLine" id="cb4-42" data-line-number="42"><span class="co">#&gt;  $ Stamen.TonerLines                  : chr "Stamen.TonerLines"</span></a>
-<a class="sourceLine" id="cb4-43" data-line-number="43"><span class="co">#&gt;  $ Stamen.TonerLabels                 : chr "Stamen.TonerLabels"</span></a>
-<a class="sourceLine" id="cb4-44" data-line-number="44"><span class="co">#&gt;  $ Stamen.TonerLite                   : chr "Stamen.TonerLite"</span></a>
-<a class="sourceLine" id="cb4-45" data-line-number="45"><span class="co">#&gt;  $ Stamen.Watercolor                  : chr "Stamen.Watercolor"</span></a>
-<a class="sourceLine" id="cb4-46" data-line-number="46"><span class="co">#&gt;  $ Stamen.Terrain                     : chr "Stamen.Terrain"</span></a>
-<a class="sourceLine" id="cb4-47" data-line-number="47"><span class="co">#&gt;  $ Stamen.TerrainBackground           : chr "Stamen.TerrainBackground"</span></a>
-<a class="sourceLine" id="cb4-48" data-line-number="48"><span class="co">#&gt;  $ Stamen.TopOSMRelief                : chr "Stamen.TopOSMRelief"</span></a>
-<a class="sourceLine" id="cb4-49" data-line-number="49"><span class="co">#&gt;  $ Stamen.TopOSMFeatures              : chr "Stamen.TopOSMFeatures"</span></a>
-<a class="sourceLine" id="cb4-50" data-line-number="50"><span class="co">#&gt;  $ Esri                               : chr "Esri"</span></a>
-<a class="sourceLine" id="cb4-51" data-line-number="51"><span class="co">#&gt;  $ Esri.WorldStreetMap                : chr "Esri.WorldStreetMap"</span></a>
-<a class="sourceLine" id="cb4-52" data-line-number="52"><span class="co">#&gt;  $ Esri.DeLorme                       : chr "Esri.DeLorme"</span></a>
-<a class="sourceLine" id="cb4-53" data-line-number="53"><span class="co">#&gt;  $ Esri.WorldTopoMap                  : chr "Esri.WorldTopoMap"</span></a>
-<a class="sourceLine" id="cb4-54" data-line-number="54"><span class="co">#&gt;  $ Esri.WorldImagery                  : chr "Esri.WorldImagery"</span></a>
-<a class="sourceLine" id="cb4-55" data-line-number="55"><span class="co">#&gt;  $ Esri.WorldTerrain                  : chr "Esri.WorldTerrain"</span></a>
-<a class="sourceLine" id="cb4-56" data-line-number="56"><span class="co">#&gt;  $ Esri.WorldShadedRelief             : chr "Esri.WorldShadedRelief"</span></a>
-<a class="sourceLine" id="cb4-57" data-line-number="57"><span class="co">#&gt;  $ Esri.WorldPhysical                 : chr "Esri.WorldPhysical"</span></a>
-<a class="sourceLine" id="cb4-58" data-line-number="58"><span class="co">#&gt;  $ Esri.OceanBasemap                  : chr "Esri.OceanBasemap"</span></a>
-<a class="sourceLine" id="cb4-59" data-line-number="59"><span class="co">#&gt;  $ Esri.NatGeoWorldMap                : chr "Esri.NatGeoWorldMap"</span></a>
-<a class="sourceLine" id="cb4-60" data-line-number="60"><span class="co">#&gt;  $ Esri.WorldGrayCanvas               : chr "Esri.WorldGrayCanvas"</span></a>
-<a class="sourceLine" id="cb4-61" data-line-number="61"><span class="co">#&gt;  $ OpenWeatherMap                     : chr "OpenWeatherMap"</span></a>
-<a class="sourceLine" id="cb4-62" data-line-number="62"><span class="co">#&gt;  $ OpenWeatherMap.Clouds              : chr "OpenWeatherMap.Clouds"</span></a>
-<a class="sourceLine" id="cb4-63" data-line-number="63"><span class="co">#&gt;  $ OpenWeatherMap.CloudsClassic       : chr "OpenWeatherMap.CloudsClassic"</span></a>
-<a class="sourceLine" id="cb4-64" data-line-number="64"><span class="co">#&gt;  $ OpenWeatherMap.Precipitation       : chr "OpenWeatherMap.Precipitation"</span></a>
-<a class="sourceLine" id="cb4-65" data-line-number="65"><span class="co">#&gt;  $ OpenWeatherMap.PrecipitationClassic: chr "OpenWeatherMap.PrecipitationClassic"</span></a>
-<a class="sourceLine" id="cb4-66" data-line-number="66"><span class="co">#&gt;  $ OpenWeatherMap.Rain                : chr "OpenWeatherMap.Rain"</span></a>
-<a class="sourceLine" id="cb4-67" data-line-number="67"><span class="co">#&gt;  $ OpenWeatherMap.RainClassic         : chr "OpenWeatherMap.RainClassic"</span></a>
-<a class="sourceLine" id="cb4-68" data-line-number="68"><span class="co">#&gt;  $ OpenWeatherMap.Pressure            : chr "OpenWeatherMap.Pressure"</span></a>
-<a class="sourceLine" id="cb4-69" data-line-number="69"><span class="co">#&gt;  $ OpenWeatherMap.PressureContour     : chr "OpenWeatherMap.PressureContour"</span></a>
-<a class="sourceLine" id="cb4-70" data-line-number="70"><span class="co">#&gt;  $ OpenWeatherMap.Wind                : chr "OpenWeatherMap.Wind"</span></a>
-<a class="sourceLine" id="cb4-71" data-line-number="71"><span class="co">#&gt;  $ OpenWeatherMap.Temperature         : chr "OpenWeatherMap.Temperature"</span></a>
-<a class="sourceLine" id="cb4-72" data-line-number="72"><span class="co">#&gt;  $ OpenWeatherMap.Snow                : chr "OpenWeatherMap.Snow"</span></a>
-<a class="sourceLine" id="cb4-73" data-line-number="73"><span class="co">#&gt;  $ HERE                               : chr "HERE"</span></a>
-<a class="sourceLine" id="cb4-74" data-line-number="74"><span class="co">#&gt;  $ HERE.normalDay                     : chr "HERE.normalDay"</span></a>
-<a class="sourceLine" id="cb4-75" data-line-number="75"><span class="co">#&gt;  $ HERE.normalDayCustom               : chr "HERE.normalDayCustom"</span></a>
-<a class="sourceLine" id="cb4-76" data-line-number="76"><span class="co">#&gt;  $ HERE.normalDayGrey                 : chr "HERE.normalDayGrey"</span></a>
-<a class="sourceLine" id="cb4-77" data-line-number="77"><span class="co">#&gt;  $ HERE.normalDayMobile               : chr "HERE.normalDayMobile"</span></a>
-<a class="sourceLine" id="cb4-78" data-line-number="78"><span class="co">#&gt;  $ HERE.normalDayGreyMobile           : chr "HERE.normalDayGreyMobile"</span></a>
-<a class="sourceLine" id="cb4-79" data-line-number="79"><span class="co">#&gt;  $ HERE.normalDayTransit              : chr "HERE.normalDayTransit"</span></a>
-<a class="sourceLine" id="cb4-80" data-line-number="80"><span class="co">#&gt;  $ HERE.normalDayTransitMobile        : chr "HERE.normalDayTransitMobile"</span></a>
-<a class="sourceLine" id="cb4-81" data-line-number="81"><span class="co">#&gt;  $ HERE.normalNight                   : chr "HERE.normalNight"</span></a>
-<a class="sourceLine" id="cb4-82" data-line-number="82"><span class="co">#&gt;  $ HERE.normalNightMobile             : chr "HERE.normalNightMobile"</span></a>
-<a class="sourceLine" id="cb4-83" data-line-number="83"><span class="co">#&gt;  $ HERE.normalNightGrey               : chr "HERE.normalNightGrey"</span></a>
-<a class="sourceLine" id="cb4-84" data-line-number="84"><span class="co">#&gt;  $ HERE.normalNightGreyMobile         : chr "HERE.normalNightGreyMobile"</span></a>
-<a class="sourceLine" id="cb4-85" data-line-number="85"><span class="co">#&gt;  $ HERE.normalNightTransit            : chr "HERE.normalNightTransit"</span></a>
-<a class="sourceLine" id="cb4-86" data-line-number="86"><span class="co">#&gt;  $ HERE.normalNightTransitMobile      : chr "HERE.normalNightTransitMobile"</span></a>
-<a class="sourceLine" id="cb4-87" data-line-number="87"><span class="co">#&gt;  $ HERE.reducedDay                    : chr "HERE.reducedDay"</span></a>
-<a class="sourceLine" id="cb4-88" data-line-number="88"><span class="co">#&gt;  $ HERE.reducedNight                  : chr "HERE.reducedNight"</span></a>
-<a class="sourceLine" id="cb4-89" data-line-number="89"><span class="co">#&gt;  $ HERE.basicMap                      : chr "HERE.basicMap"</span></a>
-<a class="sourceLine" id="cb4-90" data-line-number="90"><span class="co">#&gt;  $ HERE.mapLabels                     : chr "HERE.mapLabels"</span></a>
-<a class="sourceLine" id="cb4-91" data-line-number="91"><span class="co">#&gt;  $ HERE.trafficFlow                   : chr "HERE.trafficFlow"</span></a>
-<a class="sourceLine" id="cb4-92" data-line-number="92"><span class="co">#&gt;  $ HERE.carnavDayGrey                 : chr "HERE.carnavDayGrey"</span></a>
-<a class="sourceLine" id="cb4-93" data-line-number="93"><span class="co">#&gt;  $ HERE.hybridDay                     : chr "HERE.hybridDay"</span></a>
-<a class="sourceLine" id="cb4-94" data-line-number="94"><span class="co">#&gt;  $ HERE.hybridDayMobile               : chr "HERE.hybridDayMobile"</span></a>
-<a class="sourceLine" id="cb4-95" data-line-number="95"><span class="co">#&gt;  $ HERE.hybridDayTransit              : chr "HERE.hybridDayTransit"</span></a>
-<a class="sourceLine" id="cb4-96" data-line-number="96"><span class="co">#&gt;  $ HERE.hybridDayGrey                 : chr "HERE.hybridDayGrey"</span></a>
-<a class="sourceLine" id="cb4-97" data-line-number="97"><span class="co">#&gt;  $ HERE.pedestrianDay                 : chr "HERE.pedestrianDay"</span></a>
-<a class="sourceLine" id="cb4-98" data-line-number="98"><span class="co">#&gt;  $ HERE.pedestrianNight               : chr "HERE.pedestrianNight"</span></a>
-<a class="sourceLine" id="cb4-99" data-line-number="99"><span class="co">#&gt;  $ HERE.satelliteDay                  : chr "HERE.satelliteDay"</span></a>
-<a class="sourceLine" id="cb4-100" data-line-number="100"><span class="co">#&gt;  $ HERE.terrainDay                    : chr "HERE.terrainDay"</span></a>
-<a class="sourceLine" id="cb4-101" data-line-number="101"><span class="co">#&gt;  $ HERE.terrainDayMobile              : chr "HERE.terrainDayMobile"</span></a>
-<a class="sourceLine" id="cb4-102" data-line-number="102"><span class="co">#&gt;   [list output truncated]</span></a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/str">str</a></span>(providers_data<span class="op">$</span>providers)</a></code></pre></div>
+<div style="height:150px; overflow-y: scroll;">
+<pre><code>#&gt; List of 157
+#&gt;  $ OpenStreetMap                      : chr "OpenStreetMap"
+#&gt;  $ OpenStreetMap.Mapnik               : chr "OpenStreetMap.Mapnik"
+#&gt;  $ OpenStreetMap.DE                   : chr "OpenStreetMap.DE"
+#&gt;  $ OpenStreetMap.CH                   : chr "OpenStreetMap.CH"
+#&gt;  $ OpenStreetMap.France               : chr "OpenStreetMap.France"
+#&gt;  $ OpenStreetMap.HOT                  : chr "OpenStreetMap.HOT"
+#&gt;  $ OpenStreetMap.BZH                  : chr "OpenStreetMap.BZH"
+#&gt;  $ OpenSeaMap                         : chr "OpenSeaMap"
+#&gt;  $ OpenPtMap                          : chr "OpenPtMap"
+#&gt;  $ OpenTopoMap                        : chr "OpenTopoMap"
+#&gt;  $ OpenRailwayMap                     : chr "OpenRailwayMap"
+#&gt;  $ OpenFireMap                        : chr "OpenFireMap"
+#&gt;  $ SafeCast                           : chr "SafeCast"
+#&gt;  $ Thunderforest                      : chr "Thunderforest"
+#&gt;  $ Thunderforest.OpenCycleMap         : chr "Thunderforest.OpenCycleMap"
+#&gt;  $ Thunderforest.Transport            : chr "Thunderforest.Transport"
+#&gt;  $ Thunderforest.TransportDark        : chr "Thunderforest.TransportDark"
+#&gt;  $ Thunderforest.SpinalMap            : chr "Thunderforest.SpinalMap"
+#&gt;  $ Thunderforest.Landscape            : chr "Thunderforest.Landscape"
+#&gt;  $ Thunderforest.Outdoors             : chr "Thunderforest.Outdoors"
+#&gt;  $ Thunderforest.Pioneer              : chr "Thunderforest.Pioneer"
+#&gt;  $ Thunderforest.MobileAtlas          : chr "Thunderforest.MobileAtlas"
+#&gt;  $ Thunderforest.Neighbourhood        : chr "Thunderforest.Neighbourhood"
+#&gt;  $ OpenMapSurfer                      : chr "OpenMapSurfer"
+#&gt;  $ OpenMapSurfer.Roads                : chr "OpenMapSurfer.Roads"
+#&gt;  $ OpenMapSurfer.Hybrid               : chr "OpenMapSurfer.Hybrid"
+#&gt;  $ OpenMapSurfer.AdminBounds          : chr "OpenMapSurfer.AdminBounds"
+#&gt;  $ OpenMapSurfer.ContourLines         : chr "OpenMapSurfer.ContourLines"
+#&gt;  $ OpenMapSurfer.Hillshade            : chr "OpenMapSurfer.Hillshade"
+#&gt;  $ OpenMapSurfer.ElementsAtRisk       : chr "OpenMapSurfer.ElementsAtRisk"
+#&gt;  $ Hydda                              : chr "Hydda"
+#&gt;  $ Hydda.Full                         : chr "Hydda.Full"
+#&gt;  $ Hydda.Base                         : chr "Hydda.Base"
+#&gt;  $ Hydda.RoadsAndLabels               : chr "Hydda.RoadsAndLabels"
+#&gt;  $ MapBox                             : chr "MapBox"
+#&gt;  $ Stamen                             : chr "Stamen"
+#&gt;  $ Stamen.Toner                       : chr "Stamen.Toner"
+#&gt;  $ Stamen.TonerBackground             : chr "Stamen.TonerBackground"
+#&gt;  $ Stamen.TonerHybrid                 : chr "Stamen.TonerHybrid"
+#&gt;  $ Stamen.TonerLines                  : chr "Stamen.TonerLines"
+#&gt;  $ Stamen.TonerLabels                 : chr "Stamen.TonerLabels"
+#&gt;  $ Stamen.TonerLite                   : chr "Stamen.TonerLite"
+#&gt;  $ Stamen.Watercolor                  : chr "Stamen.Watercolor"
+#&gt;  $ Stamen.Terrain                     : chr "Stamen.Terrain"
+#&gt;  $ Stamen.TerrainBackground           : chr "Stamen.TerrainBackground"
+#&gt;  $ Stamen.TopOSMRelief                : chr "Stamen.TopOSMRelief"
+#&gt;  $ Stamen.TopOSMFeatures              : chr "Stamen.TopOSMFeatures"
+#&gt;  $ Esri                               : chr "Esri"
+#&gt;  $ Esri.WorldStreetMap                : chr "Esri.WorldStreetMap"
+#&gt;  $ Esri.DeLorme                       : chr "Esri.DeLorme"
+#&gt;  $ Esri.WorldTopoMap                  : chr "Esri.WorldTopoMap"
+#&gt;  $ Esri.WorldImagery                  : chr "Esri.WorldImagery"
+#&gt;  $ Esri.WorldTerrain                  : chr "Esri.WorldTerrain"
+#&gt;  $ Esri.WorldShadedRelief             : chr "Esri.WorldShadedRelief"
+#&gt;  $ Esri.WorldPhysical                 : chr "Esri.WorldPhysical"
+#&gt;  $ Esri.OceanBasemap                  : chr "Esri.OceanBasemap"
+#&gt;  $ Esri.NatGeoWorldMap                : chr "Esri.NatGeoWorldMap"
+#&gt;  $ Esri.WorldGrayCanvas               : chr "Esri.WorldGrayCanvas"
+#&gt;  $ OpenWeatherMap                     : chr "OpenWeatherMap"
+#&gt;  $ OpenWeatherMap.Clouds              : chr "OpenWeatherMap.Clouds"
+#&gt;  $ OpenWeatherMap.CloudsClassic       : chr "OpenWeatherMap.CloudsClassic"
+#&gt;  $ OpenWeatherMap.Precipitation       : chr "OpenWeatherMap.Precipitation"
+#&gt;  $ OpenWeatherMap.PrecipitationClassic: chr "OpenWeatherMap.PrecipitationClassic"
+#&gt;  $ OpenWeatherMap.Rain                : chr "OpenWeatherMap.Rain"
+#&gt;  $ OpenWeatherMap.RainClassic         : chr "OpenWeatherMap.RainClassic"
+#&gt;  $ OpenWeatherMap.Pressure            : chr "OpenWeatherMap.Pressure"
+#&gt;  $ OpenWeatherMap.PressureContour     : chr "OpenWeatherMap.PressureContour"
+#&gt;  $ OpenWeatherMap.Wind                : chr "OpenWeatherMap.Wind"
+#&gt;  $ OpenWeatherMap.Temperature         : chr "OpenWeatherMap.Temperature"
+#&gt;  $ OpenWeatherMap.Snow                : chr "OpenWeatherMap.Snow"
+#&gt;  $ HERE                               : chr "HERE"
+#&gt;  $ HERE.normalDay                     : chr "HERE.normalDay"
+#&gt;  $ HERE.normalDayCustom               : chr "HERE.normalDayCustom"
+#&gt;  $ HERE.normalDayGrey                 : chr "HERE.normalDayGrey"
+#&gt;  $ HERE.normalDayMobile               : chr "HERE.normalDayMobile"
+#&gt;  $ HERE.normalDayGreyMobile           : chr "HERE.normalDayGreyMobile"
+#&gt;  $ HERE.normalDayTransit              : chr "HERE.normalDayTransit"
+#&gt;  $ HERE.normalDayTransitMobile        : chr "HERE.normalDayTransitMobile"
+#&gt;  $ HERE.normalNight                   : chr "HERE.normalNight"
+#&gt;  $ HERE.normalNightMobile             : chr "HERE.normalNightMobile"
+#&gt;  $ HERE.normalNightGrey               : chr "HERE.normalNightGrey"
+#&gt;  $ HERE.normalNightGreyMobile         : chr "HERE.normalNightGreyMobile"
+#&gt;  $ HERE.normalNightTransit            : chr "HERE.normalNightTransit"
+#&gt;  $ HERE.normalNightTransitMobile      : chr "HERE.normalNightTransitMobile"
+#&gt;  $ HERE.reducedDay                    : chr "HERE.reducedDay"
+#&gt;  $ HERE.reducedNight                  : chr "HERE.reducedNight"
+#&gt;  $ HERE.basicMap                      : chr "HERE.basicMap"
+#&gt;  $ HERE.mapLabels                     : chr "HERE.mapLabels"
+#&gt;  $ HERE.trafficFlow                   : chr "HERE.trafficFlow"
+#&gt;  $ HERE.carnavDayGrey                 : chr "HERE.carnavDayGrey"
+#&gt;  $ HERE.hybridDay                     : chr "HERE.hybridDay"
+#&gt;  $ HERE.hybridDayMobile               : chr "HERE.hybridDayMobile"
+#&gt;  $ HERE.hybridDayTransit              : chr "HERE.hybridDayTransit"
+#&gt;  $ HERE.hybridDayGrey                 : chr "HERE.hybridDayGrey"
+#&gt;  $ HERE.pedestrianDay                 : chr "HERE.pedestrianDay"
+#&gt;  $ HERE.pedestrianNight               : chr "HERE.pedestrianNight"
+#&gt;  $ HERE.satelliteDay                  : chr "HERE.satelliteDay"
+#&gt;  $ HERE.terrainDay                    : chr "HERE.terrainDay"
+#&gt;  $ HERE.terrainDayMobile              : chr "HERE.terrainDayMobile"
+#&gt;  $ FreeMapSK                          : chr "FreeMapSK"
+#&gt;  $ MtbMap                             : chr "MtbMap"
+#&gt;  $ CartoDB                            : chr "CartoDB"
+#&gt;  $ CartoDB.Positron                   : chr "CartoDB.Positron"
+#&gt;  $ CartoDB.PositronNoLabels           : chr "CartoDB.PositronNoLabels"
+#&gt;  $ CartoDB.PositronOnlyLabels         : chr "CartoDB.PositronOnlyLabels"
+#&gt;  $ CartoDB.DarkMatter                 : chr "CartoDB.DarkMatter"
+#&gt;  $ CartoDB.DarkMatterNoLabels         : chr "CartoDB.DarkMatterNoLabels"
+#&gt;  $ CartoDB.DarkMatterOnlyLabels       : chr "CartoDB.DarkMatterOnlyLabels"
+#&gt;  $ CartoDB.Voyager                    : chr "CartoDB.Voyager"
+#&gt;  $ CartoDB.VoyagerNoLabels            : chr "CartoDB.VoyagerNoLabels"
+#&gt;  $ CartoDB.VoyagerOnlyLabels          : chr "CartoDB.VoyagerOnlyLabels"
+#&gt;  $ CartoDB.VoyagerLabelsUnder         : chr "CartoDB.VoyagerLabelsUnder"
+#&gt;  $ HikeBike                           : chr "HikeBike"
+#&gt;  $ HikeBike.HikeBike                  : chr "HikeBike.HikeBike"
+#&gt;  $ HikeBike.HillShading               : chr "HikeBike.HillShading"
+#&gt;  $ BasemapAT                          : chr "BasemapAT"
+#&gt;  $ BasemapAT.basemap                  : chr "BasemapAT.basemap"
+#&gt;  $ BasemapAT.grau                     : chr "BasemapAT.grau"
+#&gt;  $ BasemapAT.overlay                  : chr "BasemapAT.overlay"
+#&gt;  $ BasemapAT.highdpi                  : chr "BasemapAT.highdpi"
+#&gt;  $ BasemapAT.orthofoto                : chr "BasemapAT.orthofoto"
+#&gt;  $ nlmaps                             : chr "nlmaps"
+#&gt;  $ nlmaps.standaard                   : chr "nlmaps.standaard"
+#&gt;  $ nlmaps.pastel                      : chr "nlmaps.pastel"
+#&gt;  $ nlmaps.grijs                       : chr "nlmaps.grijs"
+#&gt;  $ nlmaps.luchtfoto                   : chr "nlmaps.luchtfoto"
+#&gt;  $ NASAGIBS                           : chr "NASAGIBS"
+#&gt;  $ NASAGIBS.ModisTerraTrueColorCR     : chr "NASAGIBS.ModisTerraTrueColorCR"
+#&gt;  $ NASAGIBS.ModisTerraBands367CR      : chr "NASAGIBS.ModisTerraBands367CR"
+#&gt;  $ NASAGIBS.ViirsEarthAtNight2012     : chr "NASAGIBS.ViirsEarthAtNight2012"
+#&gt;  $ NASAGIBS.ModisTerraLSTDay          : chr "NASAGIBS.ModisTerraLSTDay"
+#&gt;  $ NASAGIBS.ModisTerraSnowCover       : chr "NASAGIBS.ModisTerraSnowCover"
+#&gt;  $ NASAGIBS.ModisTerraAOD             : chr "NASAGIBS.ModisTerraAOD"
+#&gt;  $ NASAGIBS.ModisTerraChlorophyll     : chr "NASAGIBS.ModisTerraChlorophyll"
+#&gt;  $ NLS                                : chr "NLS"
+#&gt;  $ JusticeMap                         : chr "JusticeMap"
+#&gt;  $ JusticeMap.income                  : chr "JusticeMap.income"
+#&gt;  $ JusticeMap.americanIndian          : chr "JusticeMap.americanIndian"
+#&gt;  $ JusticeMap.asian                   : chr "JusticeMap.asian"
+#&gt;  $ JusticeMap.black                   : chr "JusticeMap.black"
+#&gt;  $ JusticeMap.hispanic                : chr "JusticeMap.hispanic"
+#&gt;  $ JusticeMap.multi                   : chr "JusticeMap.multi"
+#&gt;  $ JusticeMap.nonWhite                : chr "JusticeMap.nonWhite"
+#&gt;  $ JusticeMap.white                   : chr "JusticeMap.white"
+#&gt;  $ JusticeMap.plurality               : chr "JusticeMap.plurality"
+#&gt;  $ Wikimedia                          : chr "Wikimedia"
+#&gt;  $ GeoportailFrance                   : chr "GeoportailFrance"
+#&gt;  $ GeoportailFrance.parcels           : chr "GeoportailFrance.parcels"
+#&gt;  $ GeoportailFrance.ignMaps           : chr "GeoportailFrance.ignMaps"
+#&gt;  $ GeoportailFrance.maps              : chr "GeoportailFrance.maps"
+#&gt;  $ GeoportailFrance.orthos            : chr "GeoportailFrance.orthos"
+#&gt;  $ OneMapSG                           : chr "OneMapSG"
+#&gt;  $ OneMapSG.Default                   : chr "OneMapSG.Default"
+#&gt;  $ OneMapSG.Night                     : chr "OneMapSG.Night"
+#&gt;  $ OneMapSG.Original                  : chr "OneMapSG.Original"
+#&gt;  $ OneMapSG.Grey                      : chr "OneMapSG.Grey"
+#&gt;  $ OneMapSG.LandLot                   : chr "OneMapSG.LandLot"</code></pre>
+</div>
 </div>
 <div id="view-snippet-of-tile-providers-details" class="section level3">
 <h3 class="hasAnchor">
 <a href="#view-snippet-of-tile-providers-details" class="anchor"></a>View snippet of tile providers’ details</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/str">str</a></span>(providers_data<span class="op">$</span>providers_details, <span class="dt">vec.len =</span> <span class="dv">1</span>, <span class="dt">list.len=</span><span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="co">#&gt; List of 27</span></a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co">#&gt;  $ OpenStreetMap   :List of 3</span></a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">#&gt;   ..$ url     : chr "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"</span></a>
-<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">#&gt;   ..$ options :List of 2</span></a>
-<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt;   .. ..$ maxZoom    : int 19</span></a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt;   .. ..$ attribution: chr "&amp;copy; &lt;a href=\"https://www.openstreetmap.org/copyright\"&gt;OpenStreetMap&lt;/a&gt; contributors"</span></a>
-<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co">#&gt;   ..$ variants:List of 6</span></a>
-<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">#&gt;   .. ..$ Mapnik: Named list()</span></a>
-<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="co">#&gt;   .. ..$ DE    :List of 2</span></a>
-<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="co">#&gt;   .. .. ..$ url    : chr "https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png"</span></a>
-<a class="sourceLine" id="cb5-12" data-line-number="12"><span class="co">#&gt;   .. .. ..$ options:List of 1</span></a>
-<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="co">#&gt;   .. .. .. ..$ maxZoom: int 18</span></a>
-<a class="sourceLine" id="cb5-14" data-line-number="14"><span class="co">#&gt;   .. ..$ CH    :List of 2</span></a>
-<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="co">#&gt;   .. .. ..$ url    : chr "https://tile.osm.ch/switzerland/{z}/{x}/{y}.png"</span></a>
-<a class="sourceLine" id="cb5-16" data-line-number="16"><span class="co">#&gt;   .. .. ..$ options:List of 2</span></a>
-<a class="sourceLine" id="cb5-17" data-line-number="17"><span class="co">#&gt;   .. .. .. ..$ maxZoom: int 18</span></a>
-<a class="sourceLine" id="cb5-18" data-line-number="18"><span class="co">#&gt;   .. .. .. ..$ bounds : int [1:2, 1:2] 45 48 ...</span></a>
-<a class="sourceLine" id="cb5-19" data-line-number="19"><span class="co">#&gt;   .. .. [list output truncated]</span></a>
-<a class="sourceLine" id="cb5-20" data-line-number="20"><span class="co">#&gt;  $ OpenSeaMap      :List of 2</span></a>
-<a class="sourceLine" id="cb5-21" data-line-number="21"><span class="co">#&gt;   ..$ url    : chr "https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png"</span></a>
-<a class="sourceLine" id="cb5-22" data-line-number="22"><span class="co">#&gt;   ..$ options:List of 1</span></a>
-<a class="sourceLine" id="cb5-23" data-line-number="23"><span class="co">#&gt;   .. ..$ attribution: chr "Map data: &amp;copy; &lt;a href=\"http://www.openseamap.org\"&gt;OpenSeaMap&lt;/a&gt; contributors"</span></a>
-<a class="sourceLine" id="cb5-24" data-line-number="24"><span class="co">#&gt;  $ OpenPtMap       :List of 2</span></a>
-<a class="sourceLine" id="cb5-25" data-line-number="25"><span class="co">#&gt;   ..$ url    : chr "http://openptmap.org/tiles/{z}/{x}/{y}.png"</span></a>
-<a class="sourceLine" id="cb5-26" data-line-number="26"><span class="co">#&gt;   ..$ options:List of 2</span></a>
-<a class="sourceLine" id="cb5-27" data-line-number="27"><span class="co">#&gt;   .. ..$ maxZoom    : int 17</span></a>
-<a class="sourceLine" id="cb5-28" data-line-number="28"><span class="co">#&gt;   .. ..$ attribution: chr "Map data: &amp;copy; &lt;a href=\"http://www.openptmap.org\"&gt;OpenPtMap&lt;/a&gt; contributors"</span></a>
-<a class="sourceLine" id="cb5-29" data-line-number="29"><span class="co">#&gt;   [list output truncated]</span></a></code></pre></div>
-</div>
-<div id="use-up-to-date-providers-and-providers-details" class="section level3">
-<h3 class="hasAnchor">
-<a href="#use-up-to-date-providers-and-providers-details" class="anchor"></a>Use up-to-date providers and providers’ details</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">todays_providers &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_providers.html">get_providers</a></span>()</a>
-<a class="sourceLine" id="cb6-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="co"># Set custom providers and providers' details</span></a>
-<a class="sourceLine" id="cb6-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="kw"><a href="reference/use_providers.html">use_providers</a></span>(todays_providers)</a></code></pre></div>
-<p>Now that <code>use_providers</code> has been called with today’s providers, <a href="http://rstudio.github.io/leaflet"><code>leaflet</code></a> will use the latest providers data.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/str">str</a></span>(providers_data<span class="op">$</span>providers_details)</a></code></pre></div>
+<div style="height:150px; overflow-y: scroll;">
+
+
+<pre><code>#&gt; List of 27
+#&gt;  $ OpenStreetMap   :List of 3
+#&gt;   ..$ url     : chr "//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+#&gt;   ..$ options :List of 2
+#&gt;   .. ..$ maxZoom    : int 19
+#&gt;   .. ..$ attribution: chr "&amp;copy; &lt;a href=\"https://www.openstreetmap.org/copyright\"&gt;OpenStreetMap&lt;/a&gt; contributors"
+#&gt;   ..$ variants:List of 6
+#&gt;   .. ..$ Mapnik: Named list()
+#&gt;   .. ..$ DE    :List of 2
+#&gt;   .. .. ..$ url    : chr "//{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png"
+#&gt;   .. .. ..$ options:List of 1
+#&gt;   .. .. .. ..$ maxZoom: int 18
+#&gt;   .. ..$ CH    :List of 2
+#&gt;   .. .. ..$ url    : chr "//tile.osm.ch/switzerland/{z}/{x}/{y}.png"
+#&gt;   .. .. ..$ options:List of 2
+#&gt;   .. .. .. ..$ maxZoom: int 18
+#&gt;   .. .. .. ..$ bounds : int [1:2, 1:2] 45 48 5 11
+#&gt;   .. ..$ France:List of 2
+#&gt;   .. .. ..$ url    : chr "//{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png"
+#&gt;   .. .. ..$ options:List of 2
+#&gt;   .. .. .. ..$ maxZoom    : int 20
+#&gt;   .. .. .. ..$ attribution: chr "&amp;copy; Openstreetmap France | {attribution.OpenStreetMap}"
+#&gt;   .. ..$ HOT   :List of 2
+#&gt;   .. .. ..$ url    : chr "//{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
+#&gt;   .. .. ..$ options:List of 1
+#&gt;   .. .. .. ..$ attribution: chr "{attribution.OpenStreetMap}, Tiles style by &lt;a href=\"https://www.hotosm.org/\" target=\"_blank\"&gt;Humanitarian "| __truncated__
+#&gt;   .. ..$ BZH   :List of 2
+#&gt;   .. .. ..$ url    : chr "//tile.openstreetmap.bzh/br/{z}/{x}/{y}.png"
+#&gt;   .. .. ..$ options:List of 2
+#&gt;   .. .. .. ..$ attribution: chr "{attribution.OpenStreetMap}, Tiles courtesy of &lt;a href=\"http://www.openstreetmap.bzh/\" target=\"_blank\"&gt;Bret"| __truncated__
+#&gt;   .. .. .. ..$ bounds     : num [1:2, 1:2] 46.2 50 -5.5 0.7
+#&gt;  $ OpenSeaMap      :List of 2
+#&gt;   ..$ url    : chr "//tiles.openseamap.org/seamark/{z}/{x}/{y}.png"
+#&gt;   ..$ options:List of 1
+#&gt;   .. ..$ attribution: chr "Map data: &amp;copy; &lt;a href=\"http://www.openseamap.org\"&gt;OpenSeaMap&lt;/a&gt; contributors"
+#&gt;  $ OpenPtMap       :List of 2
+#&gt;   ..$ url    : chr "http://openptmap.org/tiles/{z}/{x}/{y}.png"
+#&gt;   ..$ options:List of 2
+#&gt;   .. ..$ maxZoom    : int 17
+#&gt;   .. ..$ attribution: chr "Map data: &amp;copy; &lt;a href=\"http://www.openptmap.org\"&gt;OpenPtMap&lt;/a&gt; contributors"
+#&gt;  $ OpenTopoMap     :List of 2
+#&gt;   ..$ url    : chr "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"
+#&gt;   ..$ options:List of 2
+#&gt;   .. ..$ maxZoom    : int 17
+#&gt;   .. ..$ attribution: chr "Map data: {attribution.OpenStreetMap}, &lt;a href=\"http://viewfinderpanoramas.org\"&gt;SRTM&lt;/a&gt; | Map style: &amp;copy; "| __truncated__
+#&gt;  $ OpenRailwayMap  :List of 2
+#&gt;   ..$ url    : chr "https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png"
+#&gt;   ..$ options:List of 2
+#&gt;   .. ..$ maxZoom    : int 19
+#&gt;   .. ..$ attribution: chr "Map data: {attribution.OpenStreetMap} | Map style: &amp;copy; &lt;a href=\"https://www.OpenRailwayMap.org\"&gt;OpenRailwa"| __truncated__
+#&gt;  $ OpenFireMap     :List of 2
+#&gt;   ..$ url    : chr "http://openfiremap.org/hytiles/{z}/{x}/{y}.png"
+#&gt;   ..$ options:List of 2
+#&gt;   .. ..$ maxZoom    : int 19
+#&gt;   .. ..$ attribution: chr "Map data: {attribution.OpenStreetMap} | Map style: &amp;copy; &lt;a href=\"http://www.openfiremap.org\"&gt;OpenFireMap&lt;/a"| __truncated__
+#&gt;  $ SafeCast        :List of 2
+#&gt;   ..$ url    : chr "//s3.amazonaws.com/te512.safecast.org/{z}/{x}/{y}.png"
+#&gt;   ..$ options:List of 2
+#&gt;   .. ..$ maxZoom    : int 16
+#&gt;   .. ..$ attribution: chr "Map data: {attribution.OpenStreetMap} | Map style: &amp;copy; &lt;a href=\"https://blog.safecast.org/about/\"&gt;SafeCast"| __truncated__
+#&gt;  $ Thunderforest   :List of 3
+#&gt;   ..$ url     : chr "https://{s}.tile.thunderforest.com/{variant}/{z}/{x}/{y}.png?apikey={apikey}"
+#&gt;   ..$ options :List of 4
+#&gt;   .. ..$ attribution: chr "&amp;copy; &lt;a href=\"http://www.thunderforest.com/\"&gt;Thunderforest&lt;/a&gt;, {attribution.OpenStreetMap}"
+#&gt;   .. ..$ variant    : chr "cycle"
+#&gt;   .. ..$ apikey     : chr "&lt;insert your api key here&gt;"
+#&gt;   .. ..$ maxZoom    : int 22
+#&gt;   ..$ variants:List of 9
+#&gt;   .. ..$ OpenCycleMap : chr "cycle"
+#&gt;   .. ..$ Transport    :List of 1
+#&gt;   .. .. ..$ options:List of 1
+#&gt;   .. .. .. ..$ variant: chr "transport"
+#&gt;   .. ..$ TransportDark:List of 1
+#&gt;   .. .. ..$ options:List of 1
+#&gt;   .. .. .. ..$ variant: chr "transport-dark"
+#&gt;   .. ..$ SpinalMap    :List of 1
+#&gt;   .. .. ..$ options:List of 1
+#&gt;   .. .. .. ..$ variant: chr "spinal-map"
+#&gt;   .. ..$ Landscape    : chr "landscape"
+#&gt;   .. ..$ Outdoors     : chr "outdoors"
+#&gt;   .. ..$ Pioneer      : chr "pioneer"
+#&gt;   .. ..$ MobileAtlas  : chr "mobile-atlas"
+#&gt;   .. ..$ Neighbourhood: chr "neighbourhood"
+#&gt;  $ OpenMapSurfer   :List of 3
+#&gt;   ..$ url     : chr "https://maps.heigit.org/openmapsurfer/tiles/{variant}/webmercator/{z}/{x}/{y}.png"
+#&gt;   ..$ options :List of 3
+#&gt;   .. ..$ maxZoom    : int 19
+#&gt;   .. ..$ variant    : chr "roads"
+#&gt;   .. ..$ attribution: chr "Imagery from &lt;a href=\"http://giscience.uni-hd.de/\"&gt;GIScience Research Group @ University of Heidelberg&lt;/a&gt; | Map data "
+#&gt;   ..$ variants:List of 6
+#&gt;   .. ..$ Roads         :List of 1
+#&gt;   .. .. ..$ options:List of 2
+#&gt;   .. .. .. ..$ variant    : chr "roads"
+#&gt;   .. .. .. ..$ attribution: chr "{attribution.OpenMapSurfer}{attribution.OpenStreetMap}"
+#&gt;   .. ..$ Hybrid        :List of 1
+#&gt;   .. .. ..$ options:List of 2
+#&gt;   .. .. .. ..$ variant    : chr "hybrid"
+#&gt;   .. .. .. ..$ attribution: chr "{attribution.OpenMapSurfer}{attribution.OpenStreetMap}"
+#&gt;   .. ..$ AdminBounds   :List of 1
+#&gt;   .. .. ..$ options:List of 3
+#&gt;   .. .. .. ..$ variant    : chr "adminb"
+#&gt;   .. .. .. ..$ maxZoom    : int 18
+#&gt;   .. .. .. ..$ attribution: chr "{attribution.OpenMapSurfer}{attribution.OpenStreetMap}"
+#&gt;   .. ..$ ContourLines  :List of 1
+#&gt;   .. .. ..$ options:List of 4
+#&gt;   .. .. .. ..$ variant    : chr "asterc"
+#&gt;   .. .. .. ..$ maxZoom    : int 18
+#&gt;   .. .. .. ..$ minZoom    : int 13
+#&gt;   .. .. .. ..$ attribution: chr "{attribution.OpenMapSurfer} &lt;a href=\"https://lpdaac.usgs.gov/products/aster_policies\"&gt;ASTER GDEM&lt;/a&gt;"
+#&gt;   .. ..$ Hillshade     :List of 1
+#&gt;   .. .. ..$ options:List of 3
+#&gt;   .. .. .. ..$ variant    : chr "asterh"
+#&gt;   .. .. .. ..$ maxZoom    : int 18
+#&gt;   .. .. .. ..$ attribution: chr "{attribution.OpenMapSurfer} &lt;a href=\"https://lpdaac.usgs.gov/products/aster_policies\"&gt;ASTER GDEM&lt;/a&gt;, &lt;a href"| __truncated__
+#&gt;   .. ..$ ElementsAtRisk:List of 1
+#&gt;   .. .. ..$ options:List of 2
+#&gt;   .. .. .. ..$ variant    : chr "elements_at_risk"
+#&gt;   .. .. .. ..$ attribution: chr "{attribution.OpenMapSurfer}{attribution.OpenStreetMap}"
+#&gt;  $ Hydda           :List of 3
+#&gt;   ..$ url     : chr "//{s}.tile.openstreetmap.se/hydda/{variant}/{z}/{x}/{y}.png"
+#&gt;   ..$ options :List of 3
+#&gt;   .. ..$ maxZoom    : int 18
+#&gt;   .. ..$ variant    : chr "full"
+#&gt;   .. ..$ attribution: chr "Tiles courtesy of &lt;a href=\"http://openstreetmap.se/\" target=\"_blank\"&gt;OpenStreetMap Sweden&lt;/a&gt; &amp;mdash; Map d"| __truncated__
+#&gt;   ..$ variants:List of 3
+#&gt;   .. ..$ Full          : chr "full"
+#&gt;   .. ..$ Base          : chr "base"
+#&gt;   .. ..$ RoadsAndLabels: chr "roads_and_labels"
+#&gt;  $ MapBox          :List of 2
+#&gt;   ..$ url    : chr "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}{r}.png?access_token={accessToken}"
+#&gt;   ..$ options:List of 4
+#&gt;   .. ..$ attribution: chr "&lt;a href=\"https://www.mapbox.com/about/maps/\" target=\"_blank\"&gt;&amp;copy; Mapbox&lt;/a&gt; {attribution.OpenStreetMap} "| __truncated__
+#&gt;   .. ..$ subdomains : chr "abcd"
+#&gt;   .. ..$ id         : chr "mapbox.streets"
+#&gt;   .. ..$ accessToken: chr "&lt;insert your access token here&gt;"
+#&gt;  $ Stamen          :List of 3
+#&gt;   ..$ url     : chr "//stamen-tiles-{s}.a.ssl.fastly.net/{variant}/{z}/{x}/{y}{r}.{ext}"
+#&gt;   ..$ options :List of 6
+#&gt;   .. ..$ attribution: chr "Map tiles by &lt;a href=\"http://stamen.com\"&gt;Stamen Design&lt;/a&gt;, &lt;a href=\"http://creativecommons.org/licenses/by/"| __truncated__
+#&gt;   .. ..$ subdomains : chr "abcd"
+#&gt;   .. ..$ minZoom    : int 0
+#&gt;   .. ..$ maxZoom    : int 20
+#&gt;   .. ..$ variant    : chr "toner"
+#&gt;   .. ..$ ext        : chr "png"
+#&gt;   ..$ variants:List of 11
+#&gt;   .. ..$ Toner            : chr "toner"
+#&gt;   .. ..$ TonerBackground  : chr "toner-background"
+#&gt;   .. ..$ TonerHybrid      : chr "toner-hybrid"
+#&gt;   .. ..$ TonerLines       : chr "toner-lines"
+#&gt;   .. ..$ TonerLabels      : chr "toner-labels"
+#&gt;   .. ..$ TonerLite        : chr "toner-lite"
+#&gt;   .. ..$ Watercolor       :List of 2
+#&gt;   .. .. ..$ url    : chr "//stamen-tiles-{s}.a.ssl.fastly.net/{variant}/{z}/{x}/{y}.{ext}"
+#&gt;   .. .. ..$ options:List of 4
+#&gt;   .. .. .. ..$ variant: chr "watercolor"
+#&gt;   .. .. .. ..$ ext    : chr "jpg"
+#&gt;   .. .. .. ..$ minZoom: int 1
+#&gt;   .. .. .. ..$ maxZoom: int 16
+#&gt;   .. ..$ Terrain          :List of 1
+#&gt;   .. .. ..$ options:List of 3
+#&gt;   .. .. .. ..$ variant: chr "terrain"
+#&gt;   .. .. .. ..$ minZoom: int 0
+#&gt;   .. .. .. ..$ maxZoom: int 18
+#&gt;   .. ..$ TerrainBackground:List of 1
+#&gt;   .. .. ..$ options:List of 3
+#&gt;   .. .. .. ..$ variant: chr "terrain-background"
+#&gt;   .. .. .. ..$ minZoom: int 0
+#&gt;   .. .. .. ..$ maxZoom: int 18
+#&gt;   .. ..$ TopOSMRelief     :List of 2
+#&gt;   .. .. ..$ url    : chr "//stamen-tiles-{s}.a.ssl.fastly.net/{variant}/{z}/{x}/{y}.{ext}"
+#&gt;   .. .. ..$ options:List of 3
+#&gt;   .. .. .. ..$ variant: chr "toposm-color-relief"
+#&gt;   .. .. .. ..$ ext    : chr "jpg"
+#&gt;   .. .. .. ..$ bounds : int [1:2, 1:2] 22 51 -132 -56
+#&gt;   .. ..$ TopOSMFeatures   :List of 1
+#&gt;   .. .. ..$ options:List of 3
+#&gt;   .. .. .. ..$ variant: chr "toposm-features"
+#&gt;   .. .. .. ..$ bounds : int [1:2, 1:2] 22 51 -132 -56
+#&gt;   .. .. .. ..$ opacity: num 0.9
+#&gt;  $ Esri            :List of 3
+#&gt;   ..$ url     : chr "//server.arcgisonline.com/ArcGIS/rest/services/{variant}/MapServer/tile/{z}/{y}/{x}"
+#&gt;   ..$ options :List of 2
+#&gt;   .. ..$ variant    : chr "World_Street_Map"
+#&gt;   .. ..$ attribution: chr "Tiles &amp;copy; Esri"
+#&gt;   ..$ variants:List of 10
+#&gt;   .. ..$ WorldStreetMap   :List of 1
+#&gt;   .. .. ..$ options:List of 1
+#&gt;   .. .. .. ..$ attribution: chr "{attribution.Esri} &amp;mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri Ch"| __truncated__
+#&gt;   .. ..$ DeLorme          :List of 1
+#&gt;   .. .. ..$ options:List of 4
+#&gt;   .. .. .. ..$ variant    : chr "Specialty/DeLorme_World_Base_Map"
+#&gt;   .. .. .. ..$ minZoom    : int 1
+#&gt;   .. .. .. ..$ maxZoom    : int 11
+#&gt;   .. .. .. ..$ attribution: chr "{attribution.Esri} &amp;mdash; Copyright: &amp;copy;2012 DeLorme"
+#&gt;   .. ..$ WorldTopoMap     :List of 1
+#&gt;   .. .. ..$ options:List of 2
+#&gt;   .. .. .. ..$ variant    : chr "World_Topo_Map"
+#&gt;   .. .. .. ..$ attribution: chr "{attribution.Esri} &amp;mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadast"| __truncated__
+#&gt;   .. ..$ WorldImagery     :List of 1
+#&gt;   .. .. ..$ options:List of 2
+#&gt;   .. .. .. ..$ variant    : chr "World_Imagery"
+#&gt;   .. .. .. ..$ attribution: chr "{attribution.Esri} &amp;mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-"| __truncated__
+#&gt;   .. ..$ WorldTerrain     :List of 1
+#&gt;   .. .. ..$ options:List of 3
+#&gt;   .. .. .. ..$ variant    : chr "World_Terrain_Base"
+#&gt;   .. .. .. ..$ maxZoom    : int 13
+#&gt;   .. .. .. ..$ attribution: chr "{attribution.Esri} &amp;mdash; Source: USGS, Esri, TANA, DeLorme, and NPS"
+#&gt;   .. ..$ WorldShadedRelief:List of 1
+#&gt;   .. .. ..$ options:List of 3
+#&gt;   .. .. .. ..$ variant    : chr "World_Shaded_Relief"
+#&gt;   .. .. .. ..$ maxZoom    : int 13
+#&gt;   .. .. .. ..$ attribution: chr "{attribution.Esri} &amp;mdash; Source: Esri"
+#&gt;   .. ..$ WorldPhysical    :List of 1
+#&gt;   .. .. ..$ options:List of 3
+#&gt;   .. .. .. ..$ variant    : chr "World_Physical_Map"
+#&gt;   .. .. .. ..$ maxZoom    : int 8
+#&gt;   .. .. .. ..$ attribution: chr "{attribution.Esri} &amp;mdash; Source: US National Park Service"
+#&gt;   .. ..$ OceanBasemap     :List of 1
+#&gt;   .. .. ..$ options:List of 3
+#&gt;   .. .. .. ..$ variant    : chr "Ocean_Basemap"
+#&gt;   .. .. .. ..$ maxZoom    : int 13
+#&gt;   .. .. .. ..$ attribution: chr "{attribution.Esri} &amp;mdash; Sources: GEBCO, NOAA, CHS, OSU, UNH, CSUMB, National Geographic, DeLorme, NAVTEQ, and Esri"
+#&gt;   .. ..$ NatGeoWorldMap   :List of 1
+#&gt;   .. .. ..$ options:List of 3
+#&gt;   .. .. .. ..$ variant    : chr "NatGeo_World_Map"
+#&gt;   .. .. .. ..$ maxZoom    : int 16
+#&gt;   .. .. .. ..$ attribution: chr "{attribution.Esri} &amp;mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN,"| __truncated__
+#&gt;   .. ..$ WorldGrayCanvas  :List of 1
+#&gt;   .. .. ..$ options:List of 3
+#&gt;   .. .. .. ..$ variant    : chr "Canvas/World_Light_Gray_Base"
+#&gt;   .. .. .. ..$ maxZoom    : int 16
+#&gt;   .. .. .. ..$ attribution: chr "{attribution.Esri} &amp;mdash; Esri, DeLorme, NAVTEQ"
+#&gt;  $ OpenWeatherMap  :List of 3
+#&gt;   ..$ url     : chr "http://{s}.tile.openweathermap.org/map/{variant}/{z}/{x}/{y}.png?appid={apiKey}"
+#&gt;   ..$ options :List of 4
+#&gt;   .. ..$ maxZoom    : int 19
+#&gt;   .. ..$ attribution: chr "Map data &amp;copy; &lt;a href=\"http://openweathermap.org\"&gt;OpenWeatherMap&lt;/a&gt;"
+#&gt;   .. ..$ apiKey     : chr "&lt;insert your api key here&gt;"
+#&gt;   .. ..$ opacity    : num 0.5
+#&gt;   ..$ variants:List of 11
+#&gt;   .. ..$ Clouds              : chr "clouds"
+#&gt;   .. ..$ CloudsClassic       : chr "clouds_cls"
+#&gt;   .. ..$ Precipitation       : chr "precipitation"
+#&gt;   .. ..$ PrecipitationClassic: chr "precipitation_cls"
+#&gt;   .. ..$ Rain                : chr "rain"
+#&gt;   .. ..$ RainClassic         : chr "rain_cls"
+#&gt;   .. ..$ Pressure            : chr "pressure"
+#&gt;   .. ..$ PressureContour     : chr "pressure_cntr"
+#&gt;   .. ..$ Wind                : chr "wind"
+#&gt;   .. ..$ Temperature         : chr "temp"
+#&gt;   .. ..$ Snow                : chr "snow"
+#&gt;  $ HERE            :List of 3
+#&gt;   ..$ url     : chr "https://{s}.{base}.maps.api.here.com/maptile/2.1/{type}/{mapID}/{variant}/{z}/{x}/{y}/{size}/{format}?app_id={a"| __truncated__
+#&gt;   ..$ options :List of 12
+#&gt;   .. ..$ attribution: chr "Map &amp;copy; 1987-2019 &lt;a href=\"http://developer.here.com\"&gt;HERE&lt;/a&gt;"
+#&gt;   .. ..$ subdomains : chr "1234"
+#&gt;   .. ..$ mapID      : chr "newest"
+#&gt;   .. ..$ app_id     : chr "&lt;insert your app_id here&gt;"
+#&gt;   .. ..$ app_code   : chr "&lt;insert your app_code here&gt;"
+#&gt;   .. ..$ base       : chr "base"
+#&gt;   .. ..$ variant    : chr "normal.day"
+#&gt;   .. ..$ maxZoom    : int 20
+#&gt;   .. ..$ type       : chr "maptile"
+#&gt;   .. ..$ language   : chr "eng"
+#&gt;   .. ..$ format     : chr "png8"
+#&gt;   .. ..$ size       : chr "256"
+#&gt;   ..$ variants:List of 28
+#&gt;   .. ..$ normalDay               : chr "normal.day"
+#&gt;   .. ..$ normalDayCustom         : chr "normal.day.custom"
+#&gt;   .. ..$ normalDayGrey           : chr "normal.day.grey"
+#&gt;   .. ..$ normalDayMobile         : chr "normal.day.mobile"
+#&gt;   .. ..$ normalDayGreyMobile     : chr "normal.day.grey.mobile"
+#&gt;   .. ..$ normalDayTransit        : chr "normal.day.transit"
+#&gt;   .. ..$ normalDayTransitMobile  : chr "normal.day.transit.mobile"
+#&gt;   .. ..$ normalNight             : chr "normal.night"
+#&gt;   .. ..$ normalNightMobile       : chr "normal.night.mobile"
+#&gt;   .. ..$ normalNightGrey         : chr "normal.night.grey"
+#&gt;   .. ..$ normalNightGreyMobile   : chr "normal.night.grey.mobile"
+#&gt;   .. ..$ normalNightTransit      : chr "normal.night.transit"
+#&gt;   .. ..$ normalNightTransitMobile: chr "normal.night.transit.mobile"
+#&gt;   .. ..$ reducedDay              : chr "reduced.day"
+#&gt;   .. ..$ reducedNight            : chr "reduced.night"
+#&gt;   .. ..$ basicMap                :List of 1
+#&gt;   .. .. ..$ options:List of 1
+#&gt;   .. .. .. ..$ type: chr "basetile"
+#&gt;   .. ..$ mapLabels               :List of 1
+#&gt;   .. .. ..$ options:List of 2
+#&gt;   .. .. .. ..$ type  : chr "labeltile"
+#&gt;   .. .. .. ..$ format: chr "png"
+#&gt;   .. ..$ trafficFlow             :List of 1
+#&gt;   .. .. ..$ options:List of 2
+#&gt;   .. .. .. ..$ base: chr "traffic"
+#&gt;   .. .. .. ..$ type: chr "flowtile"
+#&gt;   .. ..$ carnavDayGrey           : chr "carnav.day.grey"
+#&gt;   .. ..$ hybridDay               :List of 1
+#&gt;   .. .. ..$ options:List of 2
+#&gt;   .. .. .. ..$ base   : chr "aerial"
+#&gt;   .. .. .. ..$ variant: chr "hybrid.day"
+#&gt;   .. ..$ hybridDayMobile         :List of 1
+#&gt;   .. .. ..$ options:List of 2
+#&gt;   .. .. .. ..$ base   : chr "aerial"
+#&gt;   .. .. .. ..$ variant: chr "hybrid.day.mobile"
+#&gt;   .. ..$ hybridDayTransit        :List of 1
+#&gt;   .. .. ..$ options:List of 2
+#&gt;   .. .. .. ..$ base   : chr "aerial"
+#&gt;   .. .. .. ..$ variant: chr "hybrid.day.transit"
+#&gt;   .. ..$ hybridDayGrey           :List of 1
+#&gt;   .. .. ..$ options:List of 2
+#&gt;   .. .. .. ..$ base   : chr "aerial"
+#&gt;   .. .. .. ..$ variant: chr "hybrid.grey.day"
+#&gt;   .. ..$ pedestrianDay           : chr "pedestrian.day"
+#&gt;   .. ..$ pedestrianNight         : chr "pedestrian.night"
+#&gt;   .. ..$ satelliteDay            :List of 1
+#&gt;   .. .. ..$ options:List of 2
+#&gt;   .. .. .. ..$ base   : chr "aerial"
+#&gt;   .. .. .. ..$ variant: chr "satellite.day"
+#&gt;   .. ..$ terrainDay              :List of 1
+#&gt;   .. .. ..$ options:List of 2
+#&gt;   .. .. .. ..$ base   : chr "aerial"
+#&gt;   .. .. .. ..$ variant: chr "terrain.day"
+#&gt;   .. ..$ terrainDayMobile        :List of 1
+#&gt;   .. .. ..$ options:List of 2
+#&gt;   .. .. .. ..$ base   : chr "aerial"
+#&gt;   .. .. .. ..$ variant: chr "terrain.day.mobile"
+#&gt;  $ FreeMapSK       :List of 2
+#&gt;   ..$ url    : chr "http://t{s}.freemap.sk/T/{z}/{x}/{y}.jpeg"
+#&gt;   ..$ options:List of 5
+#&gt;   .. ..$ minZoom    : int 8
+#&gt;   .. ..$ maxZoom    : int 16
+#&gt;   .. ..$ subdomains : chr "1234"
+#&gt;   .. ..$ bounds     : num [1:2, 1:2] 47.2 49.8 16 22.6
+#&gt;   .. ..$ attribution: chr "{attribution.OpenStreetMap}, vizualization CC-By-SA 2.0 &lt;a href=\"http://freemap.sk\"&gt;Freemap.sk&lt;/a&gt;"
+#&gt;  $ MtbMap          :List of 2
+#&gt;   ..$ url    : chr "http://tile.mtbmap.cz/mtbmap_tiles/{z}/{x}/{y}.png"
+#&gt;   ..$ options:List of 1
+#&gt;   .. ..$ attribution: chr "{attribution.OpenStreetMap} &amp;amp; USGS"
+#&gt;  $ CartoDB         :List of 3
+#&gt;   ..$ url     : chr "https://{s}.basemaps.cartocdn.com/{variant}/{z}/{x}/{y}{r}.png"
+#&gt;   ..$ options :List of 4
+#&gt;   .. ..$ attribution: chr "{attribution.OpenStreetMap} &amp;copy; &lt;a href=\"https://carto.com/attributions\"&gt;CARTO&lt;/a&gt;"
+#&gt;   .. ..$ subdomains : chr "abcd"
+#&gt;   .. ..$ maxZoom    : int 19
+#&gt;   .. ..$ variant    : chr "light_all"
+#&gt;   ..$ variants:List of 10
+#&gt;   .. ..$ Positron            : chr "light_all"
+#&gt;   .. ..$ PositronNoLabels    : chr "light_nolabels"
+#&gt;   .. ..$ PositronOnlyLabels  : chr "light_only_labels"
+#&gt;   .. ..$ DarkMatter          : chr "dark_all"
+#&gt;   .. ..$ DarkMatterNoLabels  : chr "dark_nolabels"
+#&gt;   .. ..$ DarkMatterOnlyLabels: chr "dark_only_labels"
+#&gt;   .. ..$ Voyager             : chr "rastertiles/voyager"
+#&gt;   .. ..$ VoyagerNoLabels     : chr "rastertiles/voyager_nolabels"
+#&gt;   .. ..$ VoyagerOnlyLabels   : chr "rastertiles/voyager_only_labels"
+#&gt;   .. ..$ VoyagerLabelsUnder  : chr "rastertiles/voyager_labels_under"
+#&gt;  $ HikeBike        :List of 3
+#&gt;   ..$ url     : chr "https://tiles.wmflabs.org/{variant}/{z}/{x}/{y}.png"
+#&gt;   ..$ options :List of 3
+#&gt;   .. ..$ maxZoom    : int 19
+#&gt;   .. ..$ attribution: chr "{attribution.OpenStreetMap}"
+#&gt;   .. ..$ variant    : chr "hikebike"
+#&gt;   ..$ variants:List of 2
+#&gt;   .. ..$ HikeBike   : Named list()
+#&gt;   .. ..$ HillShading:List of 1
+#&gt;   .. .. ..$ options:List of 2
+#&gt;   .. .. .. ..$ maxZoom: int 15
+#&gt;   .. .. .. ..$ variant: chr "hillshading"
+#&gt;  $ BasemapAT       :List of 3
+#&gt;   ..$ url     : chr "//maps{s}.wien.gv.at/basemap/{variant}/normal/google3857/{z}/{y}/{x}.{format}"
+#&gt;   ..$ options :List of 6
+#&gt;   .. ..$ maxZoom    : int 19
+#&gt;   .. ..$ attribution: chr "Datenquelle: &lt;a href=\"https://www.basemap.at\"&gt;basemap.at&lt;/a&gt;"
+#&gt;   .. ..$ subdomains : chr [1:5] "" "1" "2" "3" ...
+#&gt;   .. ..$ format     : chr "png"
+#&gt;   .. ..$ bounds     : num [1:2, 1:2] 46.36 49.04 8.78 17.19
+#&gt;   .. ..$ variant    : chr "geolandbasemap"
+#&gt;   ..$ variants:List of 5
+#&gt;   .. ..$ basemap  :List of 1
+#&gt;   .. .. ..$ options:List of 2
+#&gt;   .. .. .. ..$ maxZoom: int 20
+#&gt;   .. .. .. ..$ variant: chr "geolandbasemap"
+#&gt;   .. ..$ grau     : chr "bmapgrau"
+#&gt;   .. ..$ overlay  : chr "bmapoverlay"
+#&gt;   .. ..$ highdpi  :List of 1
+#&gt;   .. .. ..$ options:List of 2
+#&gt;   .. .. .. ..$ variant: chr "bmaphidpi"
+#&gt;   .. .. .. ..$ format : chr "jpeg"
+#&gt;   .. ..$ orthofoto:List of 1
+#&gt;   .. .. ..$ options:List of 3
+#&gt;   .. .. .. ..$ maxZoom: int 20
+#&gt;   .. .. .. ..$ variant: chr "bmaporthofoto30cm"
+#&gt;   .. .. .. ..$ format : chr "jpeg"
+#&gt;  $ nlmaps          :List of 3
+#&gt;   ..$ url     : chr "//geodata.nationaalgeoregister.nl/tiles/service/wmts/{variant}/EPSG:3857/{z}/{x}/{y}.png"
+#&gt;   ..$ options :List of 4
+#&gt;   .. ..$ minZoom    : int 6
+#&gt;   .. ..$ maxZoom    : int 19
+#&gt;   .. ..$ bounds     : num [1:2, 1:2] 50.5 54 3.25 7.6
+#&gt;   .. ..$ attribution: chr "Kaartgegevens &amp;copy; &lt;a href=\"kadaster.nl\"&gt;Kadaster&lt;/a&gt;"
+#&gt;   ..$ variants:List of 4
+#&gt;   .. ..$ standaard: chr "brtachtergrondkaart"
+#&gt;   .. ..$ pastel   : chr "brtachtergrondkaartpastel"
+#&gt;   .. ..$ grijs    : chr "brtachtergrondkaartgrijs"
+#&gt;   .. ..$ luchtfoto:List of 1
+#&gt;   .. .. ..$ url: chr "//geodata.nationaalgeoregister.nl/luchtfoto/rgb/wmts/1.0.0/2016_ortho25/EPSG:3857/{z}/{x}/{y}.png"
+#&gt;  $ NASAGIBS        :List of 3
+#&gt;   ..$ url     : chr "https://map1.vis.earthdata.nasa.gov/wmts-webmerc/{variant}/default/{time}/{tilematrixset}{maxZoom}/{z}/{y}/{x}.{format}"
+#&gt;   ..$ options :List of 7
+#&gt;   .. ..$ attribution  : chr "Imagery provided by services from the Global Imagery Browse Services (GIBS), operated by the NASA/GSFC/Earth Sc"| __truncated__
+#&gt;   .. ..$ bounds       : num [1:2, 1:2] -85.1 85.1 -180 180
+#&gt;   .. ..$ minZoom      : int 1
+#&gt;   .. ..$ maxZoom      : int 9
+#&gt;   .. ..$ format       : chr "jpg"
+#&gt;   .. ..$ time         : chr ""
+#&gt;   .. ..$ tilematrixset: chr "GoogleMapsCompatible_Level"
+#&gt;   ..$ variants:List of 7
+#&gt;   .. ..$ ModisTerraTrueColorCR: chr "MODIS_Terra_CorrectedReflectance_TrueColor"
+#&gt;   .. ..$ ModisTerraBands367CR : chr "MODIS_Terra_CorrectedReflectance_Bands367"
+#&gt;   .. ..$ ViirsEarthAtNight2012:List of 1
+#&gt;   .. .. ..$ options:List of 2
+#&gt;   .. .. .. ..$ variant: chr "VIIRS_CityLights_2012"
+#&gt;   .. .. .. ..$ maxZoom: int 8
+#&gt;   .. ..$ ModisTerraLSTDay     :List of 1
+#&gt;   .. .. ..$ options:List of 4
+#&gt;   .. .. .. ..$ variant: chr "MODIS_Terra_Land_Surface_Temp_Day"
+#&gt;   .. .. .. ..$ format : chr "png"
+#&gt;   .. .. .. ..$ maxZoom: int 7
+#&gt;   .. .. .. ..$ opacity: num 0.75
+#&gt;   .. ..$ ModisTerraSnowCover  :List of 1
+#&gt;   .. .. ..$ options:List of 4
+#&gt;   .. .. .. ..$ variant: chr "MODIS_Terra_Snow_Cover"
+#&gt;   .. .. .. ..$ format : chr "png"
+#&gt;   .. .. .. ..$ maxZoom: int 8
+#&gt;   .. .. .. ..$ opacity: num 0.75
+#&gt;   .. ..$ ModisTerraAOD        :List of 1
+#&gt;   .. .. ..$ options:List of 4
+#&gt;   .. .. .. ..$ variant: chr "MODIS_Terra_Aerosol"
+#&gt;   .. .. .. ..$ format : chr "png"
+#&gt;   .. .. .. ..$ maxZoom: int 6
+#&gt;   .. .. .. ..$ opacity: num 0.75
+#&gt;   .. ..$ ModisTerraChlorophyll:List of 1
+#&gt;   .. .. ..$ options:List of 4
+#&gt;   .. .. .. ..$ variant: chr "MODIS_Terra_Chlorophyll_A"
+#&gt;   .. .. .. ..$ format : chr "png"
+#&gt;   .. .. .. ..$ maxZoom: int 7
+#&gt;   .. .. .. ..$ opacity: num 0.75
+#&gt;  $ NLS             :List of 2
+#&gt;   ..$ url    : chr "//nls-{s}.tileserver.com/nls/{z}/{x}/{y}.jpg"
+#&gt;   ..$ options:List of 5
+#&gt;   .. ..$ attribution: chr "&lt;a href=\"http://geo.nls.uk/maps/\"&gt;National Library of Scotland Historic Maps&lt;/a&gt;"
+#&gt;   .. ..$ bounds     : num [1:2, 1:2] 49.6 61.7 -12 3
+#&gt;   .. ..$ minZoom    : int 1
+#&gt;   .. ..$ maxZoom    : int 18
+#&gt;   .. ..$ subdomains : chr "0123"
+#&gt;  $ JusticeMap      :List of 3
+#&gt;   ..$ url     : chr "http://www.justicemap.org/tile/{size}/{variant}/{z}/{x}/{y}.png"
+#&gt;   ..$ options :List of 3
+#&gt;   .. ..$ attribution: chr "&lt;a href=\"http://www.justicemap.org/terms.php\"&gt;Justice Map&lt;/a&gt;"
+#&gt;   .. ..$ size       : chr "county"
+#&gt;   .. ..$ bounds     : int [1:2, 1:2] 14 72 -180 -56
+#&gt;   ..$ variants:List of 9
+#&gt;   .. ..$ income        : chr "income"
+#&gt;   .. ..$ americanIndian: chr "indian"
+#&gt;   .. ..$ asian         : chr "asian"
+#&gt;   .. ..$ black         : chr "black"
+#&gt;   .. ..$ hispanic      : chr "hispanic"
+#&gt;   .. ..$ multi         : chr "multi"
+#&gt;   .. ..$ nonWhite      : chr "nonwhite"
+#&gt;   .. ..$ white         : chr "white"
+#&gt;   .. ..$ plurality     : chr "plural"
+#&gt;  $ Wikimedia       :List of 2
+#&gt;   ..$ url    : chr "https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}{r}.png"
+#&gt;   ..$ options:List of 3
+#&gt;   .. ..$ attribution: chr "&lt;a href=\"https://wikimediafoundation.org/wiki/Maps_Terms_of_Use\"&gt;Wikimedia&lt;/a&gt;"
+#&gt;   .. ..$ minZoom    : int 1
+#&gt;   .. ..$ maxZoom    : int 19
+#&gt;  $ GeoportailFrance:List of 3
+#&gt;   ..$ url     : chr "https://wxs.ign.fr/{apikey}/geoportail/wmts?REQUEST=GetTile&amp;SERVICE=WMTS&amp;VERSION=1.0.0&amp;STYLE={style}&amp;TILEMATRIX"| __truncated__
+#&gt;   ..$ options :List of 8
+#&gt;   .. ..$ attribution: chr "&lt;a target=\"_blank\" href=\"https://www.geoportail.gouv.fr/\"&gt;Geoportail France&lt;/a&gt;"
+#&gt;   .. ..$ bounds     : int [1:2, 1:2] -75 81 -180 180
+#&gt;   .. ..$ minZoom    : int 2
+#&gt;   .. ..$ maxZoom    : int 18
+#&gt;   .. ..$ apikey     : chr "choisirgeoportail"
+#&gt;   .. ..$ format     : chr "image/jpeg"
+#&gt;   .. ..$ style      : chr "normal"
+#&gt;   .. ..$ variant    : chr "GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD"
+#&gt;   ..$ variants:List of 4
+#&gt;   .. ..$ parcels:List of 1
+#&gt;   .. .. ..$ options:List of 4
+#&gt;   .. .. .. ..$ variant: chr "CADASTRALPARCELS.PARCELS"
+#&gt;   .. .. .. ..$ maxZoom: int 20
+#&gt;   .. .. .. ..$ style  : chr "bdparcellaire"
+#&gt;   .. .. .. ..$ format : chr "image/png"
+#&gt;   .. ..$ ignMaps: chr "GEOGRAPHICALGRIDSYSTEMS.MAPS"
+#&gt;   .. ..$ maps   : chr "GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD"
+#&gt;   .. ..$ orthos :List of 1
+#&gt;   .. .. ..$ options:List of 2
+#&gt;   .. .. .. ..$ maxZoom: int 19
+#&gt;   .. .. .. ..$ variant: chr "ORTHOIMAGERY.ORTHOPHOTOS"
+#&gt;  $ OneMapSG        :List of 3
+#&gt;   ..$ url     : chr "//maps-{s}.onemap.sg/v3/{variant}/{z}/{x}/{y}.png"
+#&gt;   ..$ options :List of 5
+#&gt;   .. ..$ variant    : chr "Default"
+#&gt;   .. ..$ minZoom    : int 11
+#&gt;   .. ..$ maxZoom    : int 18
+#&gt;   .. ..$ bounds     : num [1:2, 1:2] 1.56 1.16 104.11 103.5
+#&gt;   .. ..$ attribution: chr "&lt;img src=\"https://docs.onemap.sg/maps/images/oneMap64-01.png\" style=\"height:20px;width:20px;\"/&gt; New OneMap "| __truncated__
+#&gt;   ..$ variants:List of 5
+#&gt;   .. ..$ Default : chr "Default"
+#&gt;   .. ..$ Night   : chr "Night"
+#&gt;   .. ..$ Original: chr "Original"
+#&gt;   .. ..$ Grey    : chr "Grey"
+#&gt;   .. ..$ LandLot : chr "LandLot"</code></pre>
 </div>
 </div>
 </div>
@@ -305,5 +853,6 @@
 
   
 
-  </body>
+  </div>
+</body>
 </html>

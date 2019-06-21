@@ -117,7 +117,7 @@
         
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>leaflet_providers</code> object containing <code>providers_version_num</code>, <code>providers_data</code>, <code>providers_details_data</code>, <code>html_dependency</code></p>
+    <p><code>leaflet_providers</code> object containing <code>providers_version_num</code>, <code>providers_data</code>, <code>providers_details_data</code>, and <code>src</code></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -131,11 +131,11 @@
 #&gt;   .. [list output truncated]
 #&gt;  $ providers_details:List of 27
 #&gt;   ..$ OpenStreetMap   :List of 3
-#&gt;   .. ..$ url     : chr "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+#&gt;   .. ..$ url     : chr "//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 #&gt;   .. ..$ options :List of 2
 #&gt;   .. ..$ variants:List of 6
 #&gt;   ..$ OpenSeaMap      :List of 2
-#&gt;   .. ..$ url    : chr "https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png"
+#&gt;   .. ..$ url    : chr "//tiles.openseamap.org/seamark/{z}/{x}/{y}.png"
 #&gt;   .. ..$ options:List of 1
 #&gt;   ..$ OpenPtMap       :List of 2
 #&gt;   .. ..$ url    : chr "http://openptmap.org/tiles/{z}/{x}/{y}.png"
@@ -144,14 +144,7 @@
 #&gt;   .. ..$ url    : chr "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"
 #&gt;   .. ..$ options:List of 2
 #&gt;   .. [list output truncated]
-#&gt;  $ html_dependency  :List of 10
-#&gt;   ..$ name      : chr "leaflet-providers"
-#&gt;   ..$ version   : chr "1.8.0"
-#&gt;   ..$ src       :List of 1
-#&gt;   .. ..$ file: chr "/home/travis/build/leslie-huang/leaflet.providers/inst/leaflet-providers_1.8.0.js"
-#&gt;   ..$ meta      : NULL
-#&gt;   .. [list output truncated]
-#&gt;   ..- attr(*, "class")= chr "html_dependency"
+#&gt;  $ src              : chr "(function (root, factory) {\n\tif (typeof define === 'function' &amp;&amp; define.amd) {\n\t\t// AMD. Register as an an"| __truncated__
 #&gt;  - attr(*, "class")= chr "leaflet_providers"</div><div class='input'>
 </div></pre>
   </div>

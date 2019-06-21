@@ -118,24 +118,36 @@ Use a custom <code>leaflet_providers</code> object, e.g. providers data fetched 
     
     </div>
 
-    <pre class="usage"><span class='fu'>use_providers</span>(<span class='no'>custom_providers</span>)</pre>
+    <pre class="usage"><span class='fu'>use_providers</span>(<span class='kw'>custom_providers</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>custom_providers</th>
-      <td><p>A custom <code>leaflet_providers</code> object.</p></td>
+      <td><p>A custom <code>leaflet_providers</code> object. If <code>NULL</code>, uses default providers.</p></td>
     </tr>
     </table>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>
+<span class='kw'>if</span> (<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>require</a></span>(<span class='st'>"V8"</span>) <span class='kw'>&amp;</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>require</a></span>(<span class='st'>"jsonlite"</span>)) {
+  <span class='co'># Set providers to latest providers</span>
+  <span class='fu'>use_providers</span>(<span class='fu'><a href='get_providers.html'>get_providers</a></span>())
+
+  <span class='co'># Set providers to defaults providers from leaflet.providers package</span>
+  <span class='fu'>use_providers</span>()
+}</div><div class='output co'>#&gt; <span class='message'>Loading required package: V8</span></div><div class='output co'>#&gt; <span class='message'>Using V8 engine 3.14.5.9</span></div><div class='output co'>#&gt; <span class='message'>Loading required package: jsonlite</span></div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+            
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>
