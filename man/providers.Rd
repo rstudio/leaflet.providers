@@ -7,7 +7,7 @@
 providers()
 }
 \value{
-\code{leaflet_providers} object containing \code{providers_version_num}, \code{providers_data}, \code{providers_details_data}, \code{html_dependency}
+\code{leaflet_providers} object containing \code{providers_version_num}, \code{providers_data}, \code{providers_details_data}, and \code{src}
 }
 \description{
 Return providers, providers_details, version, and HTML Dependency.

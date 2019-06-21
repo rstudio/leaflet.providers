@@ -5,12 +5,23 @@
 \title{Use custom providers data.
 Use a custom \code{leaflet_providers} object, e.g. providers data fetched with \link{get_providers}, with the \code{leaflet} package.}
 \usage{
-use_providers(custom_providers)
+use_providers(custom_providers = NULL)
 }
 \arguments{
-\item{custom_providers}{A custom \code{leaflet_providers} object.}
+\item{custom_providers}{A custom \code{leaflet_providers} object. If \code{NULL}, uses default providers.}
 }
 \description{
 Use custom providers data.
 Use a custom \code{leaflet_providers} object, e.g. providers data fetched with \link{get_providers}, with the \code{leaflet} package.
+}
+\examples{
+
+if (require("V8") & require("jsonlite")) {
+  # Set providers to latest providers
+  use_providers(get_providers())
+
+  # Set providers to defaults providers from leaflet.providers package
+  use_providers()
+}
+
 }

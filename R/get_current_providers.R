@@ -1,11 +1,32 @@
 unpkg_url <- "https://unpkg.com/leaflet-providers"
 
+https_replace <- c(
+  '//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+  '//{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png',
+  '//tile.osm.ch/switzerland/{z}/{x}/{y}.png',
+  '//{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',
+  '//{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
+  '//tile.openstreetmap.bzh/br/{z}/{x}/{y}.png',
+  '//tiles.openseamap.org/seamark/{z}/{x}/{y}.png',
+  '//s3.amazonaws.com/te512.safecast.org/{z}/{x}/{y}.png',
+  '//{s}.tile.openstreetmap.se/hydda/{variant}/{z}/{x}/{y}.png',
+  '//stamen-tiles-{s}.a.ssl.fastly.net/{variant}/{z}/{x}/{y}{r}.{ext}',
+  '//stamen-tiles-{s}.a.ssl.fastly.net/{variant}/{z}/{x}/{y}.{ext}',
+  '//server.arcgisonline.com/ArcGIS/rest/services/{variant}/MapServer/tile/{z}/{y}/{x}',
+  '//{s}.{base}.maps.cit.api.here.com/maptile/2.1/',
+  '//maps{s}.wien.gv.at/basemap/{variant}/normal/google3857/{z}/{y}/{x}.{format}',
+  '//geodata.nationaalgeoregister.nl/tiles/service/wmts/{variant}/EPSG:3857/{z}/{x}/{y}.png',
+  '//geodata.nationaalgeoregister.nl/luchtfoto/rgb/wmts/1.0.0/2016_ortho25/EPSG:3857/{z}/{x}/{y}.png',
+  '//nls-{s}.tileserver.com/nls/{z}/{x}/{y}.jpg',
+  '//maps-{s}.onemap.sg/v3/{variant}/{z}/{x}/{y}.png'
+)
+
 #' Fetch leaflet providers from Leaflet.js.
 #' @export
 #'
 #' @param version_num Version number with which to update leaflet providers. If `NULL`, fetches most recent version.
 #'
-#' @return `leaflet_providers` object containing `providers_version_num`, `providers_data`, `providers_details_data`, `html_dependency`
+#' @return `leaflet_providers` object containing `providers_version_num`, `providers_data`, `providers_details_data`, `src`
 #'
 #' @examples
 #' get_providers()
@@ -21,9 +42,16 @@ get_providers <- function(version_num = NULL) {
 
   js_path <- paste0(unpkg_url, "@", version_num)
 
-  js_lines <- readLines(js_path)
-  tmp_file <- tempfile(pattern = "", fileext = ".js")
-  writeLines(js_lines, con = tmp_file)
+  tmp_js_lines <- paste0(readLines(js_path), collapse = "\n")
+
+  for (url in https_replace) {
+    tmp_js_lines <- gsub(
+      paste0("https:", url),
+      url,
+      tmp_js_lines,
+      fixed = TRUE
+    )
+  }
 
   ct <- V8::v8()
 
@@ -32,7 +60,7 @@ get_providers <- function(version_num = NULL) {
           Util : {extend: function(){return {};}},
           tileLayer : {}}")
 
-  ct$source(tmp_file)
+  ct$eval(tmp_js_lines)
 
   providers_json <- ct$eval("JSON.stringify(L.TileLayer.Provider.providers)")
 
@@ -52,17 +80,11 @@ get_providers <- function(version_num = NULL) {
 
   providers <- stats::setNames(as.list(providers), providers)
 
-  html_dependency <- htmltools::htmlDependency(
-    "leaflet-providers",
-    version_num,
-    src = tmp_file,
-  )
-
   providers_info <- list(
     "version_num" = version_num,
     "providers" = providers,
     "providers_details" = providers_details,
-    "html_dependency" = html_dependency)
+    "src" = tmp_js_lines)
 
   class(providers_info) <- "leaflet_providers"
   return(providers_info)
@@ -83,7 +105,7 @@ get_current_version_num <- function() {
 #' Return providers, providers_details, version, and HTML Dependency.
 #' @export
 #'
-#' @return `leaflet_providers` object containing `providers_version_num`, `providers_data`, `providers_details_data`, `html_dependency`
+#' @return `leaflet_providers` object containing `providers_version_num`, `providers_data`, `providers_details_data`, and `src`
 #'
 #' @examples
 #' str(providers(), max = 3, list.len = 4)
@@ -94,18 +116,16 @@ providers <- function() {
   # Move .js file from tmp to sysfile
   js_filename_for_inst <- paste0("leaflet-providers_", providers_version_num, ".js")
 
-  html_dependency <- htmltools::htmlDependency(
-    "leaflet-providers",
-    providers_version_num,
-    src = system.file(js_filename_for_inst, package = "leaflet.providers"),
-  )
+  js_lines <- paste0(
+    readLines(system.file(js_filename_for_inst, package = "leaflet.providers")),
+    collapse = "\n")
 
   # Returns same list of obj as get_providers() except html_dependency points to /inst file
   providers_info <- list(
     "version_num" = providers_version_num,
     "providers" = providers_data,
     "providers_details" = providers_details_data,
-    "html_dependency" = html_dependency)
+    "src" = js_lines)
 
   class(providers_info) <- "leaflet_providers"
   return(providers_info)
@@ -114,23 +134,27 @@ providers <- function() {
 #' Use custom providers data.
 #' Use a custom `leaflet_providers` object, e.g. providers data fetched with [get_providers], with the `leaflet` package.
 #'
-#' @param custom_providers A custom `leaflet_providers` object.
+#' @param custom_providers A custom `leaflet_providers` object. If `NULL`, uses default providers.
 #' @export
 #'
-#' @example
+#' @examples
 #'
-#' if (require("v8") & require("jsonlite")) {
+#' if (require("V8") & require("jsonlite")) {
+#'   # Set providers to latest providers
 #'   use_providers(get_providers())
+#'
+#'   # Set providers to defaults providers from leaflet.providers package
+#'   use_providers()
 #' }
+#'
 
-use_providers <- function(custom_providers) {
-  if (!inherits(custom_providers, "leaflet_providers")) {
-    stop("`custom_providers` must be a 'leaflet_providers' object.", call. = FALSE)
+use_providers <- function(custom_providers = NULL) {
+  if (!is.null(custom_providers)) {
+    if (!inherits(custom_providers, "leaflet_providers")) {
+      stop("`custom_providers` must be a 'leaflet_providers' object.", call. = FALSE)
+    }
   }
-  options(
-    leaflet.providers = custom_providers$providers,
-    leaflet.providers.details = custom_providers$providers.details,
-    leaflet.providers.html_dependency = custom_providers$html_dependency
-          )
+
+  options(leaflet.providers = custom_providers)
   invisible(TRUE)
 }

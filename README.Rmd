@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: end -->
 
-The goal of leaflet.providers is to provide regularly updated data on the third-party tile providers supported by `leaflet`. This package is to be used with `leaflet`.
+The goal of leaflet.providers is to provide regularly updated data on the third-party tile providers supported by `leaflet`. This package is to be used with `leaflet`. Using `use_providers()` and `get_providers`, users may fetch up-to-date providers information to be used in `leaflet`.
 
 ## Installation
 
@@ -42,32 +42,13 @@ devtools::install_github("leslie-huang/leaflet.providers")
 
 ## Example
 
-This is a basic example of the data that is automatically loaded with `leaflet.providers`.
-
-### View Leaflet.js version number from which the data is derived
-
-```{r example0}
-library(leaflet.providers)
-providers_data <- providers()
-
-providers_data$version_num
-```
-
-### View supported tile providers
-
-```{r example}
-str(providers_data$providers)
-```
-
-### View snippet of tile providers' details
-
-```{r example2}
-str(providers_data$providers_details, vec.len = 1, list.len=3)
-```
+This is a basic example of the data that is automatically loaded with `leaflet.providers` and the available methods.
 
 ### Use up-to-date providers and providers' details
 
 ```{r get_providers_ex}
+library(leaflet.providers)
+
 todays_providers <- get_providers()
 
 # Set custom providers and providers' details
@@ -76,3 +57,38 @@ use_providers(todays_providers)
 ```
 
 Now that `use_providers` has been called with today's providers, [`leaflet`](http://rstudio.github.io/leaflet) will use the latest providers data.
+
+### View Leaflet.js version number from which the data is derived
+
+```{r example0}
+providers_data <- providers()
+
+providers_data$version_num
+```
+
+### View supported tile providers
+
+```{r examplept1, eval = FALSE}
+str(providers_data$providers)
+```
+
+<div style = "height:150px; overflow-y: scroll;">
+
+```{r examplept2, echo=FALSE}
+str(providers_data$providers, list.len = 200)
+```
+
+</div>
+
+### View snippet of tile providers' details
+
+
+```{r example2pt1, eval = FALSE}
+str(providers_data$providers_details)
+```
+
+<div style = "height:150px; overflow-y: scroll;">
+
+```{r example2pt2, echo=FALSE}
+str(providers_data$providers_details, list.len = 200)
+```

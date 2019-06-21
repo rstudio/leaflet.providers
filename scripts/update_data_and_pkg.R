@@ -24,9 +24,7 @@ if (length(old_files) > 0) {
 # Write .js file to inst/
 js_filename_for_inst <- paste0("leaflet-providers_", todays_data$version_num, ".js")
 
-file.copy(from = todays_data$html_dependency$src$file,
-          to = file.path("inst", js_filename_for_inst)
-)
+cat(todays_data$src, "\n", sep = "", file = file.path("inst", js_filename_for_inst))
 
 # Tests
 devtools::test()
