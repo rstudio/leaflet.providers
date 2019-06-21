@@ -5,7 +5,7 @@ unpkg_url <- "https://unpkg.com/leaflet-providers"
 #'
 #' @param version_num Version number with which to update leaflet providers. If `NULL`, fetches most recent version.
 #'
-#' @return List of `providers_version_num`, `providers_data`, `providers_details_data`, `html_dependency`
+#' @return `leaflet_providers` object containing `providers_version_num`, `providers_data`, `providers_details_data`, `html_dependency`
 #'
 #' @examples
 #' get_providers()
@@ -58,11 +58,14 @@ get_providers <- function(version_num = NULL) {
     src = tmp_file,
   )
 
-  list(
+  providers_info <- list(
     "version_num" = version_num,
     "providers" = providers,
     "providers_details" = providers_details,
     "html_dependency" = html_dependency)
+
+  class(providers_info) <- "leaflet_providers"
+  return(providers_info)
 }
 
 
@@ -80,10 +83,11 @@ get_current_version_num <- function() {
 #' Return providers, providers_details, version, and HTML Dependency.
 #' @export
 #'
-#' @return List of `providers_version_num`, `providers_data`, `providers_details_data`, `html_dependency`
+#' @return `leaflet_providers` object containing `providers_version_num`, `providers_data`, `providers_details_data`, `html_dependency`
 #'
 #' @examples
-#' providers()
+#' str(providers(), max = 3, list.len = 4)
+#'
 
 providers <- function() {
 
@@ -97,9 +101,36 @@ providers <- function() {
   )
 
   # Returns same list of obj as get_providers() except html_dependency points to /inst file
-  list(
+  providers_info <- list(
     "version_num" = providers_version_num,
     "providers" = providers_data,
     "providers_details" = providers_details_data,
     "html_dependency" = html_dependency)
+
+  class(providers_info) <- "leaflet_providers"
+  return(providers_info)
+}
+
+#' Use custom providers data.
+#' Use a custom `leaflet_providers` object, e.g. providers data fetched with [get_providers], with the `leaflet` package.
+#'
+#' @param custom_providers A custom `leaflet_providers` object.
+#' @export
+#'
+#' @example
+#'
+#' if (require("v8") & require("jsonlite")) {
+#'   use_providers(get_providers())
+#' }
+
+use_providers <- function(custom_providers) {
+  if (!inherits(custom_providers, "leaflet_providers")) {
+    stop("`custom_providers` must be a 'leaflet_providers' object.", call. = FALSE)
+  }
+  options(
+    leaflet.providers = custom_providers$providers,
+    leaflet.providers.details = custom_providers$providers.details,
+    leaflet.providers.html_dependency = custom_providers$html_dependency
+          )
+  invisible(TRUE)
 }
