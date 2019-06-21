@@ -241,6 +241,16 @@
 <a class="sourceLine" id="cb5-28" data-line-number="28"><span class="co">#&gt;   .. ..$ attribution: chr "Map data: &amp;copy; &lt;a href=\"http://www.openptmap.org\"&gt;OpenPtMap&lt;/a&gt; contributors"</span></a>
 <a class="sourceLine" id="cb5-29" data-line-number="29"><span class="co">#&gt;   [list output truncated]</span></a></code></pre></div>
 </div>
+<div id="use-up-to-date-providers-and-providers-details" class="section level3">
+<h3 class="hasAnchor">
+<a href="#use-up-to-date-providers-and-providers-details" class="anchor"></a>Use up-to-date providers and providers’ details</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">todays_providers &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_providers.html">get_providers</a></span>()</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="co"># Set custom providers and providers' details</span></a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="kw"><a href="reference/use_providers.html">use_providers</a></span>(todays_providers)</a></code></pre></div>
+<p>Now that <code>use_providers</code> has been called with today’s providers, <a href="http://rstudio.github.io/leaflet"><code>leaflet</code></a> will use the latest providers data.</p>
+</div>
 </div>
 </div>
   </div>
