@@ -190,3 +190,17 @@ str(providers_data$providers_details, vec.len = 1, list.len=3)
 #>   .. ..$ attribution: chr "Map data: &copy; <a href=\"http://www.openptmap.org\">OpenPtMap</a> contributors"
 #>   [list output truncated]
 ```
+
+### Use up-to-date providers and providers’ details
+
+``` r
+todays_providers <- get_providers()
+
+# Set custom providers and providers' details
+
+use_providers(todays_providers)
+```
+
+Now that `use_providers` has been called with today’s providers,
+[`leaflet`](http://rstudio.github.io/leaflet) will use the latest
+providers data.
