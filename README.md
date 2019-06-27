@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/leslie-huang/leaflet.providers?branch=master&svg=true)](https://ci.appveyor.com/project/leslie-huang/leaflet.providers)
+status](https://ci.appveyor.com/api/projects/status/github/leslie-huang/leaflet-providers?branch=master&svg=true)](https://ci.appveyor.com/project/leslie-huang/leaflet-providers)
 [![Travis build
 status](https://travis-ci.org/leslie-huang/leaflet.providers.svg?branch=master)](https://travis-ci.org/leslie-huang/leaflet.providers)
 [![Codecov test
