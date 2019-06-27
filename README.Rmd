@@ -22,7 +22,9 @@ knitr::opts_chunk$set(
 
 <!-- badges: end -->
 
-The goal of leaflet.providers is to provide regularly updated data on the third-party tile providers supported by `leaflet`. This package is to be used with `leaflet`. Using `use_providers()` and `get_providers`, users may fetch up-to-date providers information to be used in `leaflet`.
+The goal of leaflet.providers is to provide regularly updated data on the third-party tile providers supported by `leaflet`. The data is extracted from [leaflet-providers.js](https://github.com/leaflet-extras/leaflet-providers). This package is to be used with `leaflet`. 
+
+Using `use_providers()` and `get_providers`, users may fetch up-to-date providers information to be used in `leaflet`.
 
 ## Installation
 

@@ -15,10 +15,13 @@ coverage](https://codecov.io/gh/leslie-huang/leaflet.providers/branch/master/gra
 <!-- badges: end -->
 
 The goal of leaflet.providers is to provide regularly updated data on
-the third-party tile providers supported by `leaflet`. This package is
-to be used with `leaflet`. Using `use_providers()` and `get_providers`,
-users may fetch up-to-date providers information to be used in
-`leaflet`.
+the third-party tile providers supported by `leaflet`. The data is
+extracted from
+[leaflet-providers.js](https://github.com/leaflet-extras/leaflet-providers).
+This package is to be used with `leaflet`.
+
+Using `use_providers()` and `get_providers`, users may fetch up-to-date
+providers information to be used in `leaflet`.
 
 ## Installation
 
@@ -246,37 +249,37 @@ str(providers_data$providers_details)
 
     #> List of 27
     #>  $ OpenStreetMap   :List of 3
-    #>   ..$ url     : chr "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    #>   ..$ url     : chr "//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     #>   ..$ options :List of 2
     #>   .. ..$ maxZoom    : int 19
     #>   .. ..$ attribution: chr "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors"
     #>   ..$ variants:List of 6
     #>   .. ..$ Mapnik: Named list()
     #>   .. ..$ DE    :List of 2
-    #>   .. .. ..$ url    : chr "https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png"
+    #>   .. .. ..$ url    : chr "//{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png"
     #>   .. .. ..$ options:List of 1
     #>   .. .. .. ..$ maxZoom: int 18
     #>   .. ..$ CH    :List of 2
-    #>   .. .. ..$ url    : chr "https://tile.osm.ch/switzerland/{z}/{x}/{y}.png"
+    #>   .. .. ..$ url    : chr "//tile.osm.ch/switzerland/{z}/{x}/{y}.png"
     #>   .. .. ..$ options:List of 2
     #>   .. .. .. ..$ maxZoom: int 18
     #>   .. .. .. ..$ bounds : int [1:2, 1:2] 45 48 5 11
     #>   .. ..$ France:List of 2
-    #>   .. .. ..$ url    : chr "https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png"
+    #>   .. .. ..$ url    : chr "//{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png"
     #>   .. .. ..$ options:List of 2
     #>   .. .. .. ..$ maxZoom    : int 20
     #>   .. .. .. ..$ attribution: chr "&copy; Openstreetmap France | {attribution.OpenStreetMap}"
     #>   .. ..$ HOT   :List of 2
-    #>   .. .. ..$ url    : chr "https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
+    #>   .. .. ..$ url    : chr "//{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
     #>   .. .. ..$ options:List of 1
     #>   .. .. .. ..$ attribution: chr "{attribution.OpenStreetMap}, Tiles style by <a href=\"https://www.hotosm.org/\" target=\"_blank\">Humanitarian "| __truncated__
     #>   .. ..$ BZH   :List of 2
-    #>   .. .. ..$ url    : chr "https://tile.openstreetmap.bzh/br/{z}/{x}/{y}.png"
+    #>   .. .. ..$ url    : chr "//tile.openstreetmap.bzh/br/{z}/{x}/{y}.png"
     #>   .. .. ..$ options:List of 2
     #>   .. .. .. ..$ attribution: chr "{attribution.OpenStreetMap}, Tiles courtesy of <a href=\"http://www.openstreetmap.bzh/\" target=\"_blank\">Bret"| __truncated__
     #>   .. .. .. ..$ bounds     : num [1:2, 1:2] 46.2 50 -5.5 0.7
     #>  $ OpenSeaMap      :List of 2
-    #>   ..$ url    : chr "https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png"
+    #>   ..$ url    : chr "//tiles.openseamap.org/seamark/{z}/{x}/{y}.png"
     #>   ..$ options:List of 1
     #>   .. ..$ attribution: chr "Map data: &copy; <a href=\"http://www.openseamap.org\">OpenSeaMap</a> contributors"
     #>  $ OpenPtMap       :List of 2
@@ -300,7 +303,7 @@ str(providers_data$providers_details)
     #>   .. ..$ maxZoom    : int 19
     #>   .. ..$ attribution: chr "Map data: {attribution.OpenStreetMap} | Map style: &copy; <a href=\"http://www.openfiremap.org\">OpenFireMap</a"| __truncated__
     #>  $ SafeCast        :List of 2
-    #>   ..$ url    : chr "https://s3.amazonaws.com/te512.safecast.org/{z}/{x}/{y}.png"
+    #>   ..$ url    : chr "//s3.amazonaws.com/te512.safecast.org/{z}/{x}/{y}.png"
     #>   ..$ options:List of 2
     #>   .. ..$ maxZoom    : int 16
     #>   .. ..$ attribution: chr "Map data: {attribution.OpenStreetMap} | Map style: &copy; <a href=\"https://blog.safecast.org/about/\">SafeCast"| __truncated__
@@ -363,7 +366,7 @@ str(providers_data$providers_details)
     #>   .. .. .. ..$ variant    : chr "elements_at_risk"
     #>   .. .. .. ..$ attribution: chr "{attribution.OpenMapSurfer}{attribution.OpenStreetMap}"
     #>  $ Hydda           :List of 3
-    #>   ..$ url     : chr "https://{s}.tile.openstreetmap.se/hydda/{variant}/{z}/{x}/{y}.png"
+    #>   ..$ url     : chr "//{s}.tile.openstreetmap.se/hydda/{variant}/{z}/{x}/{y}.png"
     #>   ..$ options :List of 3
     #>   .. ..$ maxZoom    : int 18
     #>   .. ..$ variant    : chr "full"
@@ -380,7 +383,7 @@ str(providers_data$providers_details)
     #>   .. ..$ id         : chr "mapbox.streets"
     #>   .. ..$ accessToken: chr "<insert your access token here>"
     #>  $ Stamen          :List of 3
-    #>   ..$ url     : chr "https://stamen-tiles-{s}.a.ssl.fastly.net/{variant}/{z}/{x}/{y}{r}.{ext}"
+    #>   ..$ url     : chr "//stamen-tiles-{s}.a.ssl.fastly.net/{variant}/{z}/{x}/{y}{r}.{ext}"
     #>   ..$ options :List of 6
     #>   .. ..$ attribution: chr "Map tiles by <a href=\"http://stamen.com\">Stamen Design</a>, <a href=\"http://creativecommons.org/licenses/by/"| __truncated__
     #>   .. ..$ subdomains : chr "abcd"
@@ -396,7 +399,7 @@ str(providers_data$providers_details)
     #>   .. ..$ TonerLabels      : chr "toner-labels"
     #>   .. ..$ TonerLite        : chr "toner-lite"
     #>   .. ..$ Watercolor       :List of 2
-    #>   .. .. ..$ url    : chr "https://stamen-tiles-{s}.a.ssl.fastly.net/{variant}/{z}/{x}/{y}.{ext}"
+    #>   .. .. ..$ url    : chr "//stamen-tiles-{s}.a.ssl.fastly.net/{variant}/{z}/{x}/{y}.{ext}"
     #>   .. .. ..$ options:List of 4
     #>   .. .. .. ..$ variant: chr "watercolor"
     #>   .. .. .. ..$ ext    : chr "jpg"
@@ -413,7 +416,7 @@ str(providers_data$providers_details)
     #>   .. .. .. ..$ minZoom: int 0
     #>   .. .. .. ..$ maxZoom: int 18
     #>   .. ..$ TopOSMRelief     :List of 2
-    #>   .. .. ..$ url    : chr "https://stamen-tiles-{s}.a.ssl.fastly.net/{variant}/{z}/{x}/{y}.{ext}"
+    #>   .. .. ..$ url    : chr "//stamen-tiles-{s}.a.ssl.fastly.net/{variant}/{z}/{x}/{y}.{ext}"
     #>   .. .. ..$ options:List of 3
     #>   .. .. .. ..$ variant: chr "toposm-color-relief"
     #>   .. .. .. ..$ ext    : chr "jpg"
@@ -424,7 +427,7 @@ str(providers_data$providers_details)
     #>   .. .. .. ..$ bounds : int [1:2, 1:2] 22 51 -132 -56
     #>   .. .. .. ..$ opacity: num 0.9
     #>  $ Esri            :List of 3
-    #>   ..$ url     : chr "https://server.arcgisonline.com/ArcGIS/rest/services/{variant}/MapServer/tile/{z}/{y}/{x}"
+    #>   ..$ url     : chr "//server.arcgisonline.com/ArcGIS/rest/services/{variant}/MapServer/tile/{z}/{y}/{x}"
     #>   ..$ options :List of 2
     #>   .. ..$ variant    : chr "World_Street_Map"
     #>   .. ..$ attribution: chr "Tiles &copy; Esri"
@@ -611,7 +614,7 @@ str(providers_data$providers_details)
     #>   .. .. .. ..$ maxZoom: int 15
     #>   .. .. .. ..$ variant: chr "hillshading"
     #>  $ BasemapAT       :List of 3
-    #>   ..$ url     : chr "https://maps{s}.wien.gv.at/basemap/{variant}/normal/google3857/{z}/{y}/{x}.{format}"
+    #>   ..$ url     : chr "//maps{s}.wien.gv.at/basemap/{variant}/normal/google3857/{z}/{y}/{x}.{format}"
     #>   ..$ options :List of 6
     #>   .. ..$ maxZoom    : int 19
     #>   .. ..$ attribution: chr "Datenquelle: <a href=\"https://www.basemap.at\">basemap.at</a>"
@@ -636,7 +639,7 @@ str(providers_data$providers_details)
     #>   .. .. .. ..$ variant: chr "bmaporthofoto30cm"
     #>   .. .. .. ..$ format : chr "jpeg"
     #>  $ nlmaps          :List of 3
-    #>   ..$ url     : chr "https://geodata.nationaalgeoregister.nl/tiles/service/wmts/{variant}/EPSG:3857/{z}/{x}/{y}.png"
+    #>   ..$ url     : chr "//geodata.nationaalgeoregister.nl/tiles/service/wmts/{variant}/EPSG:3857/{z}/{x}/{y}.png"
     #>   ..$ options :List of 4
     #>   .. ..$ minZoom    : int 6
     #>   .. ..$ maxZoom    : int 19
@@ -647,7 +650,7 @@ str(providers_data$providers_details)
     #>   .. ..$ pastel   : chr "brtachtergrondkaartpastel"
     #>   .. ..$ grijs    : chr "brtachtergrondkaartgrijs"
     #>   .. ..$ luchtfoto:List of 1
-    #>   .. .. ..$ url: chr "https://geodata.nationaalgeoregister.nl/luchtfoto/rgb/wmts/1.0.0/2016_ortho25/EPSG:3857/{z}/{x}/{y}.png"
+    #>   .. .. ..$ url: chr "//geodata.nationaalgeoregister.nl/luchtfoto/rgb/wmts/1.0.0/2016_ortho25/EPSG:3857/{z}/{x}/{y}.png"
     #>  $ NASAGIBS        :List of 3
     #>   ..$ url     : chr "https://map1.vis.earthdata.nasa.gov/wmts-webmerc/{variant}/default/{time}/{tilematrixset}{maxZoom}/{z}/{y}/{x}.{format}"
     #>   ..$ options :List of 7
@@ -690,7 +693,7 @@ str(providers_data$providers_details)
     #>   .. .. .. ..$ maxZoom: int 7
     #>   .. .. .. ..$ opacity: num 0.75
     #>  $ NLS             :List of 2
-    #>   ..$ url    : chr "https://nls-{s}.tileserver.com/nls/{z}/{x}/{y}.jpg"
+    #>   ..$ url    : chr "//nls-{s}.tileserver.com/nls/{z}/{x}/{y}.jpg"
     #>   ..$ options:List of 5
     #>   .. ..$ attribution: chr "<a href=\"http://geo.nls.uk/maps/\">National Library of Scotland Historic Maps</a>"
     #>   .. ..$ bounds     : num [1:2, 1:2] 49.6 61.7 -12 3
@@ -744,7 +747,7 @@ str(providers_data$providers_details)
     #>   .. .. .. ..$ maxZoom: int 19
     #>   .. .. .. ..$ variant: chr "ORTHOIMAGERY.ORTHOPHOTOS"
     #>  $ OneMapSG        :List of 3
-    #>   ..$ url     : chr "https://maps-{s}.onemap.sg/v3/{variant}/{z}/{x}/{y}.png"
+    #>   ..$ url     : chr "//maps-{s}.onemap.sg/v3/{variant}/{z}/{x}/{y}.png"
     #>   ..$ options :List of 5
     #>   .. ..$ variant    : chr "Default"
     #>   .. ..$ minZoom    : int 11
