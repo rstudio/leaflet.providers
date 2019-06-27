@@ -245,7 +245,7 @@ str(providers_data$providers)
 str(providers_data$providers_details)
 ```
 
-<div style = "height:150px; overflow-y: scroll;">
+<div style="height:150px; overflow-y: scroll;">
 
     #> List of 27
     #>  $ OpenStreetMap   :List of 3
@@ -760,3 +760,5 @@ str(providers_data$providers_details)
     #>   .. ..$ Original: chr "Original"
     #>   .. ..$ Grey    : chr "Grey"
     #>   .. ..$ LandLot : chr "LandLot"
+
+</div>

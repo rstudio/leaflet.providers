@@ -94,3 +94,5 @@ str(providers_data$providers_details)
 ```{r example2pt2, echo=FALSE}
 str(providers_data$providers_details, list.len = 200)
 ```
+
+</div>
