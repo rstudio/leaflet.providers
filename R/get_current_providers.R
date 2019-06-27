@@ -1,24 +1,24 @@
 unpkg_url <- "https://unpkg.com/leaflet-providers"
 
 https_replace <- c(
-  '//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-  '//{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png',
-  '//tile.osm.ch/switzerland/{z}/{x}/{y}.png',
-  '//{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',
-  '//{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
-  '//tile.openstreetmap.bzh/br/{z}/{x}/{y}.png',
-  '//tiles.openseamap.org/seamark/{z}/{x}/{y}.png',
-  '//s3.amazonaws.com/te512.safecast.org/{z}/{x}/{y}.png',
-  '//{s}.tile.openstreetmap.se/hydda/{variant}/{z}/{x}/{y}.png',
-  '//stamen-tiles-{s}.a.ssl.fastly.net/{variant}/{z}/{x}/{y}{r}.{ext}',
-  '//stamen-tiles-{s}.a.ssl.fastly.net/{variant}/{z}/{x}/{y}.{ext}',
-  '//server.arcgisonline.com/ArcGIS/rest/services/{variant}/MapServer/tile/{z}/{y}/{x}',
-  '//{s}.{base}.maps.cit.api.here.com/maptile/2.1/',
-  '//maps{s}.wien.gv.at/basemap/{variant}/normal/google3857/{z}/{y}/{x}.{format}',
-  '//geodata.nationaalgeoregister.nl/tiles/service/wmts/{variant}/EPSG:3857/{z}/{x}/{y}.png',
-  '//geodata.nationaalgeoregister.nl/luchtfoto/rgb/wmts/1.0.0/2016_ortho25/EPSG:3857/{z}/{x}/{y}.png',
-  '//nls-{s}.tileserver.com/nls/{z}/{x}/{y}.jpg',
-  '//maps-{s}.onemap.sg/v3/{variant}/{z}/{x}/{y}.png'
+  "//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+  "//{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png",
+  "//tile.osm.ch/switzerland/{z}/{x}/{y}.png",
+  "//{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png",
+  "//{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
+  "//tile.openstreetmap.bzh/br/{z}/{x}/{y}.png",
+  "//tiles.openseamap.org/seamark/{z}/{x}/{y}.png",
+  "//s3.amazonaws.com/te512.safecast.org/{z}/{x}/{y}.png",
+  "//{s}.tile.openstreetmap.se/hydda/{variant}/{z}/{x}/{y}.png",
+  "//stamen-tiles-{s}.a.ssl.fastly.net/{variant}/{z}/{x}/{y}{r}.{ext}",
+  "//stamen-tiles-{s}.a.ssl.fastly.net/{variant}/{z}/{x}/{y}.{ext}",
+  "//server.arcgisonline.com/ArcGIS/rest/services/{variant}/MapServer/tile/{z}/{y}/{x}",
+  "//{s}.{base}.maps.cit.api.here.com/maptile/2.1/",
+  "//maps{s}.wien.gv.at/basemap/{variant}/normal/google3857/{z}/{y}/{x}.{format}",
+  "//geodata.nationaalgeoregister.nl/tiles/service/wmts/{variant}/EPSG:3857/{z}/{x}/{y}.png",
+  "//geodata.nationaalgeoregister.nl/luchtfoto/rgb/wmts/1.0.0/2016_ortho25/EPSG:3857/{z}/{x}/{y}.png", # nolint
+  "//nls-{s}.tileserver.com/nls/{z}/{x}/{y}.jpg",
+  "//maps-{s}.onemap.sg/v3/{variant}/{z}/{x}/{y}.png"
 )
 
 #' Fetch leaflet providers from Leaflet.js.
