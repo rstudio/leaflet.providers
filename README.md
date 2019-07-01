@@ -5,8 +5,6 @@
 
 <!-- badges: start -->
 
-[![Build
-status](https://ci.appveyor.com/api/projects/status/github/rstudio/leaflet-providers?svg=true)](https://ci.appveyor.com/project/rstudio/leaflet-providers)
 [![Travis build
 status](https://travis-ci.org/rstudio/leaflet.providers.svg?branch=master)](https://travis-ci.org/rstudio/leaflet.providers)
 [![Codecov test

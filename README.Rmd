@@ -16,7 +16,6 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 
-[![Build status](https://ci.appveyor.com/api/projects/status/github/rstudio/leaflet-providers?svg=true)](https://ci.appveyor.com/project/rstudio/leaflet-providers)
 [![Travis build status](https://travis-ci.org/rstudio/leaflet.providers.svg?branch=master)](https://travis-ci.org/rstudio/leaflet.providers)
 [![Codecov test coverage](https://codecov.io/gh/rstudio/leaflet.providers/branch/master/graph/badge.svg)](https://codecov.io/gh/rstudio/leaflet.providers?branch=master)
 
