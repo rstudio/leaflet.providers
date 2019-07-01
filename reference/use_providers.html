@@ -113,13 +113,13 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>use_providers</span>(<span class='kw'>custom_providers</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>use_providers</span>(<span class='kw'>providers_info</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>custom_providers</th>
+      <th>providers_info</th>
       <td><p>A custom <code>leaflet_providers</code> object. If <code>NULL</code>, uses default providers.</p></td>
     </tr>
     </table>
@@ -133,6 +133,7 @@
 
   <span class='co'># Set providers to a custom providers object (specific version number)</span>
   <span class='fu'>use_providers</span>(<span class='fu'><a href='get_providers.html'>get_providers</a></span>(<span class='st'>"1.4.0"</span>))
+  <span class='fu'>use_providers</span>(<span class='st'>"1.4.0"</span>)
 }</div><div class='output co'>#&gt; <span class='message'>Loading required package: V8</span></div><div class='output co'>#&gt; <span class='message'>Using V8 engine 3.14.5.9</span></div><div class='output co'>#&gt; <span class='message'>Loading required package: jsonlite</span></div><div class='input'>
 </div></pre>
   </div>
