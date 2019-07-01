@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Use a custom <code>leaflet_providers</code> object, e.g. providers data fetched with <a href='get_providers.html'>get_providers</a>, with the <code>leaflet</code> package. — use_providers • leaflet.providers</title>
+<title>Return currently loaded providers, providers_details, version, and HTML Dependency. — providers_loaded • leaflet.providers</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Use a custom <code>leaflet_providers</code> object, e.g. providers data fetched with <a href='get_providers.html'>get_providers</a>, with the <code>leaflet</code> package. — use_providers" />
+<meta property="og:title" content="Return currently loaded providers, providers_details, version, and HTML Dependency. — providers_loaded" />
 
-<meta property="og:description" content="Use a custom leaflet_providers object, e.g. providers data fetched with get_providers, with the leaflet package." />
+<meta property="og:description" content="Return currently loaded providers, providers_details, version, and HTML Dependency." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -102,45 +102,34 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Use a custom <code>leaflet_providers</code> object, e.g. providers data fetched with <a href='get_providers.html'>get_providers</a>, with the <code>leaflet</code> package.</h1>
+    <h1>Return currently loaded providers, providers_details, version, and HTML Dependency.</h1>
     <small class="dont-index">Source: <a href='https://github.com/leslie-huang/leaflet.providers/blob/master/R/get_current_providers.R'><code>R/get_current_providers.R</code></a></small>
-    <div class="hidden name"><code>use_providers.Rd</code></div>
+    <div class="hidden name"><code>providers_loaded.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Use a custom <code>leaflet_providers</code> object, e.g. providers data fetched with <a href='get_providers.html'>get_providers</a>, with the <code>leaflet</code> package.</p>
+    <p>Return currently loaded providers, providers_details, version, and HTML Dependency.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>use_providers</span>(<span class='kw'>custom_providers</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>custom_providers</th>
-      <td><p>A custom <code>leaflet_providers</code> object. If <code>NULL</code>, uses default providers.</p></td>
-    </tr>
-    </table>
+    <pre class="usage"><span class='fu'>providers_loaded</span>()</pre>
+        
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p><code>leaflet_providers</code> object containing <code>providers_version_num</code>, <code>providers_data</code>, <code>providers_details_data</code>, and <code>src</code></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='kw'>if</span> (<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>require</a></span>(<span class='st'>"V8"</span>) <span class='kw'>&amp;</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>require</a></span>(<span class='st'>"jsonlite"</span>)) {
-  <span class='co'># Set providers to latest providers</span>
-  <span class='fu'>use_providers</span>(<span class='fu'><a href='get_providers.html'>get_providers</a></span>())
-
-  <span class='co'># Set providers to a custom providers object (specific version number)</span>
-  <span class='fu'>use_providers</span>(<span class='fu'><a href='get_providers.html'>get_providers</a></span>(<span class='st'>"1.4.0"</span>))
-}</div><div class='output co'>#&gt; <span class='message'>Loading required package: V8</span></div><div class='output co'>#&gt; <span class='message'>Using V8 engine 3.14.5.9</span></div><div class='output co'>#&gt; <span class='message'>Loading required package: jsonlite</span></div><div class='input'>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/str'>str</a></span>(<span class='fu'>providers_loaded</span>(), <span class='kw'>max</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>list.len</span> <span class='kw'>=</span> <span class='fl'>4</span>)</div><div class='output co'>#&gt;  list()</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-            
+      
+      <li><a href="#value">Value</a></li>
+      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
