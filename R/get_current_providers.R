@@ -172,5 +172,9 @@ use_providers <- function(custom_providers = NULL) {
 #'
 
 providers_loaded <- function() {
+  if (is.null(loaded_providers_env$providers)) {
+    loaded_providers_env$providers <- providers_default()
+  }
+
   as.list(loaded_providers_env$providers)
 }
