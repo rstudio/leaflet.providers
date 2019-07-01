@@ -172,5 +172,5 @@ use_providers <- function(custom_providers = NULL) {
 #'
 
 providers_loaded <- function() {
-  as.list(loaded_providers_env)
+  as.list(loaded_providers_env$providers)
 }
