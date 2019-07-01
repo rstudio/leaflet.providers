@@ -1,7 +1,7 @@
 Package: leaflet.providers
 Type: Package
 Title: Leaflet Providers 
-Version: 0.1.0
+Version: 1.8.0
 Author: Leslie Huang
 Maintainer: Leslie Huang <lesliehuang@nyu.edu>
 Description: Contains provider information from Leaflet.js for the leaflet R package.
