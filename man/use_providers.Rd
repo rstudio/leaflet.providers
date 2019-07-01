@@ -4,10 +4,10 @@
 \alias{use_providers}
 \title{Use a custom \code{leaflet_providers} object, e.g. providers data fetched with \link{get_providers}, with the \code{leaflet} package.}
 \usage{
-use_providers(custom_providers = NULL)
+use_providers(providers_info = NULL)
 }
 \arguments{
-\item{custom_providers}{A custom \code{leaflet_providers} object. If \code{NULL}, uses default providers.}
+\item{providers_info}{A custom \code{leaflet_providers} object. If \code{NULL}, uses default providers.}
 }
 \description{
 Use a custom \code{leaflet_providers} object, e.g. providers data fetched with \link{get_providers}, with the \code{leaflet} package.
@@ -20,6 +20,7 @@ if (require("V8") & require("jsonlite")) {
 
   # Set providers to a custom providers object (specific version number)
   use_providers(get_providers("1.4.0"))
+  use_providers("1.4.0")
 }
 
 }

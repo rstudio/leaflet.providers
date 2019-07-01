@@ -137,7 +137,7 @@ providers_default <- function() {
 
 #' Use a custom `leaflet_providers` object, e.g. providers data fetched with [get_providers], with the `leaflet` package.
 #'
-#' @param custom_providers A custom `leaflet_providers` object. If `NULL`, uses default providers.
+#' @param providers_info A custom `leaflet_providers` object. If `NULL`, uses default providers.
 #' @export
 #'
 #' @examples
@@ -148,17 +148,21 @@ providers_default <- function() {
 #'
 #'   # Set providers to a custom providers object (specific version number)
 #'   use_providers(get_providers("1.4.0"))
+#'   use_providers("1.4.0")
 #' }
 #'
 
-use_providers <- function(custom_providers = NULL) {
-  if (!is.null(custom_providers)) {
-    if (!inherits(custom_providers, "leaflet_providers")) {
-      stop("`custom_providers` must be a 'leaflet_providers' object.", call. = FALSE)
-    }
+use_providers <- function(providers_info = NULL) {
+  if (is.null(providers_info)) {
+    providers_info <- providers_default()
+  } else if (is.character(providers_info)) {
+    providers_info <- get_providers(providers_info)
+  }
+  if (!inherits(providers_info, "leaflet_providers")) {
+    stop("`providers_info` must be a 'leaflet_providers' object.", call. = FALSE)
   }
 
-  loaded_providers_env$providers_info <- custom_providers
+  loaded_providers_env$providers_info <- providers_info
 }
 
 #' Return currently loaded providers, providers_details, version, and HTML Dependency.
