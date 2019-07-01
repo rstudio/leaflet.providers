@@ -6,11 +6,11 @@
 <!-- badges: start -->
 
 [![Build
-status](https://ci.appveyor.com/api/projects/status/jn298w6o6pf8mpx1?svg=true)](https://ci.appveyor.com/project/leslie-huang/leaflet-providers)
+status](https://ci.appveyor.com/api/projects/status/github/rstudio/leaflet-providers?svg=true)](https://ci.appveyor.com/project/rstudio/leaflet-providers)
 [![Travis build
-status](https://travis-ci.org/leslie-huang/leaflet.providers.svg?branch=master)](https://travis-ci.org/leslie-huang/leaflet.providers)
+status](https://travis-ci.org/rstudio/leaflet.providers.svg?branch=master)](https://travis-ci.org/rstudio/leaflet.providers)
 [![Codecov test
-coverage](https://codecov.io/gh/leslie-huang/leaflet.providers/branch/master/graph/badge.svg)](https://codecov.io/gh/leslie-huang/leaflet.providers?branch=master)
+coverage](https://codecov.io/gh/rstudio/leaflet.providers/branch/master/graph/badge.svg)](https://codecov.io/gh/rstudio/leaflet.providers?branch=master)
 
 <!-- badges: end -->
 
