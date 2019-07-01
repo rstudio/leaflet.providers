@@ -3,6 +3,7 @@ unpkg_url <- "https://unpkg.com/leaflet-providers"
 loaded_providers_env <- new.env()
 
 # this is to facilitate handling http / https protocols in leaflet
+# https://github.com/rstudio/rstudio/issues/2661
 # remove after RStudio 1.1 / next version of leaflet
 https_replace <- c(
   "//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -49,6 +50,7 @@ get_providers <- function(version_num = NULL) {
   tmp_js_lines <- paste0(readLines(js_path), collapse = "\n")
 
   # this is to facilitate handling http / https protocols in leaflet
+  # https://github.com/rstudio/rstudio/issues/2661
   # remove after RStudio 1.1 / next version of leaflet
   for (url in https_replace) {
     tmp_js_lines <- gsub(
