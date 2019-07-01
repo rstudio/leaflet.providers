@@ -110,7 +110,7 @@ get_current_version_num <- function() {
 #' Return default providers, providers_details, version, and HTML Dependency.
 #' @export
 #'
-#' @return `leaflet_providers` object containing `providers_version_num`, `providers_data`, `providers_details_data`, and `src`
+#' @return `leaflet_providers` object containing `providers_version_num`, `providers`, `providers_details`, and `src`
 #'
 #' @examples
 #' str(providers_default(), max = 3, list.len = 4)
@@ -158,23 +158,20 @@ use_providers <- function(custom_providers = NULL) {
     }
   }
 
-  loaded_providers_env$providers <- custom_providers
+  loaded_providers_env$providers_info <- custom_providers
 }
-
 
 #' Return currently loaded providers, providers_details, version, and HTML Dependency.
 #' @export
 #'
-#' @return `leaflet_providers` object containing `providers_version_num`, `providers_data`, `providers_details_data`, and `src`
+#' @return `leaflet_providers` object containing `providers_version_num`, `providers`, `providers_details`, and `src`
 #'
 #' @examples
 #' str(providers_loaded(), max = 3, list.len = 4)
 #'
-
 providers_loaded <- function() {
-  if (is.null(loaded_providers_env$providers)) {
-    loaded_providers_env$providers <- providers_default()
-  }
-
-  as.list(loaded_providers_env$providers)
+  as.list(loaded_providers_env$providers_info)
 }
+
+#' @include providers_data.R
+use_providers(providers_default())
