@@ -1,5 +1,10 @@
 unpkg_url <- "https://unpkg.com/leaflet-providers"
 
+loaded_providers_env <- new.env()
+
+# this is to facilitate handling http / https protocols in leaflet
+# https://github.com/rstudio/rstudio/issues/2661
+# remove after RStudio 1.1 / next version of leaflet
 https_replace <- c(
   "//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
   "//{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png",
@@ -44,6 +49,9 @@ get_providers <- function(version_num = NULL) {
 
   tmp_js_lines <- paste0(readLines(js_path), collapse = "\n")
 
+  # this is to facilitate handling http / https protocols in leaflet
+  # https://github.com/rstudio/rstudio/issues/2661
+  # remove after RStudio 1.1 / next version of leaflet
   for (url in https_replace) {
     tmp_js_lines <- gsub(
       paste0("https:", url),
@@ -101,18 +109,16 @@ get_current_version_num <- function() {
   return(pkg_info$version)
 }
 
-
-#' Return providers, providers_details, version, and HTML Dependency.
+#' Return default providers, providers_details, version, and HTML Dependency.
 #' @export
 #'
-#' @return `leaflet_providers` object containing `providers_version_num`, `providers_data`, `providers_details_data`, and `src`
+#' @return `leaflet_providers` object containing `providers_version_num`, `providers`, `providers_details`, and `src`
 #'
 #' @examples
-#' str(providers(), max = 3, list.len = 4)
+#' str(providers_default(), max = 3, list.len = 4)
 #'
 
-providers <- function() {
-
+providers_default <- function() {
   # Move .js file from tmp to sysfile
   js_filename_for_inst <- paste0("leaflet-providers_", providers_version_num, ".js")
 
@@ -131,10 +137,9 @@ providers <- function() {
   return(providers_info)
 }
 
-#' Use custom providers data.
 #' Use a custom `leaflet_providers` object, e.g. providers data fetched with [get_providers], with the `leaflet` package.
 #'
-#' @param custom_providers A custom `leaflet_providers` object. If `NULL`, uses default providers.
+#' @param providers_info A custom `leaflet_providers` object. If `NULL`, uses default providers.
 #' @export
 #'
 #' @examples
@@ -143,18 +148,36 @@ providers <- function() {
 #'   # Set providers to latest providers
 #'   use_providers(get_providers())
 #'
-#'   # Set providers to defaults providers from leaflet.providers package
-#'   use_providers()
+#'   # Set providers to a custom providers object (specific version number)
+#'   use_providers(get_providers("1.4.0"))
+#'   use_providers("1.4.0")
 #' }
 #'
 
-use_providers <- function(custom_providers = NULL) {
-  if (!is.null(custom_providers)) {
-    if (!inherits(custom_providers, "leaflet_providers")) {
-      stop("`custom_providers` must be a 'leaflet_providers' object.", call. = FALSE)
-    }
+use_providers <- function(providers_info = NULL) {
+  if (is.null(providers_info)) {
+    providers_info <- providers_default()
+  } else if (is.character(providers_info)) {
+    providers_info <- get_providers(providers_info)
+  }
+  if (!inherits(providers_info, "leaflet_providers")) {
+    stop("`providers_info` must be a 'leaflet_providers' object.", call. = FALSE)
   }
 
-  options(leaflet.providers = custom_providers)
-  invisible(TRUE)
+  loaded_providers_env$providers_info <- providers_info
 }
+
+#' Return currently loaded providers, providers_details, version, and HTML Dependency.
+#' @export
+#'
+#' @return `leaflet_providers` object containing `providers_version_num`, `providers`, `providers_details`, and `src`
+#'
+#' @examples
+#' str(providers_loaded(), max = 3, list.len = 4)
+#'
+providers_loaded <- function() {
+  as.list(loaded_providers_env$providers_info)
+}
+
+#' @include providers_data.R
+use_providers(providers_default())
