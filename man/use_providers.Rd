@@ -13,7 +13,7 @@ use_providers(providers_info = NULL)
 Use a custom \code{leaflet_providers} object, e.g. providers data fetched with \link{get_providers}, with the \code{leaflet} package.
 }
 \examples{
-
+\donttest{
 if (require("V8") & require("jsonlite")) {
   # Set providers to latest providers
   use_providers(get_providers())
@@ -22,5 +22,5 @@ if (require("V8") & require("jsonlite")) {
   use_providers(get_providers("1.4.0"))
   use_providers("1.4.0")
 }
-
+}
 }

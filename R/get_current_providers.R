@@ -34,9 +34,12 @@ https_replace <- c(
 #' @return `leaflet_providers` object containing `providers_version_num`, `providers_data`, `providers_details_data`, `src`
 #'
 #' @examples
-#' get_providers()
-#' get_providers("1.8.0")
-#'
+#' \donttest{
+#' if (require("V8") && require("jsonlite")) {
+#'   get_providers()
+#'   get_providers("1.8.0")
+#' }
+#' }
 
 get_providers <- function(version_num = NULL) {
   # Load providers.js file
@@ -143,8 +146,8 @@ providers_default <- function() {
 #' @export
 #'
 #' @examples
-#'
-#' if (require("V8") & require("jsonlite")) {
+#' \donttest{
+#' if (require("V8") && require("jsonlite")) {
 #'   # Set providers to latest providers
 #'   use_providers(get_providers())
 #'
@@ -152,7 +155,7 @@ providers_default <- function() {
 #'   use_providers(get_providers("1.4.0"))
 #'   use_providers("1.4.0")
 #' }
-#'
+#' }
 
 use_providers <- function(providers_info = NULL) {
   if (is.null(providers_info)) {
