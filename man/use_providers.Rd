@@ -14,7 +14,7 @@ Use a custom \code{leaflet_providers} object, e.g. providers data fetched with \
 }
 \examples{
 \donttest{
-if (require("V8") & require("jsonlite")) {
+if (require("V8") && require("jsonlite")) {
   # Set providers to latest providers
   use_providers(get_providers())
 
