@@ -1,6 +1,25 @@
-# 2019-07-05
+# 2019-07-09
 
- This submission updates `providers` and `providers.details`.
+## Resubmission
+
+This is a resubmission. In this version I have:
+
+* Provided a link to the leaflet-providers.js website in the DESCRIPTION.
+* Expanded the DESCRIPTION of the package.
+
+CRAN comments:
+
+> Please add a link to the leaflet providers to the description field of
+> your DESCRIPTION file in the form
+> \<http:...> or \<https:...>
+> with angle brackets for auto-linking and no space after 'http:' and
+> 'https:'.
+>
+> The Description field is intended to be a (one paragraph) description
+> of what the package does and why it may be useful.
+> Please elaborate.
+>
+> Please fix and resubmit.
 
 ## Test environments
 * local OS X install, R 3.6.0

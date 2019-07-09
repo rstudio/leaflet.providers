@@ -1,30 +1,34 @@
 Package: leaflet.providers
 Type: Package
-Title: Leaflet Providers 
+Title: Leaflet Providers
 Version: 1.8.0
 Authors@R: c(
-        person("Leslie", "Huang", email = "lesliehuang@nyu.edu", role = c("aut", "cre")),
-        person("Leaflet Providers contributors", role = c("ctb", "cph"), comment = "Leaflet Providers plugin"),
-        person("RStudio", role = c("cph", "fnd"))
+      person("Leslie", "Huang", email = "lesliehuang@nyu.edu", role = c("aut", "cre")),
+      person("Leaflet Providers contributors", role = c("ctb", "cph"), comment = "Leaflet Providers plugin"),
+      person("RStudio", role = c("cph", "fnd"))
     )
 Maintainer: Leslie Huang <lesliehuang@nyu.edu>
-Description: Contains provider information from Leaflet.js for the leaflet R package.
+Description: Contains third-party map tile provider information from
+    'Leaflet.js', <https://github.com/leaflet-extras/leaflet-providers>, to be
+    used with the 'leaflet' R package. Additionally, 'leaflet.providers'
+    enables users to retrieve up-to-date provider information between package
+    updates.
 License: BSD_2_clause + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Depends:
     R (>= 2.10)
-Suggests: 
+Suggests:
     V8,
     jsonlite,
     testthat (>= 2.1.0)
 Language: en-US
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
-Imports: 
+Imports:
     htmltools
 URL: https://github.com/rstudio/leaflet.providers
 BugReports: https://github.com/rstudio/leaflet.providers/issues
-Collate: 
+Collate:
     'providers_data.R'
     'get_current_providers.R'
