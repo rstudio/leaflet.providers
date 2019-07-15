@@ -16,7 +16,10 @@ get_providers(version_num = NULL)
 Fetch leaflet providers from Leaflet.js.
 }
 \examples{
-get_providers()
-get_providers("1.8.0")
-
+\donttest{
+if (require("V8") && require("jsonlite")) {
+  get_providers()
+  get_providers("1.8.0")
+}
+}
 }

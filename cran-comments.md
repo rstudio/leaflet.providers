@@ -1,11 +1,34 @@
-# 2019-06-14 
+# 2019-07-09
 
- This submission updates `providers` and `providers.details`. 
+## Resubmission
+
+This is a resubmission. In this version I have:
+
+* Provided a link to the leaflet-providers.js website in the DESCRIPTION.
+* Expanded the DESCRIPTION of the package.
+
+CRAN comments:
+
+> Please add a link to the leaflet providers to the description field of
+> your DESCRIPTION file in the form
+> \<http:...> or \<https:...>
+> with angle brackets for auto-linking and no space after 'http:' and
+> 'https:'.
+>
+> The Description field is intended to be a (one paragraph) description
+> of what the package does and why it may be useful.
+> Please elaborate.
+>
+> Please fix and resubmit.
 
 ## Test environments
 * local OS X install, R 3.6.0
 * ubuntu 14.04 (on travis-ci), R 3.6.0
-* win-builder (devel and release)
+* win-builder (oldrel, devel and release)
+* rhub
+  * windows/R-devel
+  * ubuntu 16.04/R-release
+  * fedora linux/R-devel
 
 ## R CMD check results
 
@@ -16,12 +39,3 @@
 ## Reverse dependencies
 
 There are currently no downstream dependencies for this package.
-
-
-## revdepcheck results
-
-We checked 0 reverse dependencies, comparing R CMD check results across CRAN and dev versions of this package.
-
- * We saw 0 new problems
- * We failed to check 0 packages
-
