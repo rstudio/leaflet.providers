@@ -59,13 +59,16 @@ devtools::check()
 spelling::spell_check_test(vignettes = TRUE, error = FALSE,
                            skip_on_cran = TRUE)
 
-# revdepcheck::revdep_check() # fails on pkgs not on CRAN
+revdepcheck::revdep_check() # fails on pkgs not on CRAN
 
-# devtools::check_win_oldrelease()
-# devtools::check_win_release()
-# devtools::check_win_devel()
+devtools::check_win_oldrelease()
+devtools::check_win_release()
+devtools::check_win_devel()
 
-rhub_output <- rhub::check_for_cran()
+rhub_output <- rhub::check_for_cran(
+  env_vars = c(`_R_CHECK_FORCE_SUGGESTS_` = "false", `_R_CHECK_CRAN_INCOMING_USE_ASPELL_` = "true"),
+  show_status = TRUE
+)
 
 # Generate revdep CRAN report (to include in cran-comments.md)
 revdep_report_results <- capture.output(revdepcheck::revdep_report_cran())
