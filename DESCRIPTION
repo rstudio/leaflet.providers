@@ -3,11 +3,12 @@ Type: Package
 Title: Leaflet Providers
 Version: 1.8.0
 Authors@R: c(
-      person("Leslie", "Huang", email = "lesliehuang@nyu.edu", role = c("aut", "cre")),
+      person("Leslie", "Huang", email = "lesliehuang@nyu.edu", role = c("aut")),
+      person("Barret", "Schloerke", email = "barret@rstudio.com", role = c("ctb", "cre"),
+        comment = c(ORCID = "0000-0001-9986-114X")),
       person("Leaflet Providers contributors", role = c("ctb", "cph"), comment = "Leaflet Providers plugin"),
       person("RStudio", role = c("cph", "fnd"))
     )
-Maintainer: Leslie Huang <lesliehuang@nyu.edu>
 Description: Contains third-party map tile provider information from
     'Leaflet.js', <https://github.com/leaflet-extras/leaflet-providers>, to be
     used with the 'leaflet' R package. Additionally, 'leaflet.providers'
