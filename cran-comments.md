@@ -1,41 +1,44 @@
-# 2019-07-09
+# 2019-11-06 
 
-## Resubmission
+ This submission updates `providers` and `providers.details`. 
 
-This is a resubmission. In this version I have:
-
-* Provided a link to the leaflet-providers.js website in the DESCRIPTION.
-* Expanded the DESCRIPTION of the package.
-
-CRAN comments:
-
-> Please add a link to the leaflet providers to the description field of
-> your DESCRIPTION file in the form
-> \<http:...> or \<https:...>
-> with angle brackets for auto-linking and no space after 'http:' and
-> 'https:'.
->
-> The Description field is intended to be a (one paragraph) description
-> of what the package does and why it may be useful.
-> Please elaborate.
->
-> Please fix and resubmit.
-
+ 
 ## Test environments
 * local OS X install, R 3.6.0
-* ubuntu 14.04 (on travis-ci), R 3.6.0
-* win-builder (oldrel, devel and release)
-* rhub
-  * windows/R-devel
-  * ubuntu 16.04/R-release
-  * fedora linux/R-devel
+* ubuntu 14.04 (on travis-ci), R 3.6.0, R 3.5.3, R devel
+* win-builder (devel and release)
 
 ## R CMD check results
 
 0 errors | 0 warnings | 1 note
 
 * This is a new release.
+ 
 
-## Reverse dependencies
+ ## revdepcheck results
 
-There are currently no downstream dependencies for this package.
+We checked 0 reverse dependencies, comparing R CMD check results across CRAN and dev versions of this package.
+
+ * We saw 0 new problems
+ * We failed to check 0 packages
+ 
+ ## Test environments
+- R-hub windows-x86_64-devel (r-devel)
+- R-hub ubuntu-gcc-release (r-release)
+- R-hub fedora-clang-devel (r-devel)
+
+## R CMD check results
+❯ On windows-x86_64-devel (r-devel), ubuntu-gcc-release (r-release)
+  checking CRAN incoming feasibility ... NOTE
+  Maintainer: 'Barret Schloerke <barret@rstudio.com>'
+    Barret Schloerke <barret@rstudio.com>
+  
+    Leslie Huang <lesliehuang@nyu.edu>
+  Old maintainer(s):
+  New maintainer:
+
+❯ On fedora-clang-devel (r-devel)
+  checking package dependencies ... NOTE
+  Package suggested but not available for checking: ‘V8’
+
+0 errors ✔ | 0 warnings ✔ | 2 notes ✖

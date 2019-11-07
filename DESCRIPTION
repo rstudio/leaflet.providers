@@ -1,7 +1,7 @@
 Package: leaflet.providers
 Type: Package
 Title: Leaflet Providers
-Version: 1.8.0
+Version: 1.9.0
 Authors@R: c(
       person("Leslie", "Huang", email = "lesliehuang@nyu.edu", role = c("aut")),
       person("Barret", "Schloerke", email = "barret@rstudio.com", role = c("ctb", "cre"),
