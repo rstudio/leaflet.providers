@@ -67,11 +67,15 @@ devtools::check_win_devel()
 
 rhub_output <- rhub::check_for_cran(
   env_vars = c(`_R_CHECK_FORCE_SUGGESTS_` = "false", `_R_CHECK_CRAN_INCOMING_USE_ASPELL_` = "true"),
-  show_status = TRUE
+  show_status = FALSE
 )
+for (i in seq_len(nrow(rhub_output$urls()))) {
+  rhub_output$livelog(i)
+}
 
 # Generate revdep CRAN report (to include in cran-comments.md)
 revdep_report_results <- capture.output(revdepcheck::revdep_report_cran())
+rhub_summary <- capture.output({rhub_output$cran_summary()})
 
 cran_comments_msg <- "
 ## Test environments
@@ -88,13 +92,13 @@ cran_comments_msg <- "
 
 # Auto-update cran-comments.md
 cat(file = "cran-comments.md",
-    "#", Sys.Date(),
-    "\n\n",
-    "This submission updates `providers` and `providers.details`.",
-    "\n\n",
-    cran_comments_msg,
-    "\n\n",
-    paste0(revdep_report_results, collapse = "\n"),
-    "\n",
-    paste0(rhub_output$cran_summary(), collapse = "\n")
-    )
+  "#", as.character(Sys.Date()),
+  "\n\n",
+  "This submission updates `providers` and `providers.details`.",
+  "\n\n",
+  cran_comments_msg,
+  "\n\n",
+  paste0(revdep_report_results, collapse = "\n"),
+  "\n",
+  paste0(rhub_summary, collapse = "\n")
+)
