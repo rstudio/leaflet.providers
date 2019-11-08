@@ -3,7 +3,7 @@
 language: R
 cache: packages
 
-r_binary_packages:
+r_packages:
   - lintr
   - covr
 
