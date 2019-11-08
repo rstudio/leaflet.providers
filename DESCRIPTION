@@ -26,8 +26,6 @@ Suggests:
 Language: en-US
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
-Imports:
-    htmltools
 URL: https://github.com/rstudio/leaflet.providers
 BugReports: https://github.com/rstudio/leaflet.providers/issues
 Collate:
