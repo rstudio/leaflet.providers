@@ -43,10 +43,13 @@ Barret
 * local OS X install, R 3.6.1
 * ubuntu 14.04 (on travis-ci), release, oldrel, devel
 * win-builder (devel and release)
+* R-hub windows-x86_64-devel (r-devel)
+* R-hub ubuntu-gcc-release (r-release)
+* R-hub fedora-clang-devel (r-devel)
 
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
+#### For all testing environments except R-hub fedora...
 
 NOTE:
 * checking CRAN incoming feasibility ... NOTE
@@ -57,23 +60,19 @@ New maintainer:
 Old maintainer(s):
   Leslie Huang <lesliehuang@nyu.edu>
 
+0 errors | 0 warnings | 1 note
 
-## R-hub Test environments
-- R-hub windows-x86_64-devel (r-devel)
-- R-hub ubuntu-gcc-release (r-release)
-- R-hub fedora-clang-devel (r-devel)
 
-## R CMD check results
-❯ On windows-x86_64-devel (r-devel), ubuntu-gcc-release (r-release)
-  checking CRAN incoming feasibility ... NOTE
-  Maintainer: 'Barret Schloerke <barret@rstudio.com>'
-  New maintainer:
-    Barret Schloerke <barret@rstudio.com>
-  Old maintainer(s):
-    Leslie Huang <lesliehuang@nyu.edu>
+#### On R-hub fedora-clang-devel (r-devel)
+* checking CRAN incoming feasibility ... NOTE
+Maintainer: 'Barret Schloerke <barret@rstudio.com>'
 
-❯ On fedora-clang-devel (r-devel)
-  checking package dependencies ... NOTE
+New maintainer:
+  Barret Schloerke <barret@rstudio.com>
+Old maintainer(s):
+  Leslie Huang <lesliehuang@nyu.edu>
+
+*  checking package dependencies ... NOTE
   Package suggested but not available for checking: ‘V8’
 
 0 errors ✔ | 0 warnings ✔ | 2 notes ✖
