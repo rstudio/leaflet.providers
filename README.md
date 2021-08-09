@@ -88,13 +88,6 @@ str(providers_default())
     #>   ..$ Thunderforest.Pioneer              : chr "Thunderforest.Pioneer"
     #>   ..$ Thunderforest.MobileAtlas          : chr "Thunderforest.MobileAtlas"
     #>   ..$ Thunderforest.Neighbourhood        : chr "Thunderforest.Neighbourhood"
-    #>   ..$ OpenMapSurfer                      : chr "OpenMapSurfer"
-    #>   ..$ OpenMapSurfer.Roads                : chr "OpenMapSurfer.Roads"
-    #>   ..$ OpenMapSurfer.Hybrid               : chr "OpenMapSurfer.Hybrid"
-    #>   ..$ OpenMapSurfer.AdminBounds          : chr "OpenMapSurfer.AdminBounds"
-    #>   ..$ OpenMapSurfer.ContourLines         : chr "OpenMapSurfer.ContourLines"
-    #>   ..$ OpenMapSurfer.Hillshade            : chr "OpenMapSurfer.Hillshade"
-    #>   ..$ OpenMapSurfer.ElementsAtRisk       : chr "OpenMapSurfer.ElementsAtRisk"
     #>   ..$ Hydda                              : chr "Hydda"
     #>   ..$ Hydda.Full                         : chr "Hydda.Full"
     #>   ..$ Hydda.Base                         : chr "Hydda.Base"
@@ -305,41 +298,6 @@ str(providers_default())
     #>   .. .. ..$ Pioneer      : chr "pioneer"
     #>   .. .. ..$ MobileAtlas  : chr "mobile-atlas"
     #>   .. .. ..$ Neighbourhood: chr "neighbourhood"
-    #>   ..$ OpenMapSurfer   :List of 3
-    #>   .. ..$ url     : chr "https://maps.heigit.org/openmapsurfer/tiles/{variant}/webmercator/{z}/{x}/{y}.png"
-    #>   .. ..$ options :List of 3
-    #>   .. .. ..$ maxZoom    : int 19
-    #>   .. .. ..$ variant    : chr "roads"
-    #>   .. .. ..$ attribution: chr "Imagery from <a href=\"http://giscience.uni-hd.de/\">GIScience Research Group @ University of Heidelberg</a> | Map data "
-    #>   .. ..$ variants:List of 6
-    #>   .. .. ..$ Roads         :List of 1
-    #>   .. .. .. ..$ options:List of 2
-    #>   .. .. .. .. ..$ variant    : chr "roads"
-    #>   .. .. .. .. ..$ attribution: chr "{attribution.OpenMapSurfer}{attribution.OpenStreetMap}"
-    #>   .. .. ..$ Hybrid        :List of 1
-    #>   .. .. .. ..$ options:List of 2
-    #>   .. .. .. .. ..$ variant    : chr "hybrid"
-    #>   .. .. .. .. ..$ attribution: chr "{attribution.OpenMapSurfer}{attribution.OpenStreetMap}"
-    #>   .. .. ..$ AdminBounds   :List of 1
-    #>   .. .. .. ..$ options:List of 3
-    #>   .. .. .. .. ..$ variant    : chr "adminb"
-    #>   .. .. .. .. ..$ maxZoom    : int 18
-    #>   .. .. .. .. ..$ attribution: chr "{attribution.OpenMapSurfer}{attribution.OpenStreetMap}"
-    #>   .. .. ..$ ContourLines  :List of 1
-    #>   .. .. .. ..$ options:List of 4
-    #>   .. .. .. .. ..$ variant    : chr "asterc"
-    #>   .. .. .. .. ..$ maxZoom    : int 18
-    #>   .. .. .. .. ..$ minZoom    : int 13
-    #>   .. .. .. .. ..$ attribution: chr "{attribution.OpenMapSurfer} <a href=\"https://lpdaac.usgs.gov/products/aster_policies\">ASTER GDEM</a>"
-    #>   .. .. ..$ Hillshade     :List of 1
-    #>   .. .. .. ..$ options:List of 3
-    #>   .. .. .. .. ..$ variant    : chr "asterh"
-    #>   .. .. .. .. ..$ maxZoom    : int 18
-    #>   .. .. .. .. ..$ attribution: chr "{attribution.OpenMapSurfer} <a href=\"https://lpdaac.usgs.gov/products/aster_policies\">ASTER GDEM</a>, <a href"| __truncated__
-    #>   .. .. ..$ ElementsAtRisk:List of 1
-    #>   .. .. .. ..$ options:List of 2
-    #>   .. .. .. .. ..$ variant    : chr "elements_at_risk"
-    #>   .. .. .. .. ..$ attribution: chr "{attribution.OpenMapSurfer}{attribution.OpenStreetMap}"
     #>   ..$ Hydda           :List of 3
     #>   .. ..$ url     : chr "//{s}.tile.openstreetmap.se/hydda/{variant}/{z}/{x}/{y}.png"
     #>   .. ..$ options :List of 3
@@ -807,13 +765,6 @@ str(providers_loaded()$providers)
     #>  $ Thunderforest.Pioneer              : chr "Thunderforest.Pioneer"
     #>  $ Thunderforest.MobileAtlas          : chr "Thunderforest.MobileAtlas"
     #>  $ Thunderforest.Neighbourhood        : chr "Thunderforest.Neighbourhood"
-    #>  $ OpenMapSurfer                      : chr "OpenMapSurfer"
-    #>  $ OpenMapSurfer.Roads                : chr "OpenMapSurfer.Roads"
-    #>  $ OpenMapSurfer.Hybrid               : chr "OpenMapSurfer.Hybrid"
-    #>  $ OpenMapSurfer.AdminBounds          : chr "OpenMapSurfer.AdminBounds"
-    #>  $ OpenMapSurfer.ContourLines         : chr "OpenMapSurfer.ContourLines"
-    #>  $ OpenMapSurfer.Hillshade            : chr "OpenMapSurfer.Hillshade"
-    #>  $ OpenMapSurfer.ElementsAtRisk       : chr "OpenMapSurfer.ElementsAtRisk"
     #>  $ Hydda                              : chr "Hydda"
     #>  $ Hydda.Full                         : chr "Hydda.Full"
     #>  $ Hydda.Base                         : chr "Hydda.Base"
@@ -1035,41 +986,6 @@ str(providers_loaded()$providers_details)
     #>   .. ..$ Pioneer      : chr "pioneer"
     #>   .. ..$ MobileAtlas  : chr "mobile-atlas"
     #>   .. ..$ Neighbourhood: chr "neighbourhood"
-    #>  $ OpenMapSurfer   :List of 3
-    #>   ..$ url     : chr "https://maps.heigit.org/openmapsurfer/tiles/{variant}/webmercator/{z}/{x}/{y}.png"
-    #>   ..$ options :List of 3
-    #>   .. ..$ maxZoom    : int 19
-    #>   .. ..$ variant    : chr "roads"
-    #>   .. ..$ attribution: chr "Imagery from <a href=\"http://giscience.uni-hd.de/\">GIScience Research Group @ University of Heidelberg</a> | Map data "
-    #>   ..$ variants:List of 6
-    #>   .. ..$ Roads         :List of 1
-    #>   .. .. ..$ options:List of 2
-    #>   .. .. .. ..$ variant    : chr "roads"
-    #>   .. .. .. ..$ attribution: chr "{attribution.OpenMapSurfer}{attribution.OpenStreetMap}"
-    #>   .. ..$ Hybrid        :List of 1
-    #>   .. .. ..$ options:List of 2
-    #>   .. .. .. ..$ variant    : chr "hybrid"
-    #>   .. .. .. ..$ attribution: chr "{attribution.OpenMapSurfer}{attribution.OpenStreetMap}"
-    #>   .. ..$ AdminBounds   :List of 1
-    #>   .. .. ..$ options:List of 3
-    #>   .. .. .. ..$ variant    : chr "adminb"
-    #>   .. .. .. ..$ maxZoom    : int 18
-    #>   .. .. .. ..$ attribution: chr "{attribution.OpenMapSurfer}{attribution.OpenStreetMap}"
-    #>   .. ..$ ContourLines  :List of 1
-    #>   .. .. ..$ options:List of 4
-    #>   .. .. .. ..$ variant    : chr "asterc"
-    #>   .. .. .. ..$ maxZoom    : int 18
-    #>   .. .. .. ..$ minZoom    : int 13
-    #>   .. .. .. ..$ attribution: chr "{attribution.OpenMapSurfer} <a href=\"https://lpdaac.usgs.gov/products/aster_policies\">ASTER GDEM</a>"
-    #>   .. ..$ Hillshade     :List of 1
-    #>   .. .. ..$ options:List of 3
-    #>   .. .. .. ..$ variant    : chr "asterh"
-    #>   .. .. .. ..$ maxZoom    : int 18
-    #>   .. .. .. ..$ attribution: chr "{attribution.OpenMapSurfer} <a href=\"https://lpdaac.usgs.gov/products/aster_policies\">ASTER GDEM</a>, <a href"| __truncated__
-    #>   .. ..$ ElementsAtRisk:List of 1
-    #>   .. .. ..$ options:List of 2
-    #>   .. .. .. ..$ variant    : chr "elements_at_risk"
-    #>   .. .. .. ..$ attribution: chr "{attribution.OpenMapSurfer}{attribution.OpenStreetMap}"
     #>  $ Hydda           :List of 3
     #>   ..$ url     : chr "//{s}.tile.openstreetmap.se/hydda/{variant}/{z}/{x}/{y}.png"
     #>   ..$ options :List of 3
