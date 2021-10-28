@@ -63,8 +63,8 @@ str(providers_default())
 <div style="height:150px; overflow-y: scroll;">
 
     #> List of 4
-    #>  $ version_num      : chr "1.8.0"
-    #>  $ providers        :List of 157
+    #>  $ version_num      : chr "1.9.0"
+    #>  $ providers        :List of 164
     #>   ..$ OpenStreetMap                      : chr "OpenStreetMap"
     #>   ..$ OpenStreetMap.Mapnik               : chr "OpenStreetMap.Mapnik"
     #>   ..$ OpenStreetMap.DE                   : chr "OpenStreetMap.DE"
@@ -110,8 +110,13 @@ str(providers_default())
     #>   ..$ Stamen.Watercolor                  : chr "Stamen.Watercolor"
     #>   ..$ Stamen.Terrain                     : chr "Stamen.Terrain"
     #>   ..$ Stamen.TerrainBackground           : chr "Stamen.TerrainBackground"
+    #>   ..$ Stamen.TerrainLabels               : chr "Stamen.TerrainLabels"
     #>   ..$ Stamen.TopOSMRelief                : chr "Stamen.TopOSMRelief"
     #>   ..$ Stamen.TopOSMFeatures              : chr "Stamen.TopOSMFeatures"
+    #>   ..$ TomTom                             : chr "TomTom"
+    #>   ..$ TomTom.Basic                       : chr "TomTom.Basic"
+    #>   ..$ TomTom.Hybrid                      : chr "TomTom.Hybrid"
+    #>   ..$ TomTom.Labels                      : chr "TomTom.Labels"
     #>   ..$ Esri                               : chr "Esri"
     #>   ..$ Esri.WorldStreetMap                : chr "Esri.WorldStreetMap"
     #>   ..$ Esri.DeLorme                       : chr "Esri.DeLorme"
@@ -143,6 +148,7 @@ str(providers_default())
     #>   ..$ HERE.normalDayGreyMobile           : chr "HERE.normalDayGreyMobile"
     #>   ..$ HERE.normalDayTransit              : chr "HERE.normalDayTransit"
     #>   ..$ HERE.normalDayTransitMobile        : chr "HERE.normalDayTransitMobile"
+    #>   ..$ HERE.normalDayTraffic              : chr "HERE.normalDayTraffic"
     #>   ..$ HERE.normalNight                   : chr "HERE.normalNight"
     #>   ..$ HERE.normalNightMobile             : chr "HERE.normalNightMobile"
     #>   ..$ HERE.normalNightGrey               : chr "HERE.normalNightGrey"
@@ -159,6 +165,7 @@ str(providers_default())
     #>   ..$ HERE.hybridDayMobile               : chr "HERE.hybridDayMobile"
     #>   ..$ HERE.hybridDayTransit              : chr "HERE.hybridDayTransit"
     #>   ..$ HERE.hybridDayGrey                 : chr "HERE.hybridDayGrey"
+    #>   ..$ HERE.hybridDayTraffic              : chr "HERE.hybridDayTraffic"
     #>   ..$ HERE.pedestrianDay                 : chr "HERE.pedestrianDay"
     #>   ..$ HERE.pedestrianNight               : chr "HERE.pedestrianNight"
     #>   ..$ HERE.satelliteDay                  : chr "HERE.satelliteDay"
@@ -222,7 +229,7 @@ str(providers_default())
     #>   ..$ OneMapSG.Original                  : chr "OneMapSG.Original"
     #>   ..$ OneMapSG.Grey                      : chr "OneMapSG.Grey"
     #>   ..$ OneMapSG.LandLot                   : chr "OneMapSG.LandLot"
-    #>  $ providers_details:List of 27
+    #>  $ providers_details:List of 28
     #>   ..$ OpenStreetMap   :List of 3
     #>   .. ..$ url     : chr "//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     #>   .. ..$ options :List of 2
@@ -366,7 +373,7 @@ str(providers_default())
     #>   .. .. ..$ maxZoom    : int 20
     #>   .. .. ..$ variant    : chr "toner"
     #>   .. .. ..$ ext        : chr "png"
-    #>   .. ..$ variants:List of 11
+    #>   .. ..$ variants:List of 12
     #>   .. .. ..$ Toner            : chr "toner"
     #>   .. .. ..$ TonerBackground  : chr "toner-background"
     #>   .. .. ..$ TonerHybrid      : chr "toner-hybrid"
@@ -390,6 +397,11 @@ str(providers_default())
     #>   .. .. .. .. ..$ variant: chr "terrain-background"
     #>   .. .. .. .. ..$ minZoom: int 0
     #>   .. .. .. .. ..$ maxZoom: int 18
+    #>   .. .. ..$ TerrainLabels    :List of 1
+    #>   .. .. .. ..$ options:List of 3
+    #>   .. .. .. .. ..$ variant: chr "terrain-labels"
+    #>   .. .. .. .. ..$ minZoom: int 0
+    #>   .. .. .. .. ..$ maxZoom: int 18
     #>   .. .. ..$ TopOSMRelief     :List of 2
     #>   .. .. .. ..$ url    : chr "//stamen-tiles-{s}.a.ssl.fastly.net/{variant}/{z}/{x}/{y}.{ext}"
     #>   .. .. .. ..$ options:List of 3
@@ -401,6 +413,20 @@ str(providers_default())
     #>   .. .. .. .. ..$ variant: chr "toposm-features"
     #>   .. .. .. .. ..$ bounds : int [1:2, 1:2] 22 51 -132 -56
     #>   .. .. .. .. ..$ opacity: num 0.9
+    #>   ..$ TomTom          :List of 3
+    #>   .. ..$ url     : chr "https://{s}.api.tomtom.com/map/1/tile/{variant}/{style}/{z}/{x}/{y}.{ext}?key={apikey}"
+    #>   .. ..$ options :List of 7
+    #>   .. .. ..$ variant    : chr "basic"
+    #>   .. .. ..$ maxZoom    : int 22
+    #>   .. .. ..$ attribution: chr "<a href=\"https://tomtom.com\" target=\"_blank\">&copy;  1992 - 2019 TomTom.</a> "
+    #>   .. .. ..$ subdomains : chr "abcd"
+    #>   .. .. ..$ style      : chr "main"
+    #>   .. .. ..$ ext        : chr "png"
+    #>   .. .. ..$ apikey     : chr "<insert your API key here>"
+    #>   .. ..$ variants:List of 3
+    #>   .. .. ..$ Basic : chr "basic"
+    #>   .. .. ..$ Hybrid: chr "hybrid"
+    #>   .. .. ..$ Labels: chr "labels"
     #>   ..$ Esri            :List of 3
     #>   .. ..$ url     : chr "//server.arcgisonline.com/ArcGIS/rest/services/{variant}/MapServer/tile/{z}/{y}/{x}"
     #>   .. ..$ options :List of 2
@@ -488,7 +514,7 @@ str(providers_default())
     #>   .. .. ..$ language   : chr "eng"
     #>   .. .. ..$ format     : chr "png8"
     #>   .. .. ..$ size       : chr "256"
-    #>   .. ..$ variants:List of 28
+    #>   .. ..$ variants:List of 30
     #>   .. .. ..$ normalDay               : chr "normal.day"
     #>   .. .. ..$ normalDayCustom         : chr "normal.day.custom"
     #>   .. .. ..$ normalDayGrey           : chr "normal.day.grey"
@@ -496,6 +522,11 @@ str(providers_default())
     #>   .. .. ..$ normalDayGreyMobile     : chr "normal.day.grey.mobile"
     #>   .. .. ..$ normalDayTransit        : chr "normal.day.transit"
     #>   .. .. ..$ normalDayTransitMobile  : chr "normal.day.transit.mobile"
+    #>   .. .. ..$ normalDayTraffic        :List of 1
+    #>   .. .. .. ..$ options:List of 3
+    #>   .. .. .. .. ..$ variant: chr "normal.traffic.day"
+    #>   .. .. .. .. ..$ base   : chr "traffic"
+    #>   .. .. .. .. ..$ type   : chr "traffictile"
     #>   .. .. ..$ normalNight             : chr "normal.night"
     #>   .. .. ..$ normalNightMobile       : chr "normal.night.mobile"
     #>   .. .. ..$ normalNightGrey         : chr "normal.night.grey"
@@ -532,6 +563,11 @@ str(providers_default())
     #>   .. .. .. ..$ options:List of 2
     #>   .. .. .. .. ..$ base   : chr "aerial"
     #>   .. .. .. .. ..$ variant: chr "hybrid.grey.day"
+    #>   .. .. ..$ hybridDayTraffic        :List of 1
+    #>   .. .. .. ..$ options:List of 3
+    #>   .. .. .. .. ..$ variant: chr "hybrid.traffic.day"
+    #>   .. .. .. .. ..$ base   : chr "traffic"
+    #>   .. .. .. .. ..$ type   : chr "traffictile"
     #>   .. .. ..$ pedestrianDay           : chr "pedestrian.day"
     #>   .. .. ..$ pedestrianNight         : chr "pedestrian.night"
     #>   .. .. ..$ satelliteDay            :List of 1
@@ -772,7 +808,7 @@ providers instead of the default provider data.
 
 ``` r
 providers_loaded()$version_num
-#> [1] "1.8.0"
+#> [1] "1.9.0"
 ```
 
 #### Supported tile providers
@@ -783,7 +819,7 @@ str(providers_loaded()$providers)
 
 <div style="height:150px; overflow-y: scroll;">
 
-    #> List of 157
+    #> List of 164
     #>  $ OpenStreetMap                      : chr "OpenStreetMap"
     #>  $ OpenStreetMap.Mapnik               : chr "OpenStreetMap.Mapnik"
     #>  $ OpenStreetMap.DE                   : chr "OpenStreetMap.DE"
@@ -829,8 +865,13 @@ str(providers_loaded()$providers)
     #>  $ Stamen.Watercolor                  : chr "Stamen.Watercolor"
     #>  $ Stamen.Terrain                     : chr "Stamen.Terrain"
     #>  $ Stamen.TerrainBackground           : chr "Stamen.TerrainBackground"
+    #>  $ Stamen.TerrainLabels               : chr "Stamen.TerrainLabels"
     #>  $ Stamen.TopOSMRelief                : chr "Stamen.TopOSMRelief"
     #>  $ Stamen.TopOSMFeatures              : chr "Stamen.TopOSMFeatures"
+    #>  $ TomTom                             : chr "TomTom"
+    #>  $ TomTom.Basic                       : chr "TomTom.Basic"
+    #>  $ TomTom.Hybrid                      : chr "TomTom.Hybrid"
+    #>  $ TomTom.Labels                      : chr "TomTom.Labels"
     #>  $ Esri                               : chr "Esri"
     #>  $ Esri.WorldStreetMap                : chr "Esri.WorldStreetMap"
     #>  $ Esri.DeLorme                       : chr "Esri.DeLorme"
@@ -862,6 +903,7 @@ str(providers_loaded()$providers)
     #>  $ HERE.normalDayGreyMobile           : chr "HERE.normalDayGreyMobile"
     #>  $ HERE.normalDayTransit              : chr "HERE.normalDayTransit"
     #>  $ HERE.normalDayTransitMobile        : chr "HERE.normalDayTransitMobile"
+    #>  $ HERE.normalDayTraffic              : chr "HERE.normalDayTraffic"
     #>  $ HERE.normalNight                   : chr "HERE.normalNight"
     #>  $ HERE.normalNightMobile             : chr "HERE.normalNightMobile"
     #>  $ HERE.normalNightGrey               : chr "HERE.normalNightGrey"
@@ -878,6 +920,7 @@ str(providers_loaded()$providers)
     #>  $ HERE.hybridDayMobile               : chr "HERE.hybridDayMobile"
     #>  $ HERE.hybridDayTransit              : chr "HERE.hybridDayTransit"
     #>  $ HERE.hybridDayGrey                 : chr "HERE.hybridDayGrey"
+    #>  $ HERE.hybridDayTraffic              : chr "HERE.hybridDayTraffic"
     #>  $ HERE.pedestrianDay                 : chr "HERE.pedestrianDay"
     #>  $ HERE.pedestrianNight               : chr "HERE.pedestrianNight"
     #>  $ HERE.satelliteDay                  : chr "HERE.satelliteDay"
@@ -952,7 +995,7 @@ str(providers_loaded()$providers_details)
 
 <div style="height:150px; overflow-y: scroll;">
 
-    #> List of 27
+    #> List of 28
     #>  $ OpenStreetMap   :List of 3
     #>   ..$ url     : chr "//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     #>   ..$ options :List of 2
@@ -1096,7 +1139,7 @@ str(providers_loaded()$providers_details)
     #>   .. ..$ maxZoom    : int 20
     #>   .. ..$ variant    : chr "toner"
     #>   .. ..$ ext        : chr "png"
-    #>   ..$ variants:List of 11
+    #>   ..$ variants:List of 12
     #>   .. ..$ Toner            : chr "toner"
     #>   .. ..$ TonerBackground  : chr "toner-background"
     #>   .. ..$ TonerHybrid      : chr "toner-hybrid"
@@ -1120,6 +1163,11 @@ str(providers_loaded()$providers_details)
     #>   .. .. .. ..$ variant: chr "terrain-background"
     #>   .. .. .. ..$ minZoom: int 0
     #>   .. .. .. ..$ maxZoom: int 18
+    #>   .. ..$ TerrainLabels    :List of 1
+    #>   .. .. ..$ options:List of 3
+    #>   .. .. .. ..$ variant: chr "terrain-labels"
+    #>   .. .. .. ..$ minZoom: int 0
+    #>   .. .. .. ..$ maxZoom: int 18
     #>   .. ..$ TopOSMRelief     :List of 2
     #>   .. .. ..$ url    : chr "//stamen-tiles-{s}.a.ssl.fastly.net/{variant}/{z}/{x}/{y}.{ext}"
     #>   .. .. ..$ options:List of 3
@@ -1131,6 +1179,20 @@ str(providers_loaded()$providers_details)
     #>   .. .. .. ..$ variant: chr "toposm-features"
     #>   .. .. .. ..$ bounds : int [1:2, 1:2] 22 51 -132 -56
     #>   .. .. .. ..$ opacity: num 0.9
+    #>  $ TomTom          :List of 3
+    #>   ..$ url     : chr "https://{s}.api.tomtom.com/map/1/tile/{variant}/{style}/{z}/{x}/{y}.{ext}?key={apikey}"
+    #>   ..$ options :List of 7
+    #>   .. ..$ variant    : chr "basic"
+    #>   .. ..$ maxZoom    : int 22
+    #>   .. ..$ attribution: chr "<a href=\"https://tomtom.com\" target=\"_blank\">&copy;  1992 - 2019 TomTom.</a> "
+    #>   .. ..$ subdomains : chr "abcd"
+    #>   .. ..$ style      : chr "main"
+    #>   .. ..$ ext        : chr "png"
+    #>   .. ..$ apikey     : chr "<insert your API key here>"
+    #>   ..$ variants:List of 3
+    #>   .. ..$ Basic : chr "basic"
+    #>   .. ..$ Hybrid: chr "hybrid"
+    #>   .. ..$ Labels: chr "labels"
     #>  $ Esri            :List of 3
     #>   ..$ url     : chr "//server.arcgisonline.com/ArcGIS/rest/services/{variant}/MapServer/tile/{z}/{y}/{x}"
     #>   ..$ options :List of 2
@@ -1218,7 +1280,7 @@ str(providers_loaded()$providers_details)
     #>   .. ..$ language   : chr "eng"
     #>   .. ..$ format     : chr "png8"
     #>   .. ..$ size       : chr "256"
-    #>   ..$ variants:List of 28
+    #>   ..$ variants:List of 30
     #>   .. ..$ normalDay               : chr "normal.day"
     #>   .. ..$ normalDayCustom         : chr "normal.day.custom"
     #>   .. ..$ normalDayGrey           : chr "normal.day.grey"
@@ -1226,6 +1288,11 @@ str(providers_loaded()$providers_details)
     #>   .. ..$ normalDayGreyMobile     : chr "normal.day.grey.mobile"
     #>   .. ..$ normalDayTransit        : chr "normal.day.transit"
     #>   .. ..$ normalDayTransitMobile  : chr "normal.day.transit.mobile"
+    #>   .. ..$ normalDayTraffic        :List of 1
+    #>   .. .. ..$ options:List of 3
+    #>   .. .. .. ..$ variant: chr "normal.traffic.day"
+    #>   .. .. .. ..$ base   : chr "traffic"
+    #>   .. .. .. ..$ type   : chr "traffictile"
     #>   .. ..$ normalNight             : chr "normal.night"
     #>   .. ..$ normalNightMobile       : chr "normal.night.mobile"
     #>   .. ..$ normalNightGrey         : chr "normal.night.grey"
@@ -1262,6 +1329,11 @@ str(providers_loaded()$providers_details)
     #>   .. .. ..$ options:List of 2
     #>   .. .. .. ..$ base   : chr "aerial"
     #>   .. .. .. ..$ variant: chr "hybrid.grey.day"
+    #>   .. ..$ hybridDayTraffic        :List of 1
+    #>   .. .. ..$ options:List of 3
+    #>   .. .. .. ..$ variant: chr "hybrid.traffic.day"
+    #>   .. .. .. ..$ base   : chr "traffic"
+    #>   .. .. .. ..$ type   : chr "traffictile"
     #>   .. ..$ pedestrianDay           : chr "pedestrian.day"
     #>   .. ..$ pedestrianNight         : chr "pedestrian.night"
     #>   .. ..$ satelliteDay            :List of 1
