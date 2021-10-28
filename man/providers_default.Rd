@@ -7,7 +7,8 @@
 providers_default()
 }
 \value{
-\code{leaflet_providers} object containing \code{providers_version_num}, \code{providers}, \code{providers_details}, and \code{src}
+\code{leaflet_providers} object containing \code{providers_version_num}, \code{providers},
+\code{providers_details}, and \code{src}
 }
 \description{
 Return default providers, providers_details, version, and HTML Dependency.

@@ -2,15 +2,17 @@
 % Please edit documentation in R/get_current_providers.R
 \name{use_providers}
 \alias{use_providers}
-\title{Use a custom \code{leaflet_providers} object, e.g. providers data fetched with \link{get_providers}, with the \code{leaflet} package.}
+\title{Use custom tile provider}
 \usage{
 use_providers(providers_info = NULL)
 }
 \arguments{
-\item{providers_info}{A custom \code{leaflet_providers} object. If \code{NULL}, uses default providers.}
+\item{providers_info}{A custom \code{leaflet_providers} object.
+If \code{NULL}, uses default providers.}
 }
 \description{
-Use a custom \code{leaflet_providers} object, e.g. providers data fetched with \link{get_providers}, with the \code{leaflet} package.
+Use a custom \code{leaflet_providers} object, e.g. providers data fetched with
+\link{get_providers}, with the \code{leaflet} package.
 }
 \examples{
 \donttest{

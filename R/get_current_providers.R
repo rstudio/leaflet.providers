@@ -29,9 +29,11 @@ https_replace <- c(
 #' Fetch leaflet providers from Leaflet.js.
 #' @export
 #'
-#' @param version_num Version number with which to update leaflet providers. If `NULL`, fetches most recent version.
+#' @param version_num Version number with which to update leaflet providers.
+#'   If `NULL`, fetches most recent version.
 #'
-#' @return `leaflet_providers` object containing `providers_version_num`, `providers_data`, `providers_details_data`, `src`
+#' @return `leaflet_providers` object containing `providers_version_num`, `providers_data`,
+#'   `providers_details_data`, `src`
 #'
 #' @examples
 #' \donttest{
@@ -67,8 +69,8 @@ get_providers <- function(version_num = NULL) {
   ct <- V8::v8()
 
   # create dummy Leaflet object
-  ct$eval("var L = {TileLayer : {extend: function(){return {};}},
-          Util : {extend: function(){return {};}},
+  ct$eval("var L = {TileLayer : {extend: function() { return {}; }},
+          Util : {extend: function() { return {}; }},
           tileLayer : {}}")
 
   ct$eval(tmp_js_lines)
@@ -115,7 +117,8 @@ get_current_version_num <- function() {
 #' Return default providers, providers_details, version, and HTML Dependency.
 #' @export
 #'
-#' @return `leaflet_providers` object containing `providers_version_num`, `providers`, `providers_details`, and `src`
+#' @return `leaflet_providers` object containing `providers_version_num`, `providers`,
+#'   `providers_details`, and `src`
 #'
 #' @examples
 #' str(providers_default(), max = 3, list.len = 4)
@@ -140,9 +143,13 @@ providers_default <- function() {
   return(providers_info)
 }
 
-#' Use a custom `leaflet_providers` object, e.g. providers data fetched with [get_providers], with the `leaflet` package.
+#' Use custom tile provider
 #'
-#' @param providers_info A custom `leaflet_providers` object. If `NULL`, uses default providers.
+#' Use a custom `leaflet_providers` object, e.g. providers data fetched with
+#' [get_providers], with the `leaflet` package.
+#'
+#' @param providers_info A custom `leaflet_providers` object.
+#'   If `NULL`, uses default providers.
 #' @export
 #'
 #' @examples
@@ -173,7 +180,8 @@ use_providers <- function(providers_info = NULL) {
 #' Return currently loaded providers, providers_details, version, and HTML Dependency.
 #' @export
 #'
-#' @return `leaflet_providers` object containing `providers_version_num`, `providers`, `providers_details`, and `src`
+#' @return `leaflet_providers` object containing `providers_version_num`, `providers`,
+#'   `providers_details`, and `src`
 #'
 #' @examples
 #' str(providers_loaded(), max = 3, list.len = 4)
