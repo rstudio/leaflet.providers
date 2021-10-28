@@ -8,9 +8,9 @@
 [![CRAN
 status](https://www.r-pkg.org/badges/version/leaflet.providers)](https://CRAN.R-project.org/package=leaflet.providers)
 [![Travis build
-status](https://travis-ci.org/rstudio/leaflet.providers.svg?branch=master)](https://travis-ci.org/rstudio/leaflet.providers)
+status](https://travis-ci.org/rstudio/leaflet.providers.svg?branch=main)](https://travis-ci.org/rstudio/leaflet.providers)
 [![Codecov test
-coverage](https://codecov.io/gh/rstudio/leaflet.providers/branch/master/graph/badge.svg)](https://codecov.io/gh/rstudio/leaflet.providers?branch=master)
+coverage](https://codecov.io/gh/rstudio/leaflet.providers/branch/main/graph/badge.svg)](https://codecov.io/gh/rstudio/leaflet.providers?branch=main)
 
 <!-- badges: end -->
 
@@ -57,7 +57,7 @@ custom providers.
 library(leaflet.providers)
 
 # at the time of writing, version 1.8.0
-str(providers_default()) 
+str(providers_default())
 ```
 
 <div style="height:150px; overflow-y: scroll;">
@@ -746,8 +746,8 @@ Users may use a specific version number of `leaflet-providers.js` by
 passing the version number to `use_providers()`.
 
 ``` r
-# Retrieve v 1.7.0 
-providers_170 <- get_providers("1.7.0") 
+# Retrieve v 1.7.0
+providers_170 <- get_providers("1.7.0")
 
 # Load custom providers data
 use_providers(providers_170)

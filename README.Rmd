@@ -16,8 +16,8 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/leaflet.providers)](https://CRAN.R-project.org/package=leaflet.providers)
-[![Travis build status](https://travis-ci.org/rstudio/leaflet.providers.svg?branch=master)](https://travis-ci.org/rstudio/leaflet.providers)
-[![Codecov test coverage](https://codecov.io/gh/rstudio/leaflet.providers/branch/master/graph/badge.svg)](https://codecov.io/gh/rstudio/leaflet.providers?branch=master)
+[![Travis build status](https://travis-ci.org/rstudio/leaflet.providers.svg?branch=main)](https://travis-ci.org/rstudio/leaflet.providers)
+[![Codecov test coverage](https://codecov.io/gh/rstudio/leaflet.providers/branch/main/graph/badge.svg)](https://codecov.io/gh/rstudio/leaflet.providers?branch=main)
 
 <!-- badges: end -->
 
@@ -51,7 +51,7 @@ The following are basic example of the default providers data that comes `leafle
 library(leaflet.providers)
 
 # at the time of writing, version 1.8.0
-str(providers_default()) 
+str(providers_default())
 ```
 
 <div style = "height:150px; overflow-y: scroll;">
@@ -66,11 +66,11 @@ str(providers_default(), list.len = 200)
 
 ### Fetch custom providers
 
-Users may use a specific version number of `leaflet-providers.js` by passing the version number to `use_providers()`. 
+Users may use a specific version number of `leaflet-providers.js` by passing the version number to `use_providers()`.
 
 ```{r customex}
-# Retrieve v 1.7.0 
-providers_170 <- get_providers("1.7.0") 
+# Retrieve v 1.7.0
+providers_170 <- get_providers("1.7.0")
 
 # Load custom providers data
 use_providers(providers_170)
