@@ -7,8 +7,7 @@
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/leaflet.providers)](https://CRAN.R-project.org/package=leaflet.providers)
-[![Travis build
-status](https://travis-ci.org/rstudio/leaflet.providers.svg?branch=main)](https://travis-ci.org/rstudio/leaflet.providers)
+[![R-CMD-check](https://github.com/rstudio/leaflet.providers/workflows/R-CMD-check/badge.svg)](https://github.com/rstudio/leaflet.providers/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/rstudio/leaflet.providers/branch/main/graph/badge.svg)](https://codecov.io/gh/rstudio/leaflet.providers?branch=main)
 
