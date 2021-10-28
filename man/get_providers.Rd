@@ -7,10 +7,12 @@
 get_providers(version_num = NULL)
 }
 \arguments{
-\item{version_num}{Version number with which to update leaflet providers. If \code{NULL}, fetches most recent version.}
+\item{version_num}{Version number with which to update leaflet providers.
+If \code{NULL}, fetches most recent version.}
 }
 \value{
-\code{leaflet_providers} object containing \code{providers_version_num}, \code{providers_data}, \code{providers_details_data}, \code{src}
+\code{leaflet_providers} object containing \code{providers_version_num}, \code{providers_data},
+\code{providers_details_data}, \code{src}
 }
 \description{
 Fetch leaflet providers from Leaflet.js.
