@@ -7,7 +7,7 @@
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/leaflet.providers)](https://CRAN.R-project.org/package=leaflet.providers)
-[![R-CMD-check](https://github.com/rstudio/leaflet.providers/workflows/R-CMD-check/badge.svg)](https://github.com/rstudio/leaflet.providers/actions)
+[![R-CMD-check](https://github.com/rstudio/leaflet.providers/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rstudio/leaflet.providers/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/rstudio/leaflet.providers/branch/main/graph/badge.svg)](https://codecov.io/gh/rstudio/leaflet.providers?branch=main)
 
