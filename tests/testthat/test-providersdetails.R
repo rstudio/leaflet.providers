@@ -12,5 +12,5 @@ testthat::test_that("providers.details structure", {
   testthat::expect_true(!is.null(providers_details_data[["OpenStreetMap"]][["variants"]]["Mapnik"]))
 
   testthat::expect_equal(providers_details_data[["OpenStreetMap"]][["url"]],
-                         "//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png")
+                         "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png")
 })
