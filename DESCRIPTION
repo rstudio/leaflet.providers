@@ -32,3 +32,4 @@ Collate:
     'providers_data.R'
     'get_current_providers.R'
 Config/testthat/edition: 3
+Config/Needs/website: tidyverse/tidytemplate
