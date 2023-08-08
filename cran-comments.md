@@ -10,18 +10,6 @@ Thank you,
 Barret
 
 
-## Test environments
-
-* local macOS, R 4.3.0
-* GitHub Actions
-  * macOS
-    * 4.3
-  * windows
-    * 4.3
-  * ubuntu20
-    * devel, 4.3, 4.2, 4.1, 4.0, 3.6
-* devtools::
-  * check_win_devel()
 ## R CMD check results
 
 0 errors | 0 warnings | 1 note
