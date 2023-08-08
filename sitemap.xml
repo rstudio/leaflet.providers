@@ -1,33 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/404.html</loc>
+    <loc>https://rstudio.github.io/leaflet.providers/404.html</loc>
   </url>
   <url>
-    <loc>/LICENSE-text.html</loc>
+    <loc>https://rstudio.github.io/leaflet.providers/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>/authors.html</loc>
+    <loc>https://rstudio.github.io/leaflet.providers/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>/index.html</loc>
+    <loc>https://rstudio.github.io/leaflet.providers/authors.html</loc>
   </url>
   <url>
-    <loc>/news/index.html</loc>
+    <loc>https://rstudio.github.io/leaflet.providers/index.html</loc>
   </url>
   <url>
-    <loc>/reference/get_providers.html</loc>
+    <loc>https://rstudio.github.io/leaflet.providers/news/index.html</loc>
   </url>
   <url>
-    <loc>/reference/index.html</loc>
+    <loc>https://rstudio.github.io/leaflet.providers/reference/get_providers.html</loc>
   </url>
   <url>
-    <loc>/reference/providers_default.html</loc>
+    <loc>https://rstudio.github.io/leaflet.providers/reference/index.html</loc>
   </url>
   <url>
-    <loc>/reference/providers_loaded.html</loc>
+    <loc>https://rstudio.github.io/leaflet.providers/reference/leaflet.providers-package.html</loc>
   </url>
   <url>
-    <loc>/reference/use_providers.html</loc>
+    <loc>https://rstudio.github.io/leaflet.providers/reference/providers_default.html</loc>
+  </url>
+  <url>
+    <loc>https://rstudio.github.io/leaflet.providers/reference/providers_loaded.html</loc>
+  </url>
+  <url>
+    <loc>https://rstudio.github.io/leaflet.providers/reference/use_providers.html</loc>
   </url>
 </urlset>
