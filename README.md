@@ -1002,7 +1002,7 @@ use_providers()
 Now that `use_providers()` has been called with a custom
 `leaflet.providers` object obtained via `get_providers()` (in this case,
 a previous version of the data),
-[`leaflet`](https://rstudio.github.io/leaflet) will use the custom
+[`leaflet`](https://rstudio.github.io/leaflet/) will use the custom
 providers instead of the default provider data.
 
 > Note that the package `V8` is required for `get_providers()`.
