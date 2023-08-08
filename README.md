@@ -9,7 +9,7 @@
 status](https://www.r-pkg.org/badges/version/leaflet.providers)](https://CRAN.R-project.org/package=leaflet.providers)
 [![R-CMD-check](https://github.com/rstudio/leaflet.providers/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rstudio/leaflet.providers/actions)
 [![Codecov test
-coverage](https://codecov.io/gh/rstudio/leaflet.providers/branch/main/graph/badge.svg)](https://codecov.io/gh/rstudio/leaflet.providers?branch=main)
+coverage](https://codecov.io/gh/rstudio/leaflet.providers/branch/main/graph/badge.svg)](https://app.codecov.io/gh/rstudio/leaflet.providers?branch=main)
 
 <!-- badges: end -->
 
@@ -796,7 +796,7 @@ use_providers()
 Now that `use_providers()` has been called with a custom
 `leaflet.providers` object obtained via `get_providers()` (in this case,
 a previous version of the data),
-[`leaflet`](http://rstudio.github.io/leaflet) will use the custom
+[`leaflet`](https://rstudio.github.io/leaflet) will use the custom
 providers instead of the default provider data.
 
 > Note that the package `V8` is required for `get_providers()`.
