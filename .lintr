@@ -1,6 +1,4 @@
-linters: with_defaults(
-    absolute_paths_linter = NULL,
-    line_length_linter(100),
-    dummy_linter = NULL
+linters: linters_with_defaults(
+    line_length_linter(100)
   )
 exclusions: "R/providers_data.R"

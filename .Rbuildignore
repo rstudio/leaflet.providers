@@ -10,6 +10,7 @@
 ^codecov\.yml$
 .V8history
 .lintr
+^\.github$
 inst/WORDLIST
 ^README\.Rmd$
 ^_pkgdown\.yml$

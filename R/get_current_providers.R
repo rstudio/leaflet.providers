@@ -62,7 +62,8 @@ get_providers <- function(version_num = NULL) {
     "version_num" = version_num,
     "providers" = providers,
     "providers_details" = providers_details,
-    "src" = tmp_js_lines)
+    "src" = tmp_js_lines
+  )
 
   class(providers_info) <- "leaflet_providers"
   return(providers_info)
@@ -74,8 +75,9 @@ get_providers <- function(version_num = NULL) {
 #' @return Current version number.
 #' @noRd
 get_current_version_num <- function() {
-  pkg_info <- jsonlite::fromJSON(paste0(unpkg_url, "/package.json")
-                                 )
+  pkg_info <- jsonlite::fromJSON(
+    paste0(unpkg_url, "/package.json")
+  )
   return(pkg_info$version)
 }
 
@@ -95,14 +97,16 @@ providers_default <- function() {
 
   js_lines <- paste0(
     readLines(system.file(js_filename_for_inst, package = "leaflet.providers")),
-    collapse = "\n")
+    collapse = "\n"
+  )
 
   # Returns same list of obj as get_providers() except html_dependency points to /inst file
   providers_info <- list(
     "version_num" = providers_version_num,
     "providers" = providers_data,
     "providers_details" = providers_details_data,
-    "src" = js_lines)
+    "src" = js_lines
+  )
 
   class(providers_info) <- "leaflet_providers"
   return(providers_info)
