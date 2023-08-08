@@ -8,7 +8,7 @@ Authors@R: c(
            comment = c(ORCID = "0000-0001-9986-114X")),
     person("Leaflet Providers contributors", role = c("ctb", "cph"),
            comment = "Leaflet Providers plugin"),
-    person("Posit", role = c("cph", "fnd"))
+    person(given = "Posit Software, PBC", role = c("cph", "fnd"))
   )
 Description: Contains third-party map tile provider information from
     'Leaflet.js', <https://github.com/leaflet-extras/leaflet-providers>,
@@ -16,7 +16,7 @@ Description: Contains third-party map tile provider information from
     'leaflet.providers' enables users to retrieve up-to-date provider
     information between package updates.
 License: BSD_2_clause + file LICENSE
-URL: https://github.com/rstudio/leaflet.providers
+URL: https://rstudio.github.io/leaflet.providers/, https://github.com/rstudio/leaflet.providers
 BugReports: https://github.com/rstudio/leaflet.providers/issues
 Depends:
     R (>= 3.6)
