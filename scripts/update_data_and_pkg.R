@@ -36,19 +36,14 @@ desc::desc_set_version(todays_data$version_num)
 
 # Auto update NEWS.md
 old_news <- readLines("NEWS.md")
-new_lines <- paste("# leaflet.providers",
-                   todays_data$version_num,
-                   "\n",
-                   "* Updated leaflet.providers data on",
-                   Sys.Date(),
-                   "from",
-                   "https://unpkg.com/leaflet-providers",
-                   "using version",
-                   todays_data$version_num,
-                   "of leaflet.js",
-                   "\n",
-                   sep = " ")
-cat(file = "NEWS.md",
+new_lines <- paste0(
+  "# leaflet.providers", todays_data$version_num, "\n",
+  "\n",
+  "* Updated leaflet.providers data on ", Sys.Date(),
+  " from https://unpkg.com/leaflet-providers using version ",
+  todays_data$version_num, " of leaflet.js\n"
+)
+cat(file = "NEWS.md", sep = "",
     new_lines,
     "\n",
     paste0(old_news, collapse = "\n"))
@@ -59,40 +54,39 @@ devtools::check()
 spelling::spell_check_test(vignettes = TRUE, error = FALSE,
                            skip_on_cran = TRUE)
 
-revdepcheck::revdep_check() # fails on pkgs not on CRAN
+# revdepcheck::revdep_reset()
+revdepcheck::revdep_check(num_workers = parallel::detectCores())
 
-devtools::check_win_oldrelease()
-devtools::check_win_release()
+# devtools::check_win_oldrelease()
+# devtools::check_win_release()
 devtools::check_win_devel()
-
-rhub_output <- rhub::check_for_cran(
-  env_vars = c(`_R_CHECK_FORCE_SUGGESTS_` = "false", `_R_CHECK_CRAN_INCOMING_USE_ASPELL_` = "true"),
-  show_status = FALSE
-)
-for (i in seq_len(nrow(rhub_output$urls()))) {
-  rhub_output$livelog(i)
-}
 
 # Generate revdep CRAN report (to include in cran-comments.md)
 revdep_report_results <- capture.output(revdepcheck::revdep_report_cran())
-rhub_summary <- capture.output({rhub_output$cran_summary()})
 
 cran_comments_msg <- "
 ## Test environments
-* local OS X install, R 3.6.0
-* ubuntu 14.04 (on travis-ci), R 3.6.0, R 3.5.3, R devel
-* win-builder (devel and release)
+
+* local macOS, R 4.3.0
+* GitHub Actions
+  * macOS
+    * 4.3
+  * windows
+    * 4.3
+  * ubuntu18
+    * devel, 4.3, 4.2, 4.1, 4.0, 3.6
+* devtools::
+  * check_win_devel()
 
 ## R CMD check results
 
 0 errors | 0 warnings | 1 note
 
-* This is a new release.
 "
 
 # Auto-update cran-comments.md
-cat(file = "cran-comments.md",
-  "#", as.character(Sys.Date()),
+cat(file = "cran-comments.md", sep = "",
+  "# ", as.character(Sys.Date()),
   "\n\n",
   "This submission updates `providers` and `providers.details`.",
   "\n\n",
@@ -100,5 +94,5 @@ cat(file = "cran-comments.md",
   "\n\n",
   paste0(revdep_report_results, collapse = "\n"),
   "\n",
-  paste0(rhub_summary, collapse = "\n")
+  ""
 )
