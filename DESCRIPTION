@@ -31,5 +31,6 @@ RoxygenNote: 7.2.3
 Collate:
     'providers_data.R'
     'get_current_providers.R'
+    'leaflet.providers-package.R'
 Config/testthat/edition: 3
 Config/Needs/website: tidyverse/tidytemplate
