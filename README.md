@@ -40,8 +40,7 @@ install.packages("leaflet.providers")
 And the development version from [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("rstudio/leaflet.providers")
+pak::pak("rstudio/leaflet.providers")
 ```
 
 ## Example
