@@ -4,7 +4,6 @@ loaded_providers_env <- new.env()
 
 
 #' Fetch leaflet providers from Leaflet.js.
-#' @export
 #'
 #' @param version_num Version number with which to update leaflet providers.
 #'   If `NULL`, fetches most recent version.
@@ -12,13 +11,11 @@ loaded_providers_env <- new.env()
 #' @return `leaflet_providers` object containing `providers_version_num`, `providers_data`,
 #'   `providers_details_data`, `src`
 #'
-#' @examples
-#' \donttest{
-#' if (require("V8") && require("jsonlite")) {
-#'   get_providers()
-#'   get_providers("1.8.0")
-#' }
-#' }
+#' @examplesIf interactive() && requireNamespace("V8", quietly = TRUE) && requireNamespace("jsonlite", quietly = TRUE)
+#' get_providers()
+#' get_providers("1.8.0")
+#'
+#' @export
 get_providers <- function(version_num = NULL) {
   # Load providers.js file
   if (is.null(version_num)) {
