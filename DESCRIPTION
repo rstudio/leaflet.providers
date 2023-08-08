@@ -4,10 +4,10 @@ Title: Leaflet Providers
 Version: 1.13.0
 Authors@R: c(
       person("Leslie", "Huang", email = "lesliehuang@nyu.edu", role = c("aut")),
-      person("Barret", "Schloerke", email = "barret@rstudio.com", role = c("ctb", "cre"),
+      person("Barret", "Schloerke", email = "barret@posit.co", role = c("ctb", "cre"),
         comment = c(ORCID = "0000-0001-9986-114X")),
       person("Leaflet Providers contributors", role = c("ctb", "cph"), comment = "Leaflet Providers plugin"),
-      person("RStudio", role = c("cph", "fnd"))
+      person("Posit", role = c("cph", "fnd"))
     )
 Description: Contains third-party map tile provider information from
     'Leaflet.js', <https://github.com/leaflet-extras/leaflet-providers>, to be
@@ -16,9 +16,8 @@ Description: Contains third-party map tile provider information from
     updates.
 License: BSD_2_clause + file LICENSE
 Encoding: UTF-8
-LazyData: true
 Depends:
-    R (>= 2.10)
+    R (>= 3.6)
 Suggests:
     V8,
     jsonlite,
