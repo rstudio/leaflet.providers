@@ -22,7 +22,7 @@ Depends:
     R (>= 3.6)
 Suggests:
     jsonlite,
-    testthat (>= 2.1.0),
+    testthat (>= 3.0.0),
     V8
 Encoding: UTF-8
 Language: en-US
@@ -31,3 +31,4 @@ RoxygenNote: 7.2.3
 Collate:
     'providers_data.R'
     'get_current_providers.R'
+Config/testthat/edition: 3
