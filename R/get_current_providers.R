@@ -19,7 +19,6 @@ loaded_providers_env <- new.env()
 #'   get_providers("1.8.0")
 #' }
 #' }
-
 get_providers <- function(version_num = NULL) {
   # Load providers.js file
   if (is.null(version_num)) {
@@ -90,7 +89,6 @@ get_current_version_num <- function() {
 #' @examples
 #' str(providers_default(), max = 3, list.len = 4)
 #'
-
 providers_default <- function() {
   # Move .js file from tmp to sysfile
   js_filename_for_inst <- paste0("leaflet-providers_", providers_version_num, ".js")
@@ -132,7 +130,6 @@ providers_default <- function() {
 #'   use_providers("1.4.0")
 #' }
 #' }
-
 use_providers <- function(providers_info = NULL) {
   if (is.null(providers_info)) {
     providers_info <- providers_default()

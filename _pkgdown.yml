@@ -1,1 +1,4 @@
-destination: docs
+url: https://rstudio.github.io/leaflet.providers/
+template:
+  bootstrap: 5
+
