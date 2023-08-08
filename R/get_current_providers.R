@@ -11,9 +11,15 @@ loaded_providers_env <- new.env()
 #' @return `leaflet_providers` object containing `providers_version_num`, `providers_data`,
 #'   `providers_details_data`, `src`
 #'
-#' @examplesIf interactive() && requireNamespace("V8", quietly = TRUE) && requireNamespace("jsonlite", quietly = TRUE)
-#' get_providers()
-#' get_providers("1.8.0")
+#' @examples
+#' if (
+#'   interactive() &&
+#'   requireNamespace("V8", quietly = TRUE) &&
+#'   requireNamespace("jsonlite", quietly = TRUE)
+#' ) {
+#'   get_providers()
+#'   get_providers("1.8.0")
+#' }
 #'
 #' @export
 get_providers <- function(version_num = NULL) {
