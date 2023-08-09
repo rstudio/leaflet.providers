@@ -49,8 +49,7 @@ The following are basic example of the default providers data that comes `leafle
 ```{r providersdefault, eval = FALSE}
 library(leaflet.providers)
 
-# at the time of writing, version 1.8.0
-str(providers_default())
+str(providers_default(), max.level = 2)
 ```
 
 <div style = "height:150px; overflow-y: scroll;">
@@ -58,7 +57,7 @@ str(providers_default())
 ```{r providersdefault1, echo = FALSE}
 library(leaflet.providers)
 
-str(providers_default(), list.len = 200)
+str(providers_default(), max.level = 2)
 ```
 
 </div>
@@ -95,13 +94,13 @@ providers_loaded()$version_num
 #### Supported tile providers
 
 ```{r examplept1, eval = FALSE}
-str(providers_loaded()$providers)
+names(providers_loaded()$providers)
 ```
 
 <div style = "height:150px; overflow-y: scroll;">
 
 ```{r examplept2, echo=FALSE}
-str(providers_loaded()$providers, list.len = 200)
+names(providers_loaded()$providers)
 ```
 
 </div>

@@ -1,4 +1,4 @@
-# leaflet.providers1.13.0
+# leaflet.providers 1.13.0
 
 * Updated leaflet.providers data on 2023-08-07 from https://unpkg.com/leaflet-providers using version 1.13.0 of leaflet.js
 

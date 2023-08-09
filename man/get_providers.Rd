@@ -18,10 +18,13 @@ If \code{NULL}, fetches most recent version.}
 Fetch leaflet providers from Leaflet.js.
 }
 \examples{
-\donttest{
-if (require("V8") && require("jsonlite")) {
+if (
+  interactive() &&
+  requireNamespace("V8", quietly = TRUE) &&
+  requireNamespace("jsonlite", quietly = TRUE)
+) {
   get_providers()
   get_providers("1.8.0")
 }
-}
+
 }
