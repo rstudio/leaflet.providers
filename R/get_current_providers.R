@@ -29,6 +29,11 @@ get_providers <- function(version_num = NULL) {
     return(get_providers(version_num))
   }
 
+  if (package_version(version_num) == package_version(providers_version_num)) {
+    # return the static, locally-stored leaflet.providers if possible
+    return(providers_default())
+  }
+
   unpkg_base <- paste0(unpkg_url, "@", version_num)
   js_path <- file.path(unpkg_base, "leaflet-providers.js")
 
