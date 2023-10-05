@@ -59,7 +59,7 @@ str(providers_default(), max.level = 2)
 
 <div style="height:150px; overflow-y: scroll;">
 
-    #> List of 4
+    #> List of 5
     #>  $ version_num      : chr "2.0.0"
     #>  $ providers        :List of 233
     #>   ..$ OpenStreetMap                         : chr "OpenStreetMap"
@@ -200,6 +200,18 @@ str(providers_default(), max.level = 2)
     #>   ..$ AzureMaps            :List of 3
     #>   ..$ SwissFederalGeoportal:List of 3
     #>  $ src              : chr "(function (root, factory) {\n\tif (typeof define === 'function' && define.amd) {\n\t\t// AMD. Register as an an"| __truncated__
+    #>  $ dep              :List of 10
+    #>   ..$ name      : chr "leaflet-providers"
+    #>   ..$ version   : chr "2.0.0"
+    #>   ..$ src       :List of 1
+    #>   ..$ meta      : NULL
+    #>   ..$ script    : chr "leaflet-providers_2.0.0.js"
+    #>   ..$ stylesheet: NULL
+    #>   ..$ head      : NULL
+    #>   ..$ attachment: NULL
+    #>   ..$ package   : NULL
+    #>   ..$ all_files : logi FALSE
+    #>   ..- attr(*, "class")= chr "html_dependency"
     #>  - attr(*, "class")= chr "leaflet_providers"
 
 </div>
