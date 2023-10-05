@@ -68,26 +68,27 @@
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="fu">providers_loaded</span><span class="op">(</span><span class="op">)</span>, max <span class="op">=</span> <span class="fl">3</span>, list.len <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ version_num      : chr "1.13.0"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  $ providers        :List of 231</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ version_num      : chr "2.0.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ providers        :List of 233</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ OpenStreetMap                         : chr "OpenStreetMap"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ OpenStreetMap.Mapnik                  : chr "OpenStreetMap.Mapnik"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ OpenStreetMap.DE                      : chr "OpenStreetMap.DE"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ OpenStreetMap.CH                      : chr "OpenStreetMap.CH"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. [list output truncated]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ providers_details:List of 36</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ OpenStreetMap   :List of 3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ url     : chr "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ OpenStreetMap        :List of 3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ url     : chr "https://tile.openstreetmap.org/{z}/{x}/{y}.png"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ options :List of 2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ variants:List of 6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ OpenSeaMap      :List of 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ MapTilesAPI          :List of 3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ url     : chr "https://maptiles.p.rapidapi.com/{variant}/{z}/{x}/{y}.png?rapidapi-key={apikey}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ options :List of 4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ variants:List of 3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ OpenSeaMap           :List of 2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ url    : chr "https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ options:List of 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ OPNVKarte       :List of 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ OPNVKarte            :List of 2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ url    : chr "https://tileserver.memomaps.de/tilegen/{z}/{x}/{y}.png"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ options:List of 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ OpenTopoMap     :List of 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ url    : chr "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ options:List of 2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. [list output truncated]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ src              : chr "(function (root, factory) {\n\tif (typeof define === 'function' &amp;&amp; define.amd) {\n\t\t// AMD. Register as an an"| __truncated__</span>
