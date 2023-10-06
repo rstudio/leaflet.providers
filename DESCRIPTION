@@ -21,6 +21,8 @@ URL: https://rstudio.github.io/leaflet.providers/,
 BugReports: https://github.com/rstudio/leaflet.providers/issues
 Depends:
     R (>= 2.10)
+Imports: 
+    htmltools
 Suggests:
     jsonlite,
     testthat (>= 3.0.0),
