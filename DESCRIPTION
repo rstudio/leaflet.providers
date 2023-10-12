@@ -37,3 +37,4 @@ Collate:
     'providers_data.R'
     'get_current_providers.R'
     'leaflet.providers-package.R'
+    'zzz.R'

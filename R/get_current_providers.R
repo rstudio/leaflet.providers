@@ -184,6 +184,3 @@ use_providers <- function(providers_info = NULL) {
 providers_loaded <- function() {
   as.list(loaded_providers_env$providers_info)
 }
-
-#' @include providers_data.R
-use_providers(providers_default())
