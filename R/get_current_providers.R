@@ -29,7 +29,13 @@ get_providers <- function(version_num = NULL) {
     return(get_providers(version_num))
   }
 
-  js_path <- paste0(unpkg_url, "@", version_num)
+  if (package_version(version_num) == package_version(providers_version_num)) {
+    # return the static, locally-stored leaflet.providers if possible
+    return(providers_default())
+  }
+
+  unpkg_base <- paste0(unpkg_url, "@", version_num)
+  js_path <- file.path(unpkg_base, "leaflet-providers.js")
 
   tmp_js_lines <- paste0(readLines(js_path), collapse = "\n")
 
@@ -64,11 +70,27 @@ get_providers <- function(version_num = NULL) {
     "version_num" = version_num,
     "providers" = providers,
     "providers_details" = providers_details,
-    "src" = tmp_js_lines
+    "src" = tmp_js_lines,
+    "dep" = leaflet_providers_dependency(version_num, js_path)
   )
 
   class(providers_info) <- "leaflet_providers"
   return(providers_info)
+}
+
+leaflet_providers_dependency <- function(version_num, providers_path) {
+  is_local <- !grepl("^https?://", providers_path)
+
+  src <- dirname(providers_path)
+  names(src) <- if (is_local) "file" else "href"
+
+  htmltools::htmlDependency(
+    name = "leaflet-providers",
+    version = version_num,
+    src = src,
+    script = basename(providers_path),
+    all_files = FALSE
+  )
 }
 
 
@@ -106,7 +128,11 @@ providers_default <- function() {
     "version_num" = providers_version_num,
     "providers" = providers_data,
     "providers_details" = providers_details_data,
-    "src" = js_lines
+    "src" = js_lines,
+    "dep" = leaflet_providers_dependency(
+      providers_version_num,
+      system.file(js_filename_for_inst, package = "leaflet.providers")
+    )
   )
 
   class(providers_info) <- "leaflet_providers"
@@ -158,6 +184,3 @@ use_providers <- function(providers_info = NULL) {
 providers_loaded <- function() {
   as.list(loaded_providers_env$providers_info)
 }
-
-#' @include providers_data.R
-use_providers(providers_default())
