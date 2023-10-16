@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">leaflet.providers</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.13.0.9001</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.0.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,10 +45,10 @@
     </div>
 
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="development version" id="leafletproviders-development-version">leaflet.providers (development version)<a class="anchor" aria-label="anchor" href="#leafletproviders-development-version"></a></h2>
-<ul><li><p>The previous version (v1.13.0) of leaflet.providers required R &gt;= 3.6. While versions of R older than 3.6 are not actively supported, the theoretically supported minimum R version is lower, likely R &gt;= 2.10. We’ve restored the previous R version minimum requirement. (<a href="https://github.com/rstudio/leaflet.providers/issues/33" class="external-link">#33</a>)</p></li>
-<li><p>Updated leaflet.providers data on 2023-10-05 from <a href="https://unpkg.com/leaflet-providers" class="external-link uri">https://unpkg.com/leaflet-providers</a> using version 2.0.0 of leaflet.js</p></li>
+<h2 class="pkg-version" data-toc-text="2.0.0" id="leafletproviders-200">leaflet.providers 2.0.0<a class="anchor" aria-label="anchor" href="#leafletproviders-200"></a></h2>
+<ul><li><p>Updated leaflet.providers data on 2023-10-05 from <a href="https://unpkg.com/leaflet-providers" class="external-link uri">https://unpkg.com/leaflet-providers</a> using version 2.0.0 of leaflet.js</p></li>
 <li><p><code><a href="../reference/get_providers.html">get_providers()</a></code> and <code>default_providers()</code> both include a stable <code><a href="https://rstudio.github.io/htmltools/reference/htmlDependency.html" class="external-link">htmltools::htmlDependency()</a></code> in the <code>dep</code> slot of the returned object. The default dependency uses the static <code>leaflet-providers.js</code> file included in the <code>leaflet.providers</code> package, while the <code><a href="../reference/get_providers.html">get_providers()</a></code> dependency uses the <code>leaflet-providers.js</code> file from the <code>unpkg.com</code> CDN. This makes it possible for <code>leaflet::addProviderTiles()</code> to use the stable HTML dependency that can be cached by knitr (<a href="https://github.com/rstudio/leaflet.providers/issues/36" class="external-link">#36</a>).</p></li>
+<li><p>The previous version (v1.13.0) of leaflet.providers required R &gt;= 3.6. While versions of R older than 3.6 are not actively supported, the theoretically supported minimum R version is lower, likely R &gt;= 2.10. We’ve restored the previous R version minimum requirement. (<a href="https://github.com/rstudio/leaflet.providers/issues/33" class="external-link">#33</a>)</p></li>
 </ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="1.13.0" id="leafletproviders-1130">leaflet.providers 1.13.0<a class="anchor" aria-label="anchor" href="#leafletproviders-1130"></a></h2><p class="text-muted">CRAN release: 2023-08-10</p>
