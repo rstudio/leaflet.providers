@@ -49,6 +49,51 @@ The following are basic example of the default providers data that comes
 `leaflet.providers` as well as the available methods to fetch and load
 custom providers.
 
+### Usage
+
+In general, you do not need to load or interact with `leaflet.providers`
+directly. Instead, `leaflet.providers` is used indirectly by the
+[leaflet package](https://rstudio.github.io/leaflet/) in the
+`leaflet::addProviderTiles()` function.
+
+``` r
+library(leaflet)
+
+leaflet()  |>
+  setView(lng = -71.0589, lat = 42.3601, zoom = 12) |>
+  addTiles() |>
+  addProviderTiles("OpenTopoMap")
+```
+
+### Fetch custom providers
+
+You can choose a specific version of `leaflet-providers.js` by calling
+`use_providers()` with the desired version or the providers from a
+desired version:
+
+``` r
+# Shorthand method:
+use_providers("1.7.0")
+
+# Longer method:
+# 1. Retrieve v 1.7.0
+providers_170 <- get_providers("1.7.0")
+
+# 2. Load custom providers data
+use_providers(providers_170)
+
+# Reset loaded providers to default providers
+use_providers()
+```
+
+Now that `use_providers()` has been called with a custom
+`leaflet.providers` object obtained via `get_providers()` (in this case,
+a previous version of the data),
+[`leaflet`](https://rstudio.github.io/leaflet/) will use the custom
+providers instead of the default provider data.
+
+> Note that the package `V8` is required for `get_providers()`.
+
 ### Default providers
 
 ``` r
@@ -215,32 +260,6 @@ str(providers_default(), max.level = 2)
     #>  - attr(*, "class")= chr "leaflet_providers"
 
 </div>
-
-### Fetch custom providers
-
-Users may use a specific version number of `leaflet-providers.js` by
-passing the version number to `use_providers()`.
-
-``` r
-# Retrieve v 1.7.0
-providers_170 <- get_providers("1.7.0")
-
-# Load custom providers data
-use_providers(providers_170)
-# shorthand method
-use_providers("1.7.0")
-
-# Reset loaded providers to default providers
-use_providers()
-```
-
-Now that `use_providers()` has been called with a custom
-`leaflet.providers` object obtained via `get_providers()` (in this case,
-a previous version of the data),
-[`leaflet`](https://rstudio.github.io/leaflet/) will use the custom
-providers instead of the default provider data.
-
-> Note that the package `V8` is required for `get_providers()`.
 
 ### View the loaded providers data
 
