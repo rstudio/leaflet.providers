@@ -1,4 +1,4 @@
-# leaflet.providers (development version)
+# leaflet.providers 2.0.0
 
 * The previous version (v1.13.0) of leaflet.providers required R >= 3.6. While versions of R older than 3.6 are not actively supported, the theoretically supported minimum R version is lower, likely R >= 2.10. We've restored the previous R version minimum requirement. (#33)
 
