@@ -1,25 +1,9 @@
 # Comments
 
-## 2023-08-09
-
-This submission updates `providers` and `providers.details`.
-
-I am updating my email address from `barret@rstudio.com` to `barret@posit.co`.
-
-Thank you,
-Barret
-
-
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
+0 errors | 0 warnings | 0 notes
 
-Maintainer: 'Barret Schloerke <barret@posit.co>'
-
-New maintainer:
-  Barret Schloerke <barret@posit.co>
-Old maintainer(s):
-  Barret Schloerke <barret@rstudio.com>
 
 ## revdepcheck results
 
