@@ -42,9 +42,11 @@ get_providers <- function(version_num = NULL) {
   ct <- V8::v8()
 
   # create dummy Leaflet object
-  ct$eval("var L = {TileLayer : {extend: function() { return {}; }},
+  ct$eval(
+    "var L = {TileLayer : {extend: function() { return {}; }},
           Util : {extend: function() { return {}; }},
-          tileLayer : {}}")
+          tileLayer : {}}"
+  )
 
   ct$eval(tmp_js_lines)
 
@@ -116,7 +118,11 @@ get_current_version_num <- function() {
 #'
 providers_default <- function() {
   # Move .js file from tmp to sysfile
-  js_filename_for_inst <- paste0("leaflet-providers_", providers_version_num, ".js")
+  js_filename_for_inst <- paste0(
+    "leaflet-providers_",
+    providers_version_num,
+    ".js"
+  )
 
   js_lines <- paste0(
     readLines(system.file(js_filename_for_inst, package = "leaflet.providers")),
@@ -166,7 +172,10 @@ use_providers <- function(providers_info = NULL) {
     providers_info <- get_providers(providers_info)
   }
   if (!inherits(providers_info, "leaflet_providers")) {
-    stop("`providers_info` must be a 'leaflet_providers' object.", call. = FALSE)
+    stop(
+      "`providers_info` must be a 'leaflet_providers' object.",
+      call. = FALSE
+    )
   }
 
   loaded_providers_env$providers_info <- providers_info
