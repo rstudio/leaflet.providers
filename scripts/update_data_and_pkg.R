@@ -1,6 +1,10 @@
 devtools::load_all()
 todays_data <- get_providers()
 
+if (todays_data$version_num == providers_version_num) {
+  stop("leaflet-providers up to date")
+}
+
 providers_file <- file(description = "R/providers_data.R", "w")
 cat(
   "providers_version_num <-",
