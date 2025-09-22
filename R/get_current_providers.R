@@ -73,24 +73,30 @@ get_providers <- function(version_num = NULL) {
     "providers" = providers,
     "providers_details" = providers_details,
     "src" = tmp_js_lines,
-    "dep" = leaflet_providers_dependency(version_num, js_path)
+    "dep" = leaflet_providers_dependency_url(version_num, js_path)
   )
 
   class(providers_info) <- "leaflet_providers"
   return(providers_info)
 }
 
-leaflet_providers_dependency <- function(version_num, providers_path) {
-  is_local <- !grepl("^https?://", providers_path)
-
-  src <- dirname(providers_path)
-  names(src) <- if (is_local) "file" else "href"
-
+leaflet_providers_dependency_url <- function(version_num, url) {
   htmltools::htmlDependency(
     name = "leaflet-providers",
     version = version_num,
-    src = src,
-    script = basename(providers_path),
+    src = c(href = dirname(url)),
+    script = basename(url),
+    all_files = FALSE
+  )
+}
+
+leaflet_providers_dependency_pkg <- function() {
+  htmltools::htmlDependency(
+    name = "leaflet-providers",
+    version = providers_version_num,
+    package = "leaflet.providers",
+    src = "leaflet-providers",
+    script = "leaflet-providers.js",
     all_files = FALSE
   )
 }
@@ -135,10 +141,7 @@ providers_default <- function() {
     "providers" = providers_data,
     "providers_details" = providers_details_data,
     "src" = js_lines,
-    "dep" = leaflet_providers_dependency(
-      providers_version_num,
-      system.file(js_filename_for_inst, package = "leaflet.providers")
-    )
+    "dep" = leaflet_providers_dependency_pkg()
   )
 
   class(providers_info) <- "leaflet_providers"
