@@ -1,4 +1,4 @@
-providers_version_num <- "2.0.0"
+providers_version_num <- "3.0.0"
 providers_data <- list(
   OpenStreetMap = "OpenStreetMap",
   OpenStreetMap.Mapnik = "OpenStreetMap.Mapnik",
@@ -7,6 +7,7 @@ providers_data <- list(
   OpenStreetMap.France = "OpenStreetMap.France",
   OpenStreetMap.HOT = "OpenStreetMap.HOT",
   OpenStreetMap.BZH = "OpenStreetMap.BZH",
+  OpenStreetMap.CAT = "OpenStreetMap.CAT",
   MapTilesAPI = "MapTilesAPI",
   MapTilesAPI.OSMEnglish = "MapTilesAPI.OSMEnglish",
   MapTilesAPI.OSMFrancais = "MapTilesAPI.OSMFrancais",
@@ -20,6 +21,7 @@ providers_data <- list(
   Stadia = "Stadia",
   Stadia.AlidadeSmooth = "Stadia.AlidadeSmooth",
   Stadia.AlidadeSmoothDark = "Stadia.AlidadeSmoothDark",
+  Stadia.AlidadeSatellite = "Stadia.AlidadeSatellite",
   Stadia.OSMBright = "Stadia.OSMBright",
   Stadia.Outdoors = "Stadia.Outdoors",
   Stadia.StamenToner = "Stadia.StamenToner",
@@ -42,10 +44,14 @@ providers_data <- list(
   Thunderforest.Pioneer = "Thunderforest.Pioneer",
   Thunderforest.MobileAtlas = "Thunderforest.MobileAtlas",
   Thunderforest.Neighbourhood = "Thunderforest.Neighbourhood",
+  BaseMapDE = "BaseMapDE",
+  BaseMapDE.Color = "BaseMapDE.Color",
+  BaseMapDE.Grey = "BaseMapDE.Grey",
   CyclOSM = "CyclOSM",
   Jawg = "Jawg",
   Jawg.Streets = "Jawg.Streets",
   Jawg.Terrain = "Jawg.Terrain",
+  Jawg.Lagoon = "Jawg.Lagoon",
   Jawg.Sunny = "Jawg.Sunny",
   Jawg.Dark = "Jawg.Dark",
   Jawg.Light = "Jawg.Light",
@@ -61,13 +67,23 @@ providers_data <- list(
   MapTiler.Toner = "MapTiler.Toner",
   MapTiler.Topo = "MapTiler.Topo",
   MapTiler.Voyager = "MapTiler.Voyager",
+  MapTiler.Ocean = "MapTiler.Ocean",
+  MapTiler.Backdrop = "MapTiler.Backdrop",
+  MapTiler.Dataviz = "MapTiler.Dataviz",
+  MapTiler.DatavizLight = "MapTiler.DatavizLight",
+  MapTiler.DatavizDark = "MapTiler.DatavizDark",
+  MapTiler.Aquarelle = "MapTiler.Aquarelle",
+  MapTiler.Landscape = "MapTiler.Landscape",
+  MapTiler.Openstreetmap = "MapTiler.Openstreetmap",
+  MapTiler.Outdoor = "MapTiler.Outdoor",
+  MapTiler.Satellite = "MapTiler.Satellite",
+  MapTiler.Winter = "MapTiler.Winter",
   TomTom = "TomTom",
   TomTom.Basic = "TomTom.Basic",
   TomTom.Hybrid = "TomTom.Hybrid",
   TomTom.Labels = "TomTom.Labels",
   Esri = "Esri",
   Esri.WorldStreetMap = "Esri.WorldStreetMap",
-  Esri.DeLorme = "Esri.DeLorme",
   Esri.WorldTopoMap = "Esri.WorldTopoMap",
   Esri.WorldImagery = "Esri.WorldImagery",
   Esri.WorldTerrain = "Esri.WorldTerrain",
@@ -89,22 +105,17 @@ providers_data <- list(
   OpenWeatherMap.Temperature = "OpenWeatherMap.Temperature",
   OpenWeatherMap.Snow = "OpenWeatherMap.Snow",
   HERE = "HERE",
-  HERE.normalDay = "HERE.normalDay",
-  HERE.normalDayCustom = "HERE.normalDayCustom",
-  HERE.normalDayGrey = "HERE.normalDayGrey",
-  HERE.normalDayMobile = "HERE.normalDayMobile",
-  HERE.normalDayGreyMobile = "HERE.normalDayGreyMobile",
-  HERE.normalDayTransit = "HERE.normalDayTransit",
-  HERE.normalDayTransitMobile = "HERE.normalDayTransitMobile",
-  HERE.normalDayTraffic = "HERE.normalDayTraffic",
-  HERE.normalNight = "HERE.normalNight",
-  HERE.normalNightMobile = "HERE.normalNightMobile",
-  HERE.normalNightGrey = "HERE.normalNightGrey",
-  HERE.normalNightGreyMobile = "HERE.normalNightGreyMobile",
-  HERE.normalNightTransit = "HERE.normalNightTransit",
-  HERE.normalNightTransitMobile = "HERE.normalNightTransitMobile",
-  HERE.reducedDay = "HERE.reducedDay",
-  HERE.reducedNight = "HERE.reducedNight",
+  HERE.exploreDay = "HERE.exploreDay",
+  HERE.liteDay = "HERE.liteDay",
+  HERE.logisticsDay = "HERE.logisticsDay",
+  HERE.topoDay = "HERE.topoDay",
+  HERE.logisticsNight = "HERE.logisticsNight",
+  HERE.exploreNight = "HERE.exploreNight",
+  HERE.topoNight = "HERE.topoNight",
+  HERE.liteNight = "HERE.liteNight",
+  HERE.exploreSatelliteDay = "HERE.exploreSatelliteDay",
+  HERE.liteSatelliteDay = "HERE.liteSatelliteDay",
+  HERE.logisticsSatelliteDay = "HERE.logisticsSatelliteDay",
   HERE.basicMap = "HERE.basicMap",
   HERE.mapLabels = "HERE.mapLabels",
   HERE.trafficFlow = "HERE.trafficFlow",
@@ -113,41 +124,11 @@ providers_data <- list(
   HERE.hybridDayMobile = "HERE.hybridDayMobile",
   HERE.hybridDayTransit = "HERE.hybridDayTransit",
   HERE.hybridDayGrey = "HERE.hybridDayGrey",
-  HERE.hybridDayTraffic = "HERE.hybridDayTraffic",
   HERE.pedestrianDay = "HERE.pedestrianDay",
   HERE.pedestrianNight = "HERE.pedestrianNight",
   HERE.satelliteDay = "HERE.satelliteDay",
   HERE.terrainDay = "HERE.terrainDay",
   HERE.terrainDayMobile = "HERE.terrainDayMobile",
-  HEREv3 = "HEREv3",
-  HEREv3.normalDay = "HEREv3.normalDay",
-  HEREv3.normalDayCustom = "HEREv3.normalDayCustom",
-  HEREv3.normalDayGrey = "HEREv3.normalDayGrey",
-  HEREv3.normalDayMobile = "HEREv3.normalDayMobile",
-  HEREv3.normalDayGreyMobile = "HEREv3.normalDayGreyMobile",
-  HEREv3.normalDayTransit = "HEREv3.normalDayTransit",
-  HEREv3.normalDayTransitMobile = "HEREv3.normalDayTransitMobile",
-  HEREv3.normalNight = "HEREv3.normalNight",
-  HEREv3.normalNightMobile = "HEREv3.normalNightMobile",
-  HEREv3.normalNightGrey = "HEREv3.normalNightGrey",
-  HEREv3.normalNightGreyMobile = "HEREv3.normalNightGreyMobile",
-  HEREv3.normalNightTransit = "HEREv3.normalNightTransit",
-  HEREv3.normalNightTransitMobile = "HEREv3.normalNightTransitMobile",
-  HEREv3.reducedDay = "HEREv3.reducedDay",
-  HEREv3.reducedNight = "HEREv3.reducedNight",
-  HEREv3.basicMap = "HEREv3.basicMap",
-  HEREv3.mapLabels = "HEREv3.mapLabels",
-  HEREv3.trafficFlow = "HEREv3.trafficFlow",
-  HEREv3.carnavDayGrey = "HEREv3.carnavDayGrey",
-  HEREv3.hybridDay = "HEREv3.hybridDay",
-  HEREv3.hybridDayMobile = "HEREv3.hybridDayMobile",
-  HEREv3.hybridDayTransit = "HEREv3.hybridDayTransit",
-  HEREv3.hybridDayGrey = "HEREv3.hybridDayGrey",
-  HEREv3.pedestrianDay = "HEREv3.pedestrianDay",
-  HEREv3.pedestrianNight = "HEREv3.pedestrianNight",
-  HEREv3.satelliteDay = "HEREv3.satelliteDay",
-  HEREv3.terrainDay = "HEREv3.terrainDay",
-  HEREv3.terrainDayMobile = "HEREv3.terrainDayMobile",
   FreeMapSK = "FreeMapSK",
   MtbMap = "MtbMap",
   CartoDB = "CartoDB",
@@ -187,6 +168,13 @@ providers_data <- list(
   NASAGIBS.ModisTerraAOD = "NASAGIBS.ModisTerraAOD",
   NASAGIBS.ModisTerraChlorophyll = "NASAGIBS.ModisTerraChlorophyll",
   NLS = "NLS",
+  NLS.osgb63k1885 = "NLS.osgb63k1885",
+  NLS.osgb1888 = "NLS.osgb1888",
+  NLS.osgb10k1888 = "NLS.osgb10k1888",
+  NLS.osgb1919 = "NLS.osgb1919",
+  NLS.osgb25k1937 = "NLS.osgb25k1937",
+  NLS.osgb63k1955 = "NLS.osgb63k1955",
+  NLS.oslondon1k1893 = "NLS.oslondon1k1893",
   JusticeMap = "JusticeMap",
   JusticeMap.income = "JusticeMap.income",
   JusticeMap.americanIndian = "JusticeMap.americanIndian",
@@ -232,7 +220,10 @@ providers_data <- list(
   SwissFederalGeoportal = "SwissFederalGeoportal",
   SwissFederalGeoportal.NationalMapColor = "SwissFederalGeoportal.NationalMapColor",
   SwissFederalGeoportal.NationalMapGrey = "SwissFederalGeoportal.NationalMapGrey",
-  SwissFederalGeoportal.SWISSIMAGE = "SwissFederalGeoportal.SWISSIMAGE"
+  SwissFederalGeoportal.SWISSIMAGE = "SwissFederalGeoportal.SWISSIMAGE",
+  TopPlusOpen = "TopPlusOpen",
+  TopPlusOpen.Color = "TopPlusOpen.Color",
+  TopPlusOpen.Grey = "TopPlusOpen.Grey"
 )
 
 providers_details_data <- list(
@@ -274,6 +265,12 @@ providers_details_data <- list(
           attribution = "{attribution.OpenStreetMap}, Tiles courtesy of <a href=\"http://www.openstreetmap.bzh/\" target=\"_blank\">Breton OpenStreetMap Team</a>",
           bounds = structure(c(46.2, 50, -5.5, 0.7), dim = c(2L, 2L))
         )
+      ),
+      CAT = list(
+        url = "https://tile.openstreetmap.bzh/ca/{z}/{x}/{y}.png",
+        options = list(
+          attribution = "{attribution.OpenStreetMap}, Tiles courtesy of <a href=\"https://www.openstreetmap.cat\" target=\"_blank\">Breton OpenStreetMap Team</a>"
+        )
       )
     )
   ),
@@ -287,19 +284,13 @@ providers_details_data <- list(
     ),
     variants = list(
       OSMEnglish = list(
-        options = list(
-          variant = "en/map/v1"
-        )
+        options = list(variant = "en/map/v1")
       ),
       OSMFrancais = list(
-        options = list(
-          variant = "fr/map/v1"
-        )
+        options = list(variant = "fr/map/v1")
       ),
       OSMEspagnol = list(
-        options = list(
-          variant = "es/map/v1"
-        )
+        options = list(variant = "es/map/v1")
       )
     )
   ),
@@ -356,6 +347,13 @@ providers_details_data <- list(
     variants = list(
       AlidadeSmooth = "alidade_smooth",
       AlidadeSmoothDark = "alidade_smooth_dark",
+      AlidadeSatellite = list(
+        options = list(
+          attribution = "&copy; CNES, Distribution Airbus DS, u00a9 Airbus DS, u00a9 PlanetObserver (Contains Copernicus Data) | &copy; <a href=\"https://www.stadiamaps.com/\" target=\"_blank\">Stadia Maps</a> &copy; <a href=\"https://openmaptiles.org/\" target=\"_blank\">OpenMapTiles</a> {attribution.OpenStreetMap}",
+          variant = "alidade_satellite",
+          ext = "jpg"
+        )
+      ),
       OSMBright = "osm_bright",
       Outdoors = "outdoors",
       StamenToner = list(
@@ -433,7 +431,7 @@ providers_details_data <- list(
     )
   ),
   Thunderforest = list(
-    url = "https://{s}.tile.thunderforest.com/{variant}/{z}/{x}/{y}.png?apikey={apikey}",
+    url = "https://{s}.tile.thunderforest.com/{variant}/{z}/{x}/{y}{r}.png?apikey={apikey}",
     options = list(
       attribution = "&copy; <a href=\"http://www.thunderforest.com/\">Thunderforest</a>, {attribution.OpenStreetMap}",
       variant = "cycle",
@@ -452,6 +450,17 @@ providers_details_data <- list(
       Neighbourhood = "neighbourhood"
     )
   ),
+  BaseMapDE = list(
+    url = "https://sgx.geodatenzentrum.de/wmts_basemapde/tile/1.0.0/{variant}/default/GLOBAL_WEBMERCATOR/{z}/{y}/{x}.png",
+    options = list(
+      attribution = "Map data: &copy; <a href=\"http://www.govdata.de/dl-de/by-2-0\">dl-de/by-2-0</a>",
+      variant = "de_basemapde_web_raster_farbe"
+    ),
+    variants = list(
+      Color = "de_basemapde_web_raster_farbe",
+      Grey = "de_basemapde_web_raster_grau"
+    )
+  ),
   CyclOSM = list(
     url = "https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png",
     options = list(
@@ -460,18 +469,18 @@ providers_details_data <- list(
     )
   ),
   Jawg = list(
-    url = "https://{s}.tile.jawg.io/{variant}/{z}/{x}/{y}{r}.png?access-token={accessToken}",
+    url = "https://tile.jawg.io/{variant}/{z}/{x}/{y}{r}.png?access-token={accessToken}",
     options = list(
-      attribution = "<a href=\"http://jawg.io\" title=\"Tiles Courtesy of Jawg Maps\" target=\"_blank\">&copy; <b>Jawg</b>Maps</a> {attribution.OpenStreetMap}",
+      attribution = "<a href=\"https://jawg.io\" title=\"Tiles Courtesy of Jawg Maps\" target=\"_blank\">&copy; <b>Jawg</b>Maps</a> {attribution.OpenStreetMap}",
       minZoom = 0L,
       maxZoom = 22L,
-      subdomains = "abcd",
-      variant = "jawg-terrain",
+      variant = "jawg-streets",
       accessToken = "<insert your access token here>"
     ),
     variants = list(
       Streets = "jawg-streets",
       Terrain = "jawg-terrain",
+      Lagoon = "jawg-lagoon",
       Sunny = "jawg-sunny",
       Dark = "jawg-dark",
       Light = "jawg-light",
@@ -502,9 +511,9 @@ providers_details_data <- list(
       maxZoom = 21L
     ),
     variants = list(
-      Streets = "streets",
-      Basic = "basic",
-      Bright = "bright",
+      Streets = "streets-v2",
+      Basic = "basic-v2",
+      Bright = "bright-v2",
       Pastel = "pastel",
       Positron = "positron",
       Hybrid = list(
@@ -513,9 +522,29 @@ providers_details_data <- list(
           ext = "jpg"
         )
       ),
-      Toner = "toner",
-      Topo = "topo",
-      Voyager = "voyager"
+      Toner = "toner-v2",
+      Topo = "topo-v2",
+      Voyager = "voyager-v2",
+      Ocean = "ocean",
+      Backdrop = "backdrop",
+      Dataviz = "dataviz",
+      DatavizLight = "dataviz-light",
+      DatavizDark = "dataviz-dark",
+      Aquarelle = list(
+        options = list(
+          variant = "aquarelle",
+          ext = "webp"
+        )
+      ),
+      Landscape = "landscape",
+      Openstreetmap = list(
+        options = list(variant = "openstreetmap", ext = "jpg")
+      ),
+      Outdoor = "outdoor-v2",
+      Satellite = list(
+        options = list(variant = "satellite", ext = "jpg")
+      ),
+      Winter = "winter-v2"
     )
   ),
   TomTom = list(
@@ -523,7 +552,7 @@ providers_details_data <- list(
     options = list(
       variant = "basic",
       maxZoom = 22L,
-      attribution = "<a href=\"https://tomtom.com\" target=\"_blank\">&copy;  1992 - 2023 TomTom.</a> ",
+      attribution = "<a href=\"https://tomtom.com\" target=\"_blank\">&copy;  1992 - 2026 TomTom.</a> ",
       subdomains = "abcd",
       style = "main",
       ext = "png",
@@ -545,14 +574,6 @@ providers_details_data <- list(
       WorldStreetMap = list(
         options = list(
           attribution = "{attribution.Esri} &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012"
-        )
-      ),
-      DeLorme = list(
-        options = list(
-          variant = "Specialty/DeLorme_World_Base_Map",
-          minZoom = 1L,
-          maxZoom = 11L,
-          attribution = "{attribution.Esri} &mdash; Copyright: &copy;2012 DeLorme"
         )
       ),
       WorldTopoMap = list(
@@ -634,92 +655,14 @@ providers_details_data <- list(
     )
   ),
   HERE = list(
-    url = "https://{s}.{base}.maps.api.here.com/maptile/2.1/{type}/{mapID}/{variant}/{z}/{x}/{y}/{size}/{format}?app_id={app_id}&app_code={app_code}&lg={language}",
+    url = "https://maps.hereapi.com/v3/base/mc/{z}/{x}/{y}/{format}?style={variant}&size={size}&apiKey={app_id}&lg={language}",
     options = list(
-      attribution = "Map &copy; 1987-2023 <a href=\"http://developer.here.com\">HERE</a>",
-      subdomains = "1234",
-      mapID = "newest",
-      app_id = "<insert your app_id here>",
-      app_code = "<insert your app_code here>",
-      base = "base",
-      variant = "normal.day",
-      maxZoom = 20L,
-      type = "maptile",
-      language = "eng",
-      format = "png8",
-      size = "256"
-    ),
-    variants = list(
-      normalDay = "normal.day",
-      normalDayCustom = "normal.day.custom",
-      normalDayGrey = "normal.day.grey",
-      normalDayMobile = "normal.day.mobile",
-      normalDayGreyMobile = "normal.day.grey.mobile",
-      normalDayTransit = "normal.day.transit",
-      normalDayTransitMobile = "normal.day.transit.mobile",
-      normalDayTraffic = list(
-        options = list(
-          variant = "normal.traffic.day",
-          base = "traffic",
-          type = "traffictile"
-        )
-      ),
-      normalNight = "normal.night",
-      normalNightMobile = "normal.night.mobile",
-      normalNightGrey = "normal.night.grey",
-      normalNightGreyMobile = "normal.night.grey.mobile",
-      normalNightTransit = "normal.night.transit",
-      normalNightTransitMobile = "normal.night.transit.mobile",
-      reducedDay = "reduced.day",
-      reducedNight = "reduced.night",
-      basicMap = list(options = list(type = "basetile")),
-      mapLabels = list(options = list(type = "labeltile", format = "png")),
-      trafficFlow = list(
-        options = list(
-          base = "traffic",
-          type = "flowtile"
-        )
-      ),
-      carnavDayGrey = "carnav.day.grey",
-      hybridDay = list(options = list(base = "aerial", variant = "hybrid.day")),
-      hybridDayMobile = list(
-        options = list(base = "aerial", variant = "hybrid.day.mobile")
-      ),
-      hybridDayTransit = list(
-        options = list(base = "aerial", variant = "hybrid.day.transit")
-      ),
-      hybridDayGrey = list(
-        options = list(base = "aerial", variant = "hybrid.grey.day")
-      ),
-      hybridDayTraffic = list(
-        options = list(
-          variant = "hybrid.traffic.day",
-          base = "traffic",
-          type = "traffictile"
-        )
-      ),
-      pedestrianDay = "pedestrian.day",
-      pedestrianNight = "pedestrian.night",
-      satelliteDay = list(
-        options = list(base = "aerial", variant = "satellite.day")
-      ),
-      terrainDay = list(
-        options = list(base = "aerial", variant = "terrain.day")
-      ),
-      terrainDayMobile = list(
-        options = list(base = "aerial", variant = "terrain.day.mobile")
-      )
-    )
-  ),
-  HEREv3 = list(
-    url = "https://{s}.{base}.maps.ls.hereapi.com/maptile/2.1/{type}/{mapID}/{variant}/{z}/{x}/{y}/{size}/{format}?apiKey={apiKey}&lg={language}",
-    options = list(
-      attribution = "Map &copy; 1987-2023 <a href=\"http://developer.here.com\">HERE</a>",
+      attribution = "Map &copy; 1987-2026 <a href=\"http://platform.here.com\">HERE</a>",
       subdomains = "1234",
       mapID = "newest",
       apiKey = "<insert your apiKey here>",
       base = "base",
-      variant = "normal.day",
+      variant = "explore.day",
       maxZoom = 20L,
       type = "maptile",
       language = "eng",
@@ -727,21 +670,17 @@ providers_details_data <- list(
       size = "256"
     ),
     variants = list(
-      normalDay = "normal.day",
-      normalDayCustom = "normal.day.custom",
-      normalDayGrey = "normal.day.grey",
-      normalDayMobile = "normal.day.mobile",
-      normalDayGreyMobile = "normal.day.grey.mobile",
-      normalDayTransit = "normal.day.transit",
-      normalDayTransitMobile = "normal.day.transit.mobile",
-      normalNight = "normal.night",
-      normalNightMobile = "normal.night.mobile",
-      normalNightGrey = "normal.night.grey",
-      normalNightGreyMobile = "normal.night.grey.mobile",
-      normalNightTransit = "normal.night.transit",
-      normalNightTransitMobile = "normal.night.transit.mobile",
-      reducedDay = "reduced.day",
-      reducedNight = "reduced.night",
+      exploreDay = "explore.day",
+      liteDay = "lite.day",
+      logisticsDay = "logistics.day",
+      topoDay = "topo.day",
+      logisticsNight = "logistics.night",
+      exploreNight = "explore.night",
+      topoNight = "topo.night",
+      liteNight = "lite.night",
+      exploreSatelliteDay = "explore.satellite.day",
+      liteSatelliteDay = "lite.satellite.day",
+      logisticsSatelliteDay = "logistics.satellite.day",
       basicMap = list(options = list(type = "basetile")),
       mapLabels = list(options = list(type = "labeltile", format = "png")),
       trafficFlow = list(
@@ -927,7 +866,7 @@ providers_details_data <- list(
       ),
       ModisTerraChlorophyll = list(
         options = list(
-          variant = "MODIS_Terra_Chlorophyll_A",
+          variant = "MODIS_Terra_L2_Chlorophyll_A",
           format = "png",
           maxZoom = 7L,
           opacity = 0.75
@@ -936,13 +875,22 @@ providers_details_data <- list(
     )
   ),
   NLS = list(
-    url = "https://nls-{s}.tileserver.com/nls/{z}/{x}/{y}.jpg",
+    url = "https://api.maptiler.com/tiles/{variant}/{z}/{x}/{y}.jpg?key={apikey}",
     options = list(
-      attribution = "<a href=\"http://geo.nls.uk/maps/\">National Library of Scotland Historic Maps</a>",
+      attribution = "<a href=\"http://maps.nls.uk/projects/subscription-api\">National Library of Scotland Historic Maps</a>",
       bounds = structure(c(49.6, 61.7, -12, 3), dim = c(2L, 2L)),
       minZoom = 1L,
       maxZoom = 18L,
-      subdomains = "0123"
+      apikey = "<insert your api key here>"
+    ),
+    variants = list(
+      osgb63k1885 = "uk-osgb63k1885",
+      osgb1888 = "uk-osgb1888",
+      osgb10k1888 = "uk-osgb10k1888",
+      osgb1919 = "uk-osgb1919",
+      osgb25k1937 = "uk-osgb25k1937",
+      osgb63k1955 = "uk-osgb63k1955",
+      oslondon1k1893 = "uk-oslondon1k1893"
     )
   ),
   JusticeMap = list(
@@ -965,13 +913,12 @@ providers_details_data <- list(
     )
   ),
   GeoportailFrance = list(
-    url = "https://wxs.ign.fr/{apikey}/geoportail/wmts?REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&STYLE={style}&TILEMATRIXSET=PM&FORMAT={format}&LAYER={variant}&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}",
+    url = "https://data.geopf.fr/wmts?REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&STYLE={style}&TILEMATRIXSET=PM&FORMAT={format}&LAYER={variant}&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}",
     options = list(
       attribution = "<a target=\"_blank\" href=\"https://www.geoportail.gouv.fr/\">Geoportail France</a>",
       bounds = structure(c(-75L, 81L, -180L, 180L), dim = c(2L, 2L)),
       minZoom = 2L,
       maxZoom = 18L,
-      apikey = "choisirgeoportail",
       format = "image/png",
       style = "normal",
       variant = "GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2"
@@ -1114,5 +1061,14 @@ providers_details_data <- list(
         options = list(variant = "ch.swisstopo.swissimage", maxZoom = 19L)
       )
     )
+  ),
+  TopPlusOpen = list(
+    url = "http://sgx.geodatenzentrum.de/wmts_topplus_open/tile/1.0.0/{variant}/default/WEBMERCATOR/{z}/{y}/{x}.png",
+    options = list(
+      maxZoom = 18L,
+      attribution = "Map data: &copy; <a href=\"http://www.govdata.de/dl-de/by-2-0\">dl-de/by-2-0</a>",
+      variant = "web"
+    ),
+    variants = list(Color = "web", Grey = "web_grau")
   )
 )

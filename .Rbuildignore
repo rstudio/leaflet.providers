@@ -17,3 +17,5 @@ inst/WORDLIST
 ^docs$
 ^pkgdown$
 ^CRAN-RELEASE$
+^\.context$
+^\.playwright-mcp$

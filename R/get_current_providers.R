@@ -29,7 +29,21 @@ get_providers <- function(version_num = NULL) {
     return(get_providers(version_num))
   }
 
-  if (package_version(version_num) == package_version(providers_version_num)) {
+  if (package_version(version_num) < "1.0.10") {
+    stop(
+      "`version_num` must be >= '1.0.10'. ",
+      "Earlier versions used a different JS structure that is not supported.",
+      call. = FALSE
+    )
+  }
+
+  if (
+    package_version(version_num) == package_version(providers_version_num) &&
+      nzchar(system.file(
+        paste0("leaflet-providers_", providers_version_num, ".js"),
+        package = "leaflet.providers"
+      ))
+  ) {
     # return the static, locally-stored leaflet.providers if possible
     return(providers_default())
   }
@@ -124,10 +138,18 @@ providers_default <- function() {
     ".js"
   )
 
-  js_lines <- paste0(
-    readLines(system.file(js_filename_for_inst, package = "leaflet.providers")),
-    collapse = "\n"
-  )
+  js_path <- system.file(js_filename_for_inst, package = "leaflet.providers")
+  if (!nzchar(js_path)) {
+    stop(
+      "Could not find installed '",
+      js_filename_for_inst,
+      "'. ",
+      "Please reinstall the 'leaflet.providers' package.",
+      call. = FALSE
+    )
+  }
+
+  js_lines <- paste0(readLines(js_path), collapse = "\n")
 
   # Returns same list of obj as get_providers() except html_dependency points to /inst file
   providers_info <- list(
