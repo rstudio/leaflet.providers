@@ -1,6 +1,10 @@
 # Changelog
 
-## leaflet.providers (development version)
+## leaflet.providers 3.0.0
+
+- Updated leaflet.providers data on 2026-03-17 from
+  <https://unpkg.com/leaflet-providers> using version 3.0.0 of
+  leaflet-providers.js
 
 ## leaflet.providers 2.0.0
 
@@ -8,7 +12,7 @@ CRAN release: 2023-10-17
 
 - Updated leaflet.providers data on 2023-10-05 from
   <https://unpkg.com/leaflet-providers> using version 2.0.0 of
-  leaflet.js
+  leaflet-providers.js
 
 - [`get_providers()`](https://rstudio.github.io/leaflet.providers/reference/get_providers.md)
   and `default_providers()` both include a stable
@@ -34,7 +38,7 @@ CRAN release: 2023-08-10
 
 - Updated leaflet.providers data on 2023-08-07 from
   <https://unpkg.com/leaflet-providers> using version 1.13.0 of
-  leaflet.js
+  leaflet-providers.js
 
 ## leaflet.providers 1.9.0
 
@@ -42,7 +46,7 @@ CRAN release: 2019-11-09
 
 - Updated leaflet.providers data on 2019-11-06 from
   <https://unpkg.com/leaflet-providers> using version 1.9.0 of
-  leaflet.js
+  leaflet-providers.js
 
 ## leaflet.providers 1.8.0
 

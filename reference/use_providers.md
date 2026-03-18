@@ -22,16 +22,16 @@ use_providers(providers_info = NULL)
 
 ``` r
 # \donttest{
-if (require("V8") && require("jsonlite")) {
+if (
+  requireNamespace("V8", quietly = TRUE) &&
+  requireNamespace("jsonlite", quietly = TRUE)
+) {
   # Set providers to latest providers
   use_providers(get_providers())
 
   # Set providers to a custom providers object (specific version number)
-  use_providers(get_providers("1.4.0"))
-  use_providers("1.4.0")
+  use_providers(get_providers("1.8.0"))
+  use_providers("1.8.0")
 }
-#> Loading required package: V8
-#> Using V8 engine 12.4.254.21
-#> Loading required package: jsonlite
 # }
 ```

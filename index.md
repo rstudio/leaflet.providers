@@ -102,8 +102,8 @@ str(providers_default(), max.level = 2)
 
 ``` R
 #> List of 5
-#>  $ version_num      : chr "2.0.0"
-#>  $ providers        :List of 233
+#>  $ version_num      : chr "3.0.0"
+#>  $ providers        :List of 224
 #>   ..$ OpenStreetMap                         : chr "OpenStreetMap"
 #>   ..$ OpenStreetMap.Mapnik                  : chr "OpenStreetMap.Mapnik"
 #>   ..$ OpenStreetMap.DE                      : chr "OpenStreetMap.DE"
@@ -111,6 +111,7 @@ str(providers_default(), max.level = 2)
 #>   ..$ OpenStreetMap.France                  : chr "OpenStreetMap.France"
 #>   ..$ OpenStreetMap.HOT                     : chr "OpenStreetMap.HOT"
 #>   ..$ OpenStreetMap.BZH                     : chr "OpenStreetMap.BZH"
+#>   ..$ OpenStreetMap.CAT                     : chr "OpenStreetMap.CAT"
 #>   ..$ MapTilesAPI                           : chr "MapTilesAPI"
 #>   ..$ MapTilesAPI.OSMEnglish                : chr "MapTilesAPI.OSMEnglish"
 #>   ..$ MapTilesAPI.OSMFrancais               : chr "MapTilesAPI.OSMFrancais"
@@ -124,6 +125,7 @@ str(providers_default(), max.level = 2)
 #>   ..$ Stadia                                : chr "Stadia"
 #>   ..$ Stadia.AlidadeSmooth                  : chr "Stadia.AlidadeSmooth"
 #>   ..$ Stadia.AlidadeSmoothDark              : chr "Stadia.AlidadeSmoothDark"
+#>   ..$ Stadia.AlidadeSatellite               : chr "Stadia.AlidadeSatellite"
 #>   ..$ Stadia.OSMBright                      : chr "Stadia.OSMBright"
 #>   ..$ Stadia.Outdoors                       : chr "Stadia.Outdoors"
 #>   ..$ Stadia.StamenToner                    : chr "Stadia.StamenToner"
@@ -146,10 +148,14 @@ str(providers_default(), max.level = 2)
 #>   ..$ Thunderforest.Pioneer                 : chr "Thunderforest.Pioneer"
 #>   ..$ Thunderforest.MobileAtlas             : chr "Thunderforest.MobileAtlas"
 #>   ..$ Thunderforest.Neighbourhood           : chr "Thunderforest.Neighbourhood"
+#>   ..$ BaseMapDE                             : chr "BaseMapDE"
+#>   ..$ BaseMapDE.Color                       : chr "BaseMapDE.Color"
+#>   ..$ BaseMapDE.Grey                        : chr "BaseMapDE.Grey"
 #>   ..$ CyclOSM                               : chr "CyclOSM"
 #>   ..$ Jawg                                  : chr "Jawg"
 #>   ..$ Jawg.Streets                          : chr "Jawg.Streets"
 #>   ..$ Jawg.Terrain                          : chr "Jawg.Terrain"
+#>   ..$ Jawg.Lagoon                           : chr "Jawg.Lagoon"
 #>   ..$ Jawg.Sunny                            : chr "Jawg.Sunny"
 #>   ..$ Jawg.Dark                             : chr "Jawg.Dark"
 #>   ..$ Jawg.Light                            : chr "Jawg.Light"
@@ -165,13 +171,23 @@ str(providers_default(), max.level = 2)
 #>   ..$ MapTiler.Toner                        : chr "MapTiler.Toner"
 #>   ..$ MapTiler.Topo                         : chr "MapTiler.Topo"
 #>   ..$ MapTiler.Voyager                      : chr "MapTiler.Voyager"
+#>   ..$ MapTiler.Ocean                        : chr "MapTiler.Ocean"
+#>   ..$ MapTiler.Backdrop                     : chr "MapTiler.Backdrop"
+#>   ..$ MapTiler.Dataviz                      : chr "MapTiler.Dataviz"
+#>   ..$ MapTiler.DatavizLight                 : chr "MapTiler.DatavizLight"
+#>   ..$ MapTiler.DatavizDark                  : chr "MapTiler.DatavizDark"
+#>   ..$ MapTiler.Aquarelle                    : chr "MapTiler.Aquarelle"
+#>   ..$ MapTiler.Landscape                    : chr "MapTiler.Landscape"
+#>   ..$ MapTiler.Openstreetmap                : chr "MapTiler.Openstreetmap"
+#>   ..$ MapTiler.Outdoor                      : chr "MapTiler.Outdoor"
+#>   ..$ MapTiler.Satellite                    : chr "MapTiler.Satellite"
+#>   ..$ MapTiler.Winter                       : chr "MapTiler.Winter"
 #>   ..$ TomTom                                : chr "TomTom"
 #>   ..$ TomTom.Basic                          : chr "TomTom.Basic"
 #>   ..$ TomTom.Hybrid                         : chr "TomTom.Hybrid"
 #>   ..$ TomTom.Labels                         : chr "TomTom.Labels"
 #>   ..$ Esri                                  : chr "Esri"
 #>   ..$ Esri.WorldStreetMap                   : chr "Esri.WorldStreetMap"
-#>   ..$ Esri.DeLorme                          : chr "Esri.DeLorme"
 #>   ..$ Esri.WorldTopoMap                     : chr "Esri.WorldTopoMap"
 #>   ..$ Esri.WorldImagery                     : chr "Esri.WorldImagery"
 #>   ..$ Esri.WorldTerrain                     : chr "Esri.WorldTerrain"
@@ -187,24 +203,8 @@ str(providers_default(), max.level = 2)
 #>   ..$ OpenWeatherMap.PrecipitationClassic   : chr "OpenWeatherMap.PrecipitationClassic"
 #>   ..$ OpenWeatherMap.Rain                   : chr "OpenWeatherMap.Rain"
 #>   ..$ OpenWeatherMap.RainClassic            : chr "OpenWeatherMap.RainClassic"
-#>   ..$ OpenWeatherMap.Pressure               : chr "OpenWeatherMap.Pressure"
-#>   ..$ OpenWeatherMap.PressureContour        : chr "OpenWeatherMap.PressureContour"
-#>   ..$ OpenWeatherMap.Wind                   : chr "OpenWeatherMap.Wind"
-#>   ..$ OpenWeatherMap.Temperature            : chr "OpenWeatherMap.Temperature"
-#>   ..$ OpenWeatherMap.Snow                   : chr "OpenWeatherMap.Snow"
-#>   ..$ HERE                                  : chr "HERE"
-#>   ..$ HERE.normalDay                        : chr "HERE.normalDay"
-#>   ..$ HERE.normalDayCustom                  : chr "HERE.normalDayCustom"
-#>   ..$ HERE.normalDayGrey                    : chr "HERE.normalDayGrey"
-#>   ..$ HERE.normalDayMobile                  : chr "HERE.normalDayMobile"
-#>   ..$ HERE.normalDayGreyMobile              : chr "HERE.normalDayGreyMobile"
-#>   ..$ HERE.normalDayTransit                 : chr "HERE.normalDayTransit"
-#>   ..$ HERE.normalDayTransitMobile           : chr "HERE.normalDayTransitMobile"
-#>   ..$ HERE.normalDayTraffic                 : chr "HERE.normalDayTraffic"
-#>   ..$ HERE.normalNight                      : chr "HERE.normalNight"
-#>   ..$ HERE.normalNightMobile                : chr "HERE.normalNightMobile"
 #>   .. [list output truncated]
-#>  $ providers_details:List of 36
+#>  $ providers_details:List of 37
 #>   ..$ OpenStreetMap        :List of 3
 #>   ..$ MapTilesAPI          :List of 3
 #>   ..$ OpenSeaMap           :List of 2
@@ -215,6 +215,7 @@ str(providers_default(), max.level = 2)
 #>   ..$ SafeCast             :List of 2
 #>   ..$ Stadia               :List of 3
 #>   ..$ Thunderforest        :List of 3
+#>   ..$ BaseMapDE            :List of 3
 #>   ..$ CyclOSM              :List of 2
 #>   ..$ Jawg                 :List of 3
 #>   ..$ MapBox               :List of 2
@@ -223,7 +224,6 @@ str(providers_default(), max.level = 2)
 #>   ..$ Esri                 :List of 3
 #>   ..$ OpenWeatherMap       :List of 3
 #>   ..$ HERE                 :List of 3
-#>   ..$ HEREv3               :List of 3
 #>   ..$ FreeMapSK            :List of 2
 #>   ..$ MtbMap               :List of 2
 #>   ..$ CartoDB              :List of 3
@@ -231,7 +231,7 @@ str(providers_default(), max.level = 2)
 #>   ..$ BasemapAT            :List of 3
 #>   ..$ nlmaps               :List of 3
 #>   ..$ NASAGIBS             :List of 3
-#>   ..$ NLS                  :List of 2
+#>   ..$ NLS                  :List of 3
 #>   ..$ JusticeMap           :List of 3
 #>   ..$ GeoportailFrance     :List of 3
 #>   ..$ OneMapSG             :List of 3
@@ -241,10 +241,11 @@ str(providers_default(), max.level = 2)
 #>   ..$ OpenSnowMap          :List of 3
 #>   ..$ AzureMaps            :List of 3
 #>   ..$ SwissFederalGeoportal:List of 3
-#>  $ src              : chr "(function (root, factory) {\n\tif (typeof define === 'function' && define.amd) {\n\t\t// AMD. Register as an an"| __truncated__
+#>   ..$ TopPlusOpen          :List of 3
+#>  $ src              : chr "(function(root, factory) {\n\tif (typeof define === 'function' && define.amd) {\n\t\t// AMD. Register as an ano"| __truncated__
 #>  $ dep              :List of 10
 #>   ..$ name      : chr "leaflet-providers"
-#>   ..$ version   : chr "2.0.0"
+#>   ..$ version   : chr "3.0.0"
 #>   ..$ src       :List of 1
 #>   ..$ meta      : NULL
 #>   ..$ script    : chr "leaflet-providers.js"
@@ -264,7 +265,7 @@ str(providers_default(), max.level = 2)
 ``` r
 
 providers_loaded()$version_num
-#> [1] "2.0.0"
+#> [1] "3.0.0"
 ```
 
 #### Supported tile providers
@@ -282,232 +283,223 @@ names(providers_loaded()$providers)
 #>   [5] "OpenStreetMap.France"                  
 #>   [6] "OpenStreetMap.HOT"                     
 #>   [7] "OpenStreetMap.BZH"                     
-#>   [8] "MapTilesAPI"                           
-#>   [9] "MapTilesAPI.OSMEnglish"                
-#>  [10] "MapTilesAPI.OSMFrancais"               
-#>  [11] "MapTilesAPI.OSMEspagnol"               
-#>  [12] "OpenSeaMap"                            
-#>  [13] "OPNVKarte"                             
-#>  [14] "OpenTopoMap"                           
-#>  [15] "OpenRailwayMap"                        
-#>  [16] "OpenFireMap"                           
-#>  [17] "SafeCast"                              
-#>  [18] "Stadia"                                
-#>  [19] "Stadia.AlidadeSmooth"                  
-#>  [20] "Stadia.AlidadeSmoothDark"              
-#>  [21] "Stadia.OSMBright"                      
-#>  [22] "Stadia.Outdoors"                       
-#>  [23] "Stadia.StamenToner"                    
-#>  [24] "Stadia.StamenTonerBackground"          
-#>  [25] "Stadia.StamenTonerLines"               
-#>  [26] "Stadia.StamenTonerLabels"              
-#>  [27] "Stadia.StamenTonerLite"                
-#>  [28] "Stadia.StamenWatercolor"               
-#>  [29] "Stadia.StamenTerrain"                  
-#>  [30] "Stadia.StamenTerrainBackground"        
-#>  [31] "Stadia.StamenTerrainLabels"            
-#>  [32] "Stadia.StamenTerrainLines"             
-#>  [33] "Thunderforest"                         
-#>  [34] "Thunderforest.OpenCycleMap"            
-#>  [35] "Thunderforest.Transport"               
-#>  [36] "Thunderforest.TransportDark"           
-#>  [37] "Thunderforest.SpinalMap"               
-#>  [38] "Thunderforest.Landscape"               
-#>  [39] "Thunderforest.Outdoors"                
-#>  [40] "Thunderforest.Pioneer"                 
-#>  [41] "Thunderforest.MobileAtlas"             
-#>  [42] "Thunderforest.Neighbourhood"           
-#>  [43] "CyclOSM"                               
-#>  [44] "Jawg"                                  
-#>  [45] "Jawg.Streets"                          
-#>  [46] "Jawg.Terrain"                          
-#>  [47] "Jawg.Sunny"                            
-#>  [48] "Jawg.Dark"                             
-#>  [49] "Jawg.Light"                            
-#>  [50] "Jawg.Matrix"                           
-#>  [51] "MapBox"                                
-#>  [52] "MapTiler"                              
-#>  [53] "MapTiler.Streets"                      
-#>  [54] "MapTiler.Basic"                        
-#>  [55] "MapTiler.Bright"                       
-#>  [56] "MapTiler.Pastel"                       
-#>  [57] "MapTiler.Positron"                     
-#>  [58] "MapTiler.Hybrid"                       
-#>  [59] "MapTiler.Toner"                        
-#>  [60] "MapTiler.Topo"                         
-#>  [61] "MapTiler.Voyager"                      
-#>  [62] "TomTom"                                
-#>  [63] "TomTom.Basic"                          
-#>  [64] "TomTom.Hybrid"                         
-#>  [65] "TomTom.Labels"                         
-#>  [66] "Esri"                                  
-#>  [67] "Esri.WorldStreetMap"                   
-#>  [68] "Esri.DeLorme"                          
-#>  [69] "Esri.WorldTopoMap"                     
-#>  [70] "Esri.WorldImagery"                     
-#>  [71] "Esri.WorldTerrain"                     
-#>  [72] "Esri.WorldShadedRelief"                
-#>  [73] "Esri.WorldPhysical"                    
-#>  [74] "Esri.OceanBasemap"                     
-#>  [75] "Esri.NatGeoWorldMap"                   
-#>  [76] "Esri.WorldGrayCanvas"                  
-#>  [77] "OpenWeatherMap"                        
-#>  [78] "OpenWeatherMap.Clouds"                 
-#>  [79] "OpenWeatherMap.CloudsClassic"          
-#>  [80] "OpenWeatherMap.Precipitation"          
-#>  [81] "OpenWeatherMap.PrecipitationClassic"   
-#>  [82] "OpenWeatherMap.Rain"                   
-#>  [83] "OpenWeatherMap.RainClassic"            
-#>  [84] "OpenWeatherMap.Pressure"               
-#>  [85] "OpenWeatherMap.PressureContour"        
-#>  [86] "OpenWeatherMap.Wind"                   
-#>  [87] "OpenWeatherMap.Temperature"            
-#>  [88] "OpenWeatherMap.Snow"                   
-#>  [89] "HERE"                                  
-#>  [90] "HERE.normalDay"                        
-#>  [91] "HERE.normalDayCustom"                  
-#>  [92] "HERE.normalDayGrey"                    
-#>  [93] "HERE.normalDayMobile"                  
-#>  [94] "HERE.normalDayGreyMobile"              
-#>  [95] "HERE.normalDayTransit"                 
-#>  [96] "HERE.normalDayTransitMobile"           
-#>  [97] "HERE.normalDayTraffic"                 
-#>  [98] "HERE.normalNight"                      
-#>  [99] "HERE.normalNightMobile"                
-#> [100] "HERE.normalNightGrey"                  
-#> [101] "HERE.normalNightGreyMobile"            
-#> [102] "HERE.normalNightTransit"               
-#> [103] "HERE.normalNightTransitMobile"         
-#> [104] "HERE.reducedDay"                       
-#> [105] "HERE.reducedNight"                     
-#> [106] "HERE.basicMap"                         
-#> [107] "HERE.mapLabels"                        
-#> [108] "HERE.trafficFlow"                      
-#> [109] "HERE.carnavDayGrey"                    
-#> [110] "HERE.hybridDay"                        
-#> [111] "HERE.hybridDayMobile"                  
-#> [112] "HERE.hybridDayTransit"                 
-#> [113] "HERE.hybridDayGrey"                    
-#> [114] "HERE.hybridDayTraffic"                 
-#> [115] "HERE.pedestrianDay"                    
-#> [116] "HERE.pedestrianNight"                  
-#> [117] "HERE.satelliteDay"                     
-#> [118] "HERE.terrainDay"                       
-#> [119] "HERE.terrainDayMobile"                 
-#> [120] "HEREv3"                                
-#> [121] "HEREv3.normalDay"                      
-#> [122] "HEREv3.normalDayCustom"                
-#> [123] "HEREv3.normalDayGrey"                  
-#> [124] "HEREv3.normalDayMobile"                
-#> [125] "HEREv3.normalDayGreyMobile"            
-#> [126] "HEREv3.normalDayTransit"               
-#> [127] "HEREv3.normalDayTransitMobile"         
-#> [128] "HEREv3.normalNight"                    
-#> [129] "HEREv3.normalNightMobile"              
-#> [130] "HEREv3.normalNightGrey"                
-#> [131] "HEREv3.normalNightGreyMobile"          
-#> [132] "HEREv3.normalNightTransit"             
-#> [133] "HEREv3.normalNightTransitMobile"       
-#> [134] "HEREv3.reducedDay"                     
-#> [135] "HEREv3.reducedNight"                   
-#> [136] "HEREv3.basicMap"                       
-#> [137] "HEREv3.mapLabels"                      
-#> [138] "HEREv3.trafficFlow"                    
-#> [139] "HEREv3.carnavDayGrey"                  
-#> [140] "HEREv3.hybridDay"                      
-#> [141] "HEREv3.hybridDayMobile"                
-#> [142] "HEREv3.hybridDayTransit"               
-#> [143] "HEREv3.hybridDayGrey"                  
-#> [144] "HEREv3.pedestrianDay"                  
-#> [145] "HEREv3.pedestrianNight"                
-#> [146] "HEREv3.satelliteDay"                   
-#> [147] "HEREv3.terrainDay"                     
-#> [148] "HEREv3.terrainDayMobile"               
-#> [149] "FreeMapSK"                             
-#> [150] "MtbMap"                                
-#> [151] "CartoDB"                               
-#> [152] "CartoDB.Positron"                      
-#> [153] "CartoDB.PositronNoLabels"              
-#> [154] "CartoDB.PositronOnlyLabels"            
-#> [155] "CartoDB.DarkMatter"                    
-#> [156] "CartoDB.DarkMatterNoLabels"            
-#> [157] "CartoDB.DarkMatterOnlyLabels"          
-#> [158] "CartoDB.Voyager"                       
-#> [159] "CartoDB.VoyagerNoLabels"               
-#> [160] "CartoDB.VoyagerOnlyLabels"             
-#> [161] "CartoDB.VoyagerLabelsUnder"            
-#> [162] "HikeBike"                              
-#> [163] "HikeBike.HikeBike"                     
-#> [164] "HikeBike.HillShading"                  
-#> [165] "BasemapAT"                             
-#> [166] "BasemapAT.basemap"                     
-#> [167] "BasemapAT.grau"                        
-#> [168] "BasemapAT.overlay"                     
-#> [169] "BasemapAT.terrain"                     
-#> [170] "BasemapAT.surface"                     
-#> [171] "BasemapAT.highdpi"                     
-#> [172] "BasemapAT.orthofoto"                   
-#> [173] "nlmaps"                                
-#> [174] "nlmaps.standaard"                      
-#> [175] "nlmaps.pastel"                         
-#> [176] "nlmaps.grijs"                          
-#> [177] "nlmaps.water"                          
-#> [178] "nlmaps.luchtfoto"                      
-#> [179] "NASAGIBS"                              
-#> [180] "NASAGIBS.ModisTerraTrueColorCR"        
-#> [181] "NASAGIBS.ModisTerraBands367CR"         
-#> [182] "NASAGIBS.ViirsEarthAtNight2012"        
-#> [183] "NASAGIBS.ModisTerraLSTDay"             
-#> [184] "NASAGIBS.ModisTerraSnowCover"          
-#> [185] "NASAGIBS.ModisTerraAOD"                
-#> [186] "NASAGIBS.ModisTerraChlorophyll"        
-#> [187] "NLS"                                   
-#> [188] "JusticeMap"                            
-#> [189] "JusticeMap.income"                     
-#> [190] "JusticeMap.americanIndian"             
-#> [191] "JusticeMap.asian"                      
-#> [192] "JusticeMap.black"                      
-#> [193] "JusticeMap.hispanic"                   
-#> [194] "JusticeMap.multi"                      
-#> [195] "JusticeMap.nonWhite"                   
-#> [196] "JusticeMap.white"                      
-#> [197] "JusticeMap.plurality"                  
-#> [198] "GeoportailFrance"                      
-#> [199] "GeoportailFrance.plan"                 
-#> [200] "GeoportailFrance.parcels"              
-#> [201] "GeoportailFrance.orthos"               
-#> [202] "OneMapSG"                              
-#> [203] "OneMapSG.Default"                      
-#> [204] "OneMapSG.Night"                        
-#> [205] "OneMapSG.Original"                     
-#> [206] "OneMapSG.Grey"                         
-#> [207] "OneMapSG.LandLot"                      
-#> [208] "USGS"                                  
-#> [209] "USGS.USTopo"                           
-#> [210] "USGS.USImagery"                        
-#> [211] "USGS.USImageryTopo"                    
-#> [212] "WaymarkedTrails"                       
-#> [213] "WaymarkedTrails.hiking"                
-#> [214] "WaymarkedTrails.cycling"               
-#> [215] "WaymarkedTrails.mtb"                   
-#> [216] "WaymarkedTrails.slopes"                
-#> [217] "WaymarkedTrails.riding"                
-#> [218] "WaymarkedTrails.skating"               
-#> [219] "OpenAIP"                               
-#> [220] "OpenSnowMap"                           
-#> [221] "OpenSnowMap.pistes"                    
-#> [222] "AzureMaps"                             
-#> [223] "AzureMaps.MicrosoftImagery"            
-#> [224] "AzureMaps.MicrosoftBaseDarkGrey"       
-#> [225] "AzureMaps.MicrosoftBaseRoad"           
-#> [226] "AzureMaps.MicrosoftBaseHybridRoad"     
-#> [227] "AzureMaps.MicrosoftTerraMain"          
-#> [228] "AzureMaps.MicrosoftWeatherInfraredMain"
-#> [229] "AzureMaps.MicrosoftWeatherRadarMain"   
-#> [230] "SwissFederalGeoportal"                 
-#> [231] "SwissFederalGeoportal.NationalMapColor"
-#> [232] "SwissFederalGeoportal.NationalMapGrey" 
-#> [233] "SwissFederalGeoportal.SWISSIMAGE"
+#>   [8] "OpenStreetMap.CAT"                     
+#>   [9] "MapTilesAPI"                           
+#>  [10] "MapTilesAPI.OSMEnglish"                
+#>  [11] "MapTilesAPI.OSMFrancais"               
+#>  [12] "MapTilesAPI.OSMEspagnol"               
+#>  [13] "OpenSeaMap"                            
+#>  [14] "OPNVKarte"                             
+#>  [15] "OpenTopoMap"                           
+#>  [16] "OpenRailwayMap"                        
+#>  [17] "OpenFireMap"                           
+#>  [18] "SafeCast"                              
+#>  [19] "Stadia"                                
+#>  [20] "Stadia.AlidadeSmooth"                  
+#>  [21] "Stadia.AlidadeSmoothDark"              
+#>  [22] "Stadia.AlidadeSatellite"               
+#>  [23] "Stadia.OSMBright"                      
+#>  [24] "Stadia.Outdoors"                       
+#>  [25] "Stadia.StamenToner"                    
+#>  [26] "Stadia.StamenTonerBackground"          
+#>  [27] "Stadia.StamenTonerLines"               
+#>  [28] "Stadia.StamenTonerLabels"              
+#>  [29] "Stadia.StamenTonerLite"                
+#>  [30] "Stadia.StamenWatercolor"               
+#>  [31] "Stadia.StamenTerrain"                  
+#>  [32] "Stadia.StamenTerrainBackground"        
+#>  [33] "Stadia.StamenTerrainLabels"            
+#>  [34] "Stadia.StamenTerrainLines"             
+#>  [35] "Thunderforest"                         
+#>  [36] "Thunderforest.OpenCycleMap"            
+#>  [37] "Thunderforest.Transport"               
+#>  [38] "Thunderforest.TransportDark"           
+#>  [39] "Thunderforest.SpinalMap"               
+#>  [40] "Thunderforest.Landscape"               
+#>  [41] "Thunderforest.Outdoors"                
+#>  [42] "Thunderforest.Pioneer"                 
+#>  [43] "Thunderforest.MobileAtlas"             
+#>  [44] "Thunderforest.Neighbourhood"           
+#>  [45] "BaseMapDE"                             
+#>  [46] "BaseMapDE.Color"                       
+#>  [47] "BaseMapDE.Grey"                        
+#>  [48] "CyclOSM"                               
+#>  [49] "Jawg"                                  
+#>  [50] "Jawg.Streets"                          
+#>  [51] "Jawg.Terrain"                          
+#>  [52] "Jawg.Lagoon"                           
+#>  [53] "Jawg.Sunny"                            
+#>  [54] "Jawg.Dark"                             
+#>  [55] "Jawg.Light"                            
+#>  [56] "Jawg.Matrix"                           
+#>  [57] "MapBox"                                
+#>  [58] "MapTiler"                              
+#>  [59] "MapTiler.Streets"                      
+#>  [60] "MapTiler.Basic"                        
+#>  [61] "MapTiler.Bright"                       
+#>  [62] "MapTiler.Pastel"                       
+#>  [63] "MapTiler.Positron"                     
+#>  [64] "MapTiler.Hybrid"                       
+#>  [65] "MapTiler.Toner"                        
+#>  [66] "MapTiler.Topo"                         
+#>  [67] "MapTiler.Voyager"                      
+#>  [68] "MapTiler.Ocean"                        
+#>  [69] "MapTiler.Backdrop"                     
+#>  [70] "MapTiler.Dataviz"                      
+#>  [71] "MapTiler.DatavizLight"                 
+#>  [72] "MapTiler.DatavizDark"                  
+#>  [73] "MapTiler.Aquarelle"                    
+#>  [74] "MapTiler.Landscape"                    
+#>  [75] "MapTiler.Openstreetmap"                
+#>  [76] "MapTiler.Outdoor"                      
+#>  [77] "MapTiler.Satellite"                    
+#>  [78] "MapTiler.Winter"                       
+#>  [79] "TomTom"                                
+#>  [80] "TomTom.Basic"                          
+#>  [81] "TomTom.Hybrid"                         
+#>  [82] "TomTom.Labels"                         
+#>  [83] "Esri"                                  
+#>  [84] "Esri.WorldStreetMap"                   
+#>  [85] "Esri.WorldTopoMap"                     
+#>  [86] "Esri.WorldImagery"                     
+#>  [87] "Esri.WorldTerrain"                     
+#>  [88] "Esri.WorldShadedRelief"                
+#>  [89] "Esri.WorldPhysical"                    
+#>  [90] "Esri.OceanBasemap"                     
+#>  [91] "Esri.NatGeoWorldMap"                   
+#>  [92] "Esri.WorldGrayCanvas"                  
+#>  [93] "OpenWeatherMap"                        
+#>  [94] "OpenWeatherMap.Clouds"                 
+#>  [95] "OpenWeatherMap.CloudsClassic"          
+#>  [96] "OpenWeatherMap.Precipitation"          
+#>  [97] "OpenWeatherMap.PrecipitationClassic"   
+#>  [98] "OpenWeatherMap.Rain"                   
+#>  [99] "OpenWeatherMap.RainClassic"            
+#> [100] "OpenWeatherMap.Pressure"               
+#> [101] "OpenWeatherMap.PressureContour"        
+#> [102] "OpenWeatherMap.Wind"                   
+#> [103] "OpenWeatherMap.Temperature"            
+#> [104] "OpenWeatherMap.Snow"                   
+#> [105] "HERE"                                  
+#> [106] "HERE.exploreDay"                       
+#> [107] "HERE.liteDay"                          
+#> [108] "HERE.logisticsDay"                     
+#> [109] "HERE.topoDay"                          
+#> [110] "HERE.logisticsNight"                   
+#> [111] "HERE.exploreNight"                     
+#> [112] "HERE.topoNight"                        
+#> [113] "HERE.liteNight"                        
+#> [114] "HERE.exploreSatelliteDay"              
+#> [115] "HERE.liteSatelliteDay"                 
+#> [116] "HERE.logisticsSatelliteDay"            
+#> [117] "HERE.basicMap"                         
+#> [118] "HERE.mapLabels"                        
+#> [119] "HERE.trafficFlow"                      
+#> [120] "HERE.carnavDayGrey"                    
+#> [121] "HERE.hybridDay"                        
+#> [122] "HERE.hybridDayMobile"                  
+#> [123] "HERE.hybridDayTransit"                 
+#> [124] "HERE.hybridDayGrey"                    
+#> [125] "HERE.pedestrianDay"                    
+#> [126] "HERE.pedestrianNight"                  
+#> [127] "HERE.satelliteDay"                     
+#> [128] "HERE.terrainDay"                       
+#> [129] "HERE.terrainDayMobile"                 
+#> [130] "FreeMapSK"                             
+#> [131] "MtbMap"                                
+#> [132] "CartoDB"                               
+#> [133] "CartoDB.Positron"                      
+#> [134] "CartoDB.PositronNoLabels"              
+#> [135] "CartoDB.PositronOnlyLabels"            
+#> [136] "CartoDB.DarkMatter"                    
+#> [137] "CartoDB.DarkMatterNoLabels"            
+#> [138] "CartoDB.DarkMatterOnlyLabels"          
+#> [139] "CartoDB.Voyager"                       
+#> [140] "CartoDB.VoyagerNoLabels"               
+#> [141] "CartoDB.VoyagerOnlyLabels"             
+#> [142] "CartoDB.VoyagerLabelsUnder"            
+#> [143] "HikeBike"                              
+#> [144] "HikeBike.HikeBike"                     
+#> [145] "HikeBike.HillShading"                  
+#> [146] "BasemapAT"                             
+#> [147] "BasemapAT.basemap"                     
+#> [148] "BasemapAT.grau"                        
+#> [149] "BasemapAT.overlay"                     
+#> [150] "BasemapAT.terrain"                     
+#> [151] "BasemapAT.surface"                     
+#> [152] "BasemapAT.highdpi"                     
+#> [153] "BasemapAT.orthofoto"                   
+#> [154] "nlmaps"                                
+#> [155] "nlmaps.standaard"                      
+#> [156] "nlmaps.pastel"                         
+#> [157] "nlmaps.grijs"                          
+#> [158] "nlmaps.water"                          
+#> [159] "nlmaps.luchtfoto"                      
+#> [160] "NASAGIBS"                              
+#> [161] "NASAGIBS.ModisTerraTrueColorCR"        
+#> [162] "NASAGIBS.ModisTerraBands367CR"         
+#> [163] "NASAGIBS.ViirsEarthAtNight2012"        
+#> [164] "NASAGIBS.ModisTerraLSTDay"             
+#> [165] "NASAGIBS.ModisTerraSnowCover"          
+#> [166] "NASAGIBS.ModisTerraAOD"                
+#> [167] "NASAGIBS.ModisTerraChlorophyll"        
+#> [168] "NLS"                                   
+#> [169] "NLS.osgb63k1885"                       
+#> [170] "NLS.osgb1888"                          
+#> [171] "NLS.osgb10k1888"                       
+#> [172] "NLS.osgb1919"                          
+#> [173] "NLS.osgb25k1937"                       
+#> [174] "NLS.osgb63k1955"                       
+#> [175] "NLS.oslondon1k1893"                    
+#> [176] "JusticeMap"                            
+#> [177] "JusticeMap.income"                     
+#> [178] "JusticeMap.americanIndian"             
+#> [179] "JusticeMap.asian"                      
+#> [180] "JusticeMap.black"                      
+#> [181] "JusticeMap.hispanic"                   
+#> [182] "JusticeMap.multi"                      
+#> [183] "JusticeMap.nonWhite"                   
+#> [184] "JusticeMap.white"                      
+#> [185] "JusticeMap.plurality"                  
+#> [186] "GeoportailFrance"                      
+#> [187] "GeoportailFrance.plan"                 
+#> [188] "GeoportailFrance.parcels"              
+#> [189] "GeoportailFrance.orthos"               
+#> [190] "OneMapSG"                              
+#> [191] "OneMapSG.Default"                      
+#> [192] "OneMapSG.Night"                        
+#> [193] "OneMapSG.Original"                     
+#> [194] "OneMapSG.Grey"                         
+#> [195] "OneMapSG.LandLot"                      
+#> [196] "USGS"                                  
+#> [197] "USGS.USTopo"                           
+#> [198] "USGS.USImagery"                        
+#> [199] "USGS.USImageryTopo"                    
+#> [200] "WaymarkedTrails"                       
+#> [201] "WaymarkedTrails.hiking"                
+#> [202] "WaymarkedTrails.cycling"               
+#> [203] "WaymarkedTrails.mtb"                   
+#> [204] "WaymarkedTrails.slopes"                
+#> [205] "WaymarkedTrails.riding"                
+#> [206] "WaymarkedTrails.skating"               
+#> [207] "OpenAIP"                               
+#> [208] "OpenSnowMap"                           
+#> [209] "OpenSnowMap.pistes"                    
+#> [210] "AzureMaps"                             
+#> [211] "AzureMaps.MicrosoftImagery"            
+#> [212] "AzureMaps.MicrosoftBaseDarkGrey"       
+#> [213] "AzureMaps.MicrosoftBaseRoad"           
+#> [214] "AzureMaps.MicrosoftBaseHybridRoad"     
+#> [215] "AzureMaps.MicrosoftTerraMain"          
+#> [216] "AzureMaps.MicrosoftWeatherInfraredMain"
+#> [217] "AzureMaps.MicrosoftWeatherRadarMain"   
+#> [218] "SwissFederalGeoportal"                 
+#> [219] "SwissFederalGeoportal.NationalMapColor"
+#> [220] "SwissFederalGeoportal.NationalMapGrey" 
+#> [221] "SwissFederalGeoportal.SWISSIMAGE"      
+#> [222] "TopPlusOpen"                           
+#> [223] "TopPlusOpen.Color"                     
+#> [224] "TopPlusOpen.Grey"
 ```
 
 #### Tile providers’ details
@@ -518,13 +510,13 @@ str(providers_loaded()$providers_details)
 ```
 
 ``` R
-#> List of 36
+#> List of 37
 #>  $ OpenStreetMap        :List of 3
 #>   ..$ url     : chr "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
 #>   ..$ options :List of 2
 #>   .. ..$ maxZoom    : int 19
 #>   .. ..$ attribution: chr "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors"
-#>   ..$ variants:List of 6
+#>   ..$ variants:List of 7
 #>   .. ..$ Mapnik: Named list()
 #>   .. ..$ DE    :List of 2
 #>   .. .. ..$ url    : chr "https://tile.openstreetmap.de/{z}/{x}/{y}.png"
@@ -549,6 +541,10 @@ str(providers_loaded()$providers_details)
 #>   .. .. ..$ options:List of 2
 #>   .. .. .. ..$ attribution: chr "{attribution.OpenStreetMap}, Tiles courtesy of <a href=\"http://www.openstreetmap.bzh/\" target=\"_blank\">Bret"| __truncated__
 #>   .. .. .. ..$ bounds     : num [1:2, 1:2] 46.2 50 -5.5 0.7
+#>   .. ..$ CAT   :List of 2
+#>   .. .. ..$ url    : chr "https://tile.openstreetmap.bzh/ca/{z}/{x}/{y}.png"
+#>   .. .. ..$ options:List of 1
+#>   .. .. .. ..$ attribution: chr "{attribution.OpenStreetMap}, Tiles courtesy of <a href=\"https://www.openstreetmap.cat\" target=\"_blank\">Bret"| __truncated__
 #>  $ MapTilesAPI          :List of 3
 #>   ..$ url     : chr "https://maptiles.p.rapidapi.com/{variant}/{z}/{x}/{y}.png?rapidapi-key={apikey}"
 #>   ..$ options :List of 4
@@ -603,9 +599,14 @@ str(providers_loaded()$providers_details)
 #>   .. ..$ attribution: chr "&copy; <a href=\"https://www.stadiamaps.com/\" target=\"_blank\">Stadia Maps</a> &copy; <a href=\"https://openm"| __truncated__
 #>   .. ..$ variant    : chr "alidade_smooth"
 #>   .. ..$ ext        : chr "png"
-#>   ..$ variants:List of 14
+#>   ..$ variants:List of 15
 #>   .. ..$ AlidadeSmooth          : chr "alidade_smooth"
 #>   .. ..$ AlidadeSmoothDark      : chr "alidade_smooth_dark"
+#>   .. ..$ AlidadeSatellite       :List of 1
+#>   .. .. ..$ options:List of 3
+#>   .. .. .. ..$ attribution: chr "&copy; CNES, Distribution Airbus DS, u00a9 Airbus DS, u00a9 PlanetObserver (Contains Copernicus Data) | &copy; "| __truncated__
+#>   .. .. .. ..$ variant    : chr "alidade_satellite"
+#>   .. .. .. ..$ ext        : chr "jpg"
 #>   .. ..$ OSMBright              : chr "osm_bright"
 #>   .. ..$ Outdoors               : chr "outdoors"
 #>   .. ..$ StamenToner            :List of 1
@@ -661,7 +662,7 @@ str(providers_loaded()$providers_details)
 #>   .. .. .. ..$ minZoom    : int 0
 #>   .. .. .. ..$ maxZoom    : int 18
 #>  $ Thunderforest        :List of 3
-#>   ..$ url     : chr "https://{s}.tile.thunderforest.com/{variant}/{z}/{x}/{y}.png?apikey={apikey}"
+#>   ..$ url     : chr "https://{s}.tile.thunderforest.com/{variant}/{z}/{x}/{y}{r}.png?apikey={apikey}"
 #>   ..$ options :List of 4
 #>   .. ..$ attribution: chr "&copy; <a href=\"http://www.thunderforest.com/\">Thunderforest</a>, {attribution.OpenStreetMap}"
 #>   .. ..$ variant    : chr "cycle"
@@ -683,23 +684,31 @@ str(providers_loaded()$providers_details)
 #>   .. ..$ Pioneer      : chr "pioneer"
 #>   .. ..$ MobileAtlas  : chr "mobile-atlas"
 #>   .. ..$ Neighbourhood: chr "neighbourhood"
+#>  $ BaseMapDE            :List of 3
+#>   ..$ url     : chr "https://sgx.geodatenzentrum.de/wmts_basemapde/tile/1.0.0/{variant}/default/GLOBAL_WEBMERCATOR/{z}/{y}/{x}.png"
+#>   ..$ options :List of 2
+#>   .. ..$ attribution: chr "Map data: &copy; <a href=\"http://www.govdata.de/dl-de/by-2-0\">dl-de/by-2-0</a>"
+#>   .. ..$ variant    : chr "de_basemapde_web_raster_farbe"
+#>   ..$ variants:List of 2
+#>   .. ..$ Color: chr "de_basemapde_web_raster_farbe"
+#>   .. ..$ Grey : chr "de_basemapde_web_raster_grau"
 #>  $ CyclOSM              :List of 2
 #>   ..$ url    : chr "https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png"
 #>   ..$ options:List of 2
 #>   .. ..$ maxZoom    : int 20
 #>   .. ..$ attribution: chr "<a href=\"https://github.com/cyclosm/cyclosm-cartocss-style/releases\" title=\"CyclOSM - Open Bicycle render\">"| __truncated__
 #>  $ Jawg                 :List of 3
-#>   ..$ url     : chr "https://{s}.tile.jawg.io/{variant}/{z}/{x}/{y}{r}.png?access-token={accessToken}"
-#>   ..$ options :List of 6
-#>   .. ..$ attribution: chr "<a href=\"http://jawg.io\" title=\"Tiles Courtesy of Jawg Maps\" target=\"_blank\">&copy; <b>Jawg</b>Maps</a> {"| __truncated__
+#>   ..$ url     : chr "https://tile.jawg.io/{variant}/{z}/{x}/{y}{r}.png?access-token={accessToken}"
+#>   ..$ options :List of 5
+#>   .. ..$ attribution: chr "<a href=\"https://jawg.io\" title=\"Tiles Courtesy of Jawg Maps\" target=\"_blank\">&copy; <b>Jawg</b>Maps</a> "| __truncated__
 #>   .. ..$ minZoom    : int 0
 #>   .. ..$ maxZoom    : int 22
-#>   .. ..$ subdomains : chr "abcd"
-#>   .. ..$ variant    : chr "jawg-terrain"
+#>   .. ..$ variant    : chr "jawg-streets"
 #>   .. ..$ accessToken: chr "<insert your access token here>"
-#>   ..$ variants:List of 6
+#>   ..$ variants:List of 7
 #>   .. ..$ Streets: chr "jawg-streets"
 #>   .. ..$ Terrain: chr "jawg-terrain"
+#>   .. ..$ Lagoon : chr "jawg-lagoon"
 #>   .. ..$ Sunny  : chr "jawg-sunny"
 #>   .. ..$ Dark   : chr "jawg-dark"
 #>   .. ..$ Light  : chr "jawg-light"
@@ -724,25 +733,45 @@ str(providers_loaded()$providers_details)
 #>   .. ..$ zoomOffset : int -1
 #>   .. ..$ minZoom    : int 0
 #>   .. ..$ maxZoom    : int 21
-#>   ..$ variants:List of 9
-#>   .. ..$ Streets : chr "streets"
-#>   .. ..$ Basic   : chr "basic"
-#>   .. ..$ Bright  : chr "bright"
-#>   .. ..$ Pastel  : chr "pastel"
-#>   .. ..$ Positron: chr "positron"
-#>   .. ..$ Hybrid  :List of 1
+#>   ..$ variants:List of 20
+#>   .. ..$ Streets      : chr "streets-v2"
+#>   .. ..$ Basic        : chr "basic-v2"
+#>   .. ..$ Bright       : chr "bright-v2"
+#>   .. ..$ Pastel       : chr "pastel"
+#>   .. ..$ Positron     : chr "positron"
+#>   .. ..$ Hybrid       :List of 1
 #>   .. .. ..$ options:List of 2
 #>   .. .. .. ..$ variant: chr "hybrid"
 #>   .. .. .. ..$ ext    : chr "jpg"
-#>   .. ..$ Toner   : chr "toner"
-#>   .. ..$ Topo    : chr "topo"
-#>   .. ..$ Voyager : chr "voyager"
+#>   .. ..$ Toner        : chr "toner-v2"
+#>   .. ..$ Topo         : chr "topo-v2"
+#>   .. ..$ Voyager      : chr "voyager-v2"
+#>   .. ..$ Ocean        : chr "ocean"
+#>   .. ..$ Backdrop     : chr "backdrop"
+#>   .. ..$ Dataviz      : chr "dataviz"
+#>   .. ..$ DatavizLight : chr "dataviz-light"
+#>   .. ..$ DatavizDark  : chr "dataviz-dark"
+#>   .. ..$ Aquarelle    :List of 1
+#>   .. .. ..$ options:List of 2
+#>   .. .. .. ..$ variant: chr "aquarelle"
+#>   .. .. .. ..$ ext    : chr "webp"
+#>   .. ..$ Landscape    : chr "landscape"
+#>   .. ..$ Openstreetmap:List of 1
+#>   .. .. ..$ options:List of 2
+#>   .. .. .. ..$ variant: chr "openstreetmap"
+#>   .. .. .. ..$ ext    : chr "jpg"
+#>   .. ..$ Outdoor      : chr "outdoor-v2"
+#>   .. ..$ Satellite    :List of 1
+#>   .. .. ..$ options:List of 2
+#>   .. .. .. ..$ variant: chr "satellite"
+#>   .. .. .. ..$ ext    : chr "jpg"
+#>   .. ..$ Winter       : chr "winter-v2"
 #>  $ TomTom               :List of 3
 #>   ..$ url     : chr "https://{s}.api.tomtom.com/map/1/tile/{variant}/{style}/{z}/{x}/{y}.{ext}?key={apikey}"
 #>   ..$ options :List of 7
 #>   .. ..$ variant    : chr "basic"
 #>   .. ..$ maxZoom    : int 22
-#>   .. ..$ attribution: chr "<a href=\"https://tomtom.com\" target=\"_blank\">&copy;  1992 - 2023 TomTom.</a> "
+#>   .. ..$ attribution: chr "<a href=\"https://tomtom.com\" target=\"_blank\">&copy;  1992 - 2026 TomTom.</a> "
 #>   .. ..$ subdomains : chr "abcd"
 #>   .. ..$ style      : chr "main"
 #>   .. ..$ ext        : chr "png"
@@ -756,16 +785,10 @@ str(providers_loaded()$providers_details)
 #>   ..$ options :List of 2
 #>   .. ..$ variant    : chr "World_Street_Map"
 #>   .. ..$ attribution: chr "Tiles &copy; Esri"
-#>   ..$ variants:List of 10
+#>   ..$ variants:List of 9
 #>   .. ..$ WorldStreetMap   :List of 1
 #>   .. .. ..$ options:List of 1
 #>   .. .. .. ..$ attribution: chr "{attribution.Esri} &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri Ch"| __truncated__
-#>   .. ..$ DeLorme          :List of 1
-#>   .. .. ..$ options:List of 4
-#>   .. .. .. ..$ variant    : chr "Specialty/DeLorme_World_Base_Map"
-#>   .. .. .. ..$ minZoom    : int 1
-#>   .. .. .. ..$ maxZoom    : int 11
-#>   .. .. .. ..$ attribution: chr "{attribution.Esri} &mdash; Copyright: &copy;2012 DeLorme"
 #>   .. ..$ WorldTopoMap     :List of 1
 #>   .. .. ..$ options:List of 2
 #>   .. .. .. ..$ variant    : chr "World_Topo_Map"
@@ -824,157 +847,70 @@ str(providers_loaded()$providers_details)
 #>   .. ..$ Temperature         : chr "temp"
 #>   .. ..$ Snow                : chr "snow"
 #>  $ HERE                 :List of 3
-#>   ..$ url     : chr "https://{s}.{base}.maps.api.here.com/maptile/2.1/{type}/{mapID}/{variant}/{z}/{x}/{y}/{size}/{format}?app_id={a"| __truncated__
-#>   ..$ options :List of 12
-#>   .. ..$ attribution: chr "Map &copy; 1987-2023 <a href=\"http://developer.here.com\">HERE</a>"
-#>   .. ..$ subdomains : chr "1234"
-#>   .. ..$ mapID      : chr "newest"
-#>   .. ..$ app_id     : chr "<insert your app_id here>"
-#>   .. ..$ app_code   : chr "<insert your app_code here>"
-#>   .. ..$ base       : chr "base"
-#>   .. ..$ variant    : chr "normal.day"
-#>   .. ..$ maxZoom    : int 20
-#>   .. ..$ type       : chr "maptile"
-#>   .. ..$ language   : chr "eng"
-#>   .. ..$ format     : chr "png8"
-#>   .. ..$ size       : chr "256"
-#>   ..$ variants:List of 30
-#>   .. ..$ normalDay               : chr "normal.day"
-#>   .. ..$ normalDayCustom         : chr "normal.day.custom"
-#>   .. ..$ normalDayGrey           : chr "normal.day.grey"
-#>   .. ..$ normalDayMobile         : chr "normal.day.mobile"
-#>   .. ..$ normalDayGreyMobile     : chr "normal.day.grey.mobile"
-#>   .. ..$ normalDayTransit        : chr "normal.day.transit"
-#>   .. ..$ normalDayTransitMobile  : chr "normal.day.transit.mobile"
-#>   .. ..$ normalDayTraffic        :List of 1
-#>   .. .. ..$ options:List of 3
-#>   .. .. .. ..$ variant: chr "normal.traffic.day"
-#>   .. .. .. ..$ base   : chr "traffic"
-#>   .. .. .. ..$ type   : chr "traffictile"
-#>   .. ..$ normalNight             : chr "normal.night"
-#>   .. ..$ normalNightMobile       : chr "normal.night.mobile"
-#>   .. ..$ normalNightGrey         : chr "normal.night.grey"
-#>   .. ..$ normalNightGreyMobile   : chr "normal.night.grey.mobile"
-#>   .. ..$ normalNightTransit      : chr "normal.night.transit"
-#>   .. ..$ normalNightTransitMobile: chr "normal.night.transit.mobile"
-#>   .. ..$ reducedDay              : chr "reduced.day"
-#>   .. ..$ reducedNight            : chr "reduced.night"
-#>   .. ..$ basicMap                :List of 1
-#>   .. .. ..$ options:List of 1
-#>   .. .. .. ..$ type: chr "basetile"
-#>   .. ..$ mapLabels               :List of 1
-#>   .. .. ..$ options:List of 2
-#>   .. .. .. ..$ type  : chr "labeltile"
-#>   .. .. .. ..$ format: chr "png"
-#>   .. ..$ trafficFlow             :List of 1
-#>   .. .. ..$ options:List of 2
-#>   .. .. .. ..$ base: chr "traffic"
-#>   .. .. .. ..$ type: chr "flowtile"
-#>   .. ..$ carnavDayGrey           : chr "carnav.day.grey"
-#>   .. ..$ hybridDay               :List of 1
-#>   .. .. ..$ options:List of 2
-#>   .. .. .. ..$ base   : chr "aerial"
-#>   .. .. .. ..$ variant: chr "hybrid.day"
-#>   .. ..$ hybridDayMobile         :List of 1
-#>   .. .. ..$ options:List of 2
-#>   .. .. .. ..$ base   : chr "aerial"
-#>   .. .. .. ..$ variant: chr "hybrid.day.mobile"
-#>   .. ..$ hybridDayTransit        :List of 1
-#>   .. .. ..$ options:List of 2
-#>   .. .. .. ..$ base   : chr "aerial"
-#>   .. .. .. ..$ variant: chr "hybrid.day.transit"
-#>   .. ..$ hybridDayGrey           :List of 1
-#>   .. .. ..$ options:List of 2
-#>   .. .. .. ..$ base   : chr "aerial"
-#>   .. .. .. ..$ variant: chr "hybrid.grey.day"
-#>   .. ..$ hybridDayTraffic        :List of 1
-#>   .. .. ..$ options:List of 3
-#>   .. .. .. ..$ variant: chr "hybrid.traffic.day"
-#>   .. .. .. ..$ base   : chr "traffic"
-#>   .. .. .. ..$ type   : chr "traffictile"
-#>   .. ..$ pedestrianDay           : chr "pedestrian.day"
-#>   .. ..$ pedestrianNight         : chr "pedestrian.night"
-#>   .. ..$ satelliteDay            :List of 1
-#>   .. .. ..$ options:List of 2
-#>   .. .. .. ..$ base   : chr "aerial"
-#>   .. .. .. ..$ variant: chr "satellite.day"
-#>   .. ..$ terrainDay              :List of 1
-#>   .. .. ..$ options:List of 2
-#>   .. .. .. ..$ base   : chr "aerial"
-#>   .. .. .. ..$ variant: chr "terrain.day"
-#>   .. ..$ terrainDayMobile        :List of 1
-#>   .. .. ..$ options:List of 2
-#>   .. .. .. ..$ base   : chr "aerial"
-#>   .. .. .. ..$ variant: chr "terrain.day.mobile"
-#>  $ HEREv3               :List of 3
-#>   ..$ url     : chr "https://{s}.{base}.maps.ls.hereapi.com/maptile/2.1/{type}/{mapID}/{variant}/{z}/{x}/{y}/{size}/{format}?apiKey="| __truncated__
+#>   ..$ url     : chr "https://maps.hereapi.com/v3/base/mc/{z}/{x}/{y}/{format}?style={variant}&size={size}&apiKey={app_id}&lg={language}"
 #>   ..$ options :List of 11
-#>   .. ..$ attribution: chr "Map &copy; 1987-2023 <a href=\"http://developer.here.com\">HERE</a>"
+#>   .. ..$ attribution: chr "Map &copy; 1987-2026 <a href=\"http://platform.here.com\">HERE</a>"
 #>   .. ..$ subdomains : chr "1234"
 #>   .. ..$ mapID      : chr "newest"
 #>   .. ..$ apiKey     : chr "<insert your apiKey here>"
 #>   .. ..$ base       : chr "base"
-#>   .. ..$ variant    : chr "normal.day"
+#>   .. ..$ variant    : chr "explore.day"
 #>   .. ..$ maxZoom    : int 20
 #>   .. ..$ type       : chr "maptile"
 #>   .. ..$ language   : chr "eng"
 #>   .. ..$ format     : chr "png8"
 #>   .. ..$ size       : chr "256"
-#>   ..$ variants:List of 28
-#>   .. ..$ normalDay               : chr "normal.day"
-#>   .. ..$ normalDayCustom         : chr "normal.day.custom"
-#>   .. ..$ normalDayGrey           : chr "normal.day.grey"
-#>   .. ..$ normalDayMobile         : chr "normal.day.mobile"
-#>   .. ..$ normalDayGreyMobile     : chr "normal.day.grey.mobile"
-#>   .. ..$ normalDayTransit        : chr "normal.day.transit"
-#>   .. ..$ normalDayTransitMobile  : chr "normal.day.transit.mobile"
-#>   .. ..$ normalNight             : chr "normal.night"
-#>   .. ..$ normalNightMobile       : chr "normal.night.mobile"
-#>   .. ..$ normalNightGrey         : chr "normal.night.grey"
-#>   .. ..$ normalNightGreyMobile   : chr "normal.night.grey.mobile"
-#>   .. ..$ normalNightTransit      : chr "normal.night.transit"
-#>   .. ..$ normalNightTransitMobile: chr "normal.night.transit.mobile"
-#>   .. ..$ reducedDay              : chr "reduced.day"
-#>   .. ..$ reducedNight            : chr "reduced.night"
-#>   .. ..$ basicMap                :List of 1
+#>   ..$ variants:List of 24
+#>   .. ..$ exploreDay           : chr "explore.day"
+#>   .. ..$ liteDay              : chr "lite.day"
+#>   .. ..$ logisticsDay         : chr "logistics.day"
+#>   .. ..$ topoDay              : chr "topo.day"
+#>   .. ..$ logisticsNight       : chr "logistics.night"
+#>   .. ..$ exploreNight         : chr "explore.night"
+#>   .. ..$ topoNight            : chr "topo.night"
+#>   .. ..$ liteNight            : chr "lite.night"
+#>   .. ..$ exploreSatelliteDay  : chr "explore.satellite.day"
+#>   .. ..$ liteSatelliteDay     : chr "lite.satellite.day"
+#>   .. ..$ logisticsSatelliteDay: chr "logistics.satellite.day"
+#>   .. ..$ basicMap             :List of 1
 #>   .. .. ..$ options:List of 1
 #>   .. .. .. ..$ type: chr "basetile"
-#>   .. ..$ mapLabels               :List of 1
+#>   .. ..$ mapLabels            :List of 1
 #>   .. .. ..$ options:List of 2
 #>   .. .. .. ..$ type  : chr "labeltile"
 #>   .. .. .. ..$ format: chr "png"
-#>   .. ..$ trafficFlow             :List of 1
+#>   .. ..$ trafficFlow          :List of 1
 #>   .. .. ..$ options:List of 2
 #>   .. .. .. ..$ base: chr "traffic"
 #>   .. .. .. ..$ type: chr "flowtile"
-#>   .. ..$ carnavDayGrey           : chr "carnav.day.grey"
-#>   .. ..$ hybridDay               :List of 1
+#>   .. ..$ carnavDayGrey        : chr "carnav.day.grey"
+#>   .. ..$ hybridDay            :List of 1
 #>   .. .. ..$ options:List of 2
 #>   .. .. .. ..$ base   : chr "aerial"
 #>   .. .. .. ..$ variant: chr "hybrid.day"
-#>   .. ..$ hybridDayMobile         :List of 1
+#>   .. ..$ hybridDayMobile      :List of 1
 #>   .. .. ..$ options:List of 2
 #>   .. .. .. ..$ base   : chr "aerial"
 #>   .. .. .. ..$ variant: chr "hybrid.day.mobile"
-#>   .. ..$ hybridDayTransit        :List of 1
+#>   .. ..$ hybridDayTransit     :List of 1
 #>   .. .. ..$ options:List of 2
 #>   .. .. .. ..$ base   : chr "aerial"
 #>   .. .. .. ..$ variant: chr "hybrid.day.transit"
-#>   .. ..$ hybridDayGrey           :List of 1
+#>   .. ..$ hybridDayGrey        :List of 1
 #>   .. .. ..$ options:List of 2
 #>   .. .. .. ..$ base   : chr "aerial"
 #>   .. .. .. ..$ variant: chr "hybrid.grey.day"
-#>   .. ..$ pedestrianDay           : chr "pedestrian.day"
-#>   .. ..$ pedestrianNight         : chr "pedestrian.night"
-#>   .. ..$ satelliteDay            :List of 1
+#>   .. ..$ pedestrianDay        : chr "pedestrian.day"
+#>   .. ..$ pedestrianNight      : chr "pedestrian.night"
+#>   .. ..$ satelliteDay         :List of 1
 #>   .. .. ..$ options:List of 2
 #>   .. .. .. ..$ base   : chr "aerial"
 #>   .. .. .. ..$ variant: chr "satellite.day"
-#>   .. ..$ terrainDay              :List of 1
+#>   .. ..$ terrainDay           :List of 1
 #>   .. .. ..$ options:List of 2
 #>   .. .. .. ..$ base   : chr "aerial"
 #>   .. .. .. ..$ variant: chr "terrain.day"
-#>   .. ..$ terrainDayMobile        :List of 1
+#>   .. ..$ terrainDayMobile     :List of 1
 #>   .. .. ..$ options:List of 2
 #>   .. .. .. ..$ base   : chr "aerial"
 #>   .. .. .. ..$ variant: chr "terrain.day.mobile"
@@ -1106,18 +1042,26 @@ str(providers_loaded()$providers_details)
 #>   .. .. .. ..$ opacity: num 0.75
 #>   .. ..$ ModisTerraChlorophyll:List of 1
 #>   .. .. ..$ options:List of 4
-#>   .. .. .. ..$ variant: chr "MODIS_Terra_Chlorophyll_A"
+#>   .. .. .. ..$ variant: chr "MODIS_Terra_L2_Chlorophyll_A"
 #>   .. .. .. ..$ format : chr "png"
 #>   .. .. .. ..$ maxZoom: int 7
 #>   .. .. .. ..$ opacity: num 0.75
-#>  $ NLS                  :List of 2
-#>   ..$ url    : chr "https://nls-{s}.tileserver.com/nls/{z}/{x}/{y}.jpg"
-#>   ..$ options:List of 5
-#>   .. ..$ attribution: chr "<a href=\"http://geo.nls.uk/maps/\">National Library of Scotland Historic Maps</a>"
+#>  $ NLS                  :List of 3
+#>   ..$ url     : chr "https://api.maptiler.com/tiles/{variant}/{z}/{x}/{y}.jpg?key={apikey}"
+#>   ..$ options :List of 5
+#>   .. ..$ attribution: chr "<a href=\"http://maps.nls.uk/projects/subscription-api\">National Library of Scotland Historic Maps</a>"
 #>   .. ..$ bounds     : num [1:2, 1:2] 49.6 61.7 -12 3
 #>   .. ..$ minZoom    : int 1
 #>   .. ..$ maxZoom    : int 18
-#>   .. ..$ subdomains : chr "0123"
+#>   .. ..$ apikey     : chr "<insert your api key here>"
+#>   ..$ variants:List of 7
+#>   .. ..$ osgb63k1885   : chr "uk-osgb63k1885"
+#>   .. ..$ osgb1888      : chr "uk-osgb1888"
+#>   .. ..$ osgb10k1888   : chr "uk-osgb10k1888"
+#>   .. ..$ osgb1919      : chr "uk-osgb1919"
+#>   .. ..$ osgb25k1937   : chr "uk-osgb25k1937"
+#>   .. ..$ osgb63k1955   : chr "uk-osgb63k1955"
+#>   .. ..$ oslondon1k1893: chr "uk-oslondon1k1893"
 #>  $ JusticeMap           :List of 3
 #>   ..$ url     : chr "https://www.justicemap.org/tile/{size}/{variant}/{z}/{x}/{y}.png"
 #>   ..$ options :List of 3
@@ -1135,13 +1079,12 @@ str(providers_loaded()$providers_details)
 #>   .. ..$ white         : chr "white"
 #>   .. ..$ plurality     : chr "plural"
 #>  $ GeoportailFrance     :List of 3
-#>   ..$ url     : chr "https://wxs.ign.fr/{apikey}/geoportail/wmts?REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&STYLE={style}&TILEMATRIX"| __truncated__
-#>   ..$ options :List of 8
+#>   ..$ url     : chr "https://data.geopf.fr/wmts?REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&STYLE={style}&TILEMATRIXSET=PM&FORMAT={fo"| __truncated__
+#>   ..$ options :List of 7
 #>   .. ..$ attribution: chr "<a target=\"_blank\" href=\"https://www.geoportail.gouv.fr/\">Geoportail France</a>"
 #>   .. ..$ bounds     : int [1:2, 1:2] -75 81 -180 180
 #>   .. ..$ minZoom    : int 2
 #>   .. ..$ maxZoom    : int 18
-#>   .. ..$ apikey     : chr "choisirgeoportail"
 #>   .. ..$ format     : chr "image/png"
 #>   .. ..$ style      : chr "normal"
 #>   .. ..$ variant    : chr "GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2"
@@ -1252,4 +1195,30 @@ str(providers_loaded()$providers_details)
 #>   .. .. ..$ options:List of 2
 #>   .. .. .. ..$ variant: chr "ch.swisstopo.swissimage"
 #>   .. .. .. ..$ maxZoom: int 19
+#>  $ TopPlusOpen          :List of 3
+#>   ..$ url     : chr "http://sgx.geodatenzentrum.de/wmts_topplus_open/tile/1.0.0/{variant}/default/WEBMERCATOR/{z}/{y}/{x}.png"
+#>   ..$ options :List of 3
+#>   .. ..$ maxZoom    : int 18
+#>   .. ..$ attribution: chr "Map data: &copy; <a href=\"http://www.govdata.de/dl-de/by-2-0\">dl-de/by-2-0</a>"
+#>   .. ..$ variant    : chr "web"
+#>   ..$ variants:List of 2
+#>   .. ..$ Color: chr "web"
+#>   .. ..$ Grey : chr "web_grau"
 ```
+
+## Developer
+
+### Updating to a new leaflet-providers version
+
+To update this package to a new upstream release of
+[leaflet-providers.js](https://github.com/leaflet-extras/leaflet-providers),
+run the following [Claude
+Code](https://docs.anthropic.com/en/docs/claude-code) skill:
+
+``` bash
+/update-leaflet-providers
+```
+
+This walks through the full update workflow: fetching the new JS,
+regenerating package data, bumping the version, running checks, and
+creating a PR.
