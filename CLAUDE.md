@@ -34,7 +34,7 @@ pkgdown::build_site()
 
 The package bundles provider data at two levels:
 
-1. **Static bundled data** (`R/providers_data.R` + `inst/leaflet-providers_<version>.js`): Auto-generated R data objects (`providers_data`, `providers_details_data`, `providers_version_num`) and the raw JS file shipped with the package. This file is excluded from linting.
+1. **Static bundled data** (`R/providers_data.R` + `inst/leaflet-providers/leaflet-providers.js`): Auto-generated R data objects (`providers_data`, `providers_details_data`, `providers_version_num`) and the raw JS file shipped with the package. This file is excluded from linting.
 
 2. **Runtime-fetched data** (`R/get_current_providers.R`): `get_providers()` fetches any version of `leaflet-providers.js` from unpkg.com, evaluates it in a V8 context, and extracts provider info. Requires `V8` and `jsonlite` (Suggests).
 
@@ -44,13 +44,7 @@ The `leaflet_providers` S3 class is a list with fields: `version_num`, `provider
 
 ### Updating Provider Data
 
-To update the bundled providers to the latest `leaflet-providers.js` version, run `scripts/update_data_and_pkg.R`. This script:
-1. Fetches the latest version via `get_providers()`
-2. Regenerates `R/providers_data.R` using `dput()`
-3. Replaces `inst/leaflet-providers_<version>.js`
-4. Updates `DESCRIPTION` version to match `leaflet-providers.js` version
-5. Prepends a new entry to `NEWS.md`
-6. Runs tests, full check, win-devel check, and revdep check
+To update the bundled providers to the latest `leaflet-providers.js` version, run the Claude Code skill `/update-leaflet-providers`.
 
 ### Linting
 

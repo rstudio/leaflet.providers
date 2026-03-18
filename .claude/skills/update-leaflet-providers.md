@@ -52,8 +52,7 @@ Use `dput()` for the list objects. See the existing file for the exact format.
 
 #### 2c. Update the JS file in `inst/`
 
-1. Delete old `inst/leaflet-providers_*.js` files.
-2. Write `todays_data$src` to `inst/leaflet-providers_<VERSION>.js`.
+1. Write `todays_data$src` to `inst/leaflet-providers/leaflet-providers.js` (overwrite the existing file).
 
 #### 2d. Format R code
 
@@ -151,7 +150,7 @@ shinyApp(ui, server)
 Stage all modified files:
 - `R/providers_data.R`
 - `R/get_current_providers.R` (if changed)
-- `inst/leaflet-providers_<VERSION>.js` (new) + remove old JS
+- `inst/leaflet-providers/leaflet-providers.js`
 - `DESCRIPTION`
 - `NEWS.md`
 - `cran-comments.md`
@@ -168,11 +167,11 @@ Do NOT stage `.playwright-mcp/` or other ephemeral directories.
 |------|---------|
 | `R/providers_data.R` | Generated: version num, providers list, details list |
 | `R/get_current_providers.R` | `get_providers()`, `providers_default()`, version validation |
-| `inst/leaflet-providers_<V>.js` | Bundled upstream JS (one file, matches version) |
+| `inst/leaflet-providers/leaflet-providers.js` | Bundled upstream JS |
 | `tests/testthat/test-get_providers.R` | Provider tests including version validation |
 
 ## Constraints
 
 - `get_providers()` rejects versions < 1.0.10 (different JS structure).
 - The package version in DESCRIPTION must match the upstream leaflet-providers version.
-- Only one `inst/leaflet-providers_*.js` file should exist at a time.
+- The JS file lives at `inst/leaflet-providers/leaflet-providers.js` (package htmlDependency).
