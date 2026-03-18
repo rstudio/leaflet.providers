@@ -40,7 +40,10 @@ test_that("use_providers() and providers_loaded() round-trip", {
   loaded <- providers_loaded()
 
   expect_type(loaded, "list")
-  expect_named(loaded, c("version_num", "providers", "providers_details", "src", "dep"))
+  expect_named(
+    loaded,
+    c("version_num", "providers", "providers_details", "src", "dep")
+  )
   expect_identical(loaded$version_num, providers_version_num)
   expect_identical(loaded$providers, providers_data)
   expect_s3_class(loaded$dep, "html_dependency")
@@ -50,7 +53,10 @@ test_that("use_providers() and providers_loaded() round-trip", {
 })
 
 test_that("use_providers() rejects invalid input", {
-  expect_error(use_providers(list(a = 1)), "must be a 'leaflet_providers' object")
+  expect_error(
+    use_providers(list(a = 1)),
+    "must be a 'leaflet_providers' object"
+  )
 })
 
 test_that("leaflet_providers_dependency_url() creates href-based dependency", {

@@ -153,7 +153,8 @@ providers_default <- function() {
       )
     }
     loaded_providers_env$js_src_cache <- paste0(
-      readLines(js_path, warn = FALSE), collapse = "\n"
+      readLines(js_path, warn = FALSE),
+      collapse = "\n"
     )
   }
 
