@@ -1,6 +1,10 @@
 devtools::load_all()
 todays_data <- get_providers()
 
+if (todays_data$version_num == providers_version_num) {
+  stop("leaflet-providers up to date")
+}
+
 providers_file <- file(description = "R/providers_data.R", "w")
 cat(
   "providers_version_num <-",
@@ -18,25 +22,14 @@ cat("providers_details_data <- ", file = providers_file)
 dput(todays_data$providers_details, file = providers_file)
 close(providers_file)
 
-# Delete old .js files
-old_files <- list.files(path = "inst", pattern = ".*\\.js", full.names = TRUE)
-
-if (length(old_files) > 0) {
-  unlink(old_files)
-}
-
 # Write .js file to inst/
-js_filename_for_inst <- paste0(
-  "leaflet-providers_",
-  todays_data$version_num,
-  ".js"
-)
+js_filename_for_inst <- "leaflet-providers.js"
 
 cat(
   todays_data$src,
   "\n",
   sep = "",
-  file = file.path("inst", js_filename_for_inst)
+  file = file.path("inst", "leaflet-providers", js_filename_for_inst)
 )
 
 # Tests
@@ -66,55 +59,4 @@ cat(
   new_lines,
   "\n",
   paste0(old_news, collapse = "\n")
-)
-
-## Final checks
-devtools::check()
-
-spelling::spell_check_test(vignettes = TRUE, error = FALSE, skip_on_cran = TRUE)
-
-# revdepcheck::revdep_reset()
-revdepcheck::revdep_check(num_workers = parallel::detectCores())
-
-# devtools::check_win_oldrelease()
-# devtools::check_win_release()
-devtools::check_win_devel()
-
-# Generate revdep CRAN report (to include in cran-comments.md)
-revdep_report_results <- capture.output(revdepcheck::revdep_report_cran())
-
-cran_comments_msg <- "
-## Test environments
-
-* local macOS, R 4.3.0
-* GitHub Actions
-  * macOS
-    * 4.3
-  * windows
-    * 4.3
-  * ubuntu18
-    * devel, 4.3, 4.2, 4.1, 4.0, 3.6
-* devtools::
-  * check_win_devel()
-
-## R CMD check results
-
-0 errors | 0 warnings | 1 note
-
-"
-
-# Auto-update cran-comments.md
-cat(
-  file = "cran-comments.md",
-  sep = "",
-  "# ",
-  as.character(Sys.Date()),
-  "\n\n",
-  "This submission updates `providers` and `providers.details`.",
-  "\n\n",
-  cran_comments_msg,
-  "\n\n",
-  paste0(revdep_report_results, collapse = "\n"),
-  "\n",
-  ""
 )

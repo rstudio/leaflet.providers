@@ -250,11 +250,11 @@ str(providers_default(), max.level = 2)
     #>   ..$ version   : chr "2.0.0"
     #>   ..$ src       :List of 1
     #>   ..$ meta      : NULL
-    #>   ..$ script    : chr "leaflet-providers_2.0.0.js"
+    #>   ..$ script    : chr "leaflet-providers.js"
     #>   ..$ stylesheet: NULL
     #>   ..$ head      : NULL
     #>   ..$ attachment: NULL
-    #>   ..$ package   : NULL
+    #>   ..$ package   : chr "leaflet.providers"
     #>   ..$ all_files : logi FALSE
     #>   ..- attr(*, "class")= chr "html_dependency"
     #>  - attr(*, "class")= chr "leaflet_providers"
