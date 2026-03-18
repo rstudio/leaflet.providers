@@ -1,9 +1,9 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
-^scripts/
 .travis.yml
 ^LICENSE\.md$
 ^revdep$
+^scripts$
 ^appveyor\.yml$
 ^\.travis\.yml$
 ^cran-comments\.md$
@@ -13,7 +13,13 @@
 ^\.github$
 inst/WORDLIST
 ^README\.Rmd$
+^README\.html$
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
 ^CRAN-RELEASE$
+^\.context$
+^\.playwright-mcp$
+^\.git$
+^\.claude$
+^CLAUDE\.md$

@@ -12,13 +12,14 @@ loaded_providers_env <- new.env()
 #'   `providers_details_data`, `src`
 #'
 #' @examples
+#' \donttest{
 #' if (
-#'   interactive() &&
 #'   requireNamespace("V8", quietly = TRUE) &&
 #'   requireNamespace("jsonlite", quietly = TRUE)
 #' ) {
 #'   get_providers()
-#'   get_providers("1.8.0")
+#'   get_providers("2.0.0")
+#' }
 #' }
 #'
 #' @export
@@ -29,15 +30,30 @@ get_providers <- function(version_num = NULL) {
     return(get_providers(version_num))
   }
 
-  if (package_version(version_num) == package_version(providers_version_num)) {
+  if (package_version(version_num) < "1.0.10") {
+    stop(
+      "`version_num` must be >= '1.0.10'. ",
+      "Earlier versions used a different JS structure that is not supported.",
+      call. = FALSE
+    )
+  }
+
+  if (
+    package_version(version_num) == package_version(providers_version_num) &&
+      nzchar(system.file(
+        "leaflet-providers",
+        "leaflet-providers.js",
+        package = "leaflet.providers"
+      ))
+  ) {
     # return the static, locally-stored leaflet.providers if possible
     return(providers_default())
   }
 
   unpkg_base <- paste0(unpkg_url, "@", version_num)
-  js_path <- file.path(unpkg_base, "leaflet-providers.js")
+  js_path <- paste(unpkg_base, "leaflet-providers.js", sep = "/")
 
-  tmp_js_lines <- paste0(readLines(js_path), collapse = "\n")
+  tmp_js_lines <- paste0(readLines(js_path, warn = FALSE), collapse = "\n")
 
   ct <- V8::v8()
 
@@ -116,20 +132,33 @@ get_current_version_num <- function() {
 #' Return default providers, providers_details, version, and HTML Dependency.
 #' @export
 #'
-#' @return `leaflet_providers` object containing `providers_version_num`, `providers`,
-#'   `providers_details`, and `src`
+#' @return `leaflet_providers` object containing `version_num`, `providers`,
+#'   `providers_details`, `src`, and `dep`.
 #'
 #' @examples
 #' str(providers_default(), max = 3, list.len = 4)
 #'
 providers_default <- function() {
-  js_lines <- paste0(
-    readLines(system.file(
-      "leaflet-providers", "leaflet-providers.js",
+  if (is.null(loaded_providers_env$js_src_cache)) {
+    js_path <- system.file(
+      "leaflet-providers",
+      "leaflet-providers.js",
       package = "leaflet.providers"
-    )),
-    collapse = "\n"
-  )
+    )
+    if (!nzchar(js_path)) {
+      stop(
+        "Could not find installed 'leaflet-providers/leaflet-providers.js'. ",
+        "Please reinstall the 'leaflet.providers' package.",
+        call. = FALSE
+      )
+    }
+    loaded_providers_env$js_src_cache <- paste0(
+      readLines(js_path, warn = FALSE),
+      collapse = "\n"
+    )
+  }
+
+  js_lines <- loaded_providers_env$js_src_cache
 
   # Returns same list of obj as get_providers() except html_dependency points to /inst file
   providers_info <- list(
@@ -155,13 +184,16 @@ providers_default <- function() {
 #'
 #' @examples
 #' \donttest{
-#' if (require("V8") && require("jsonlite")) {
+#' if (
+#'   requireNamespace("V8", quietly = TRUE) &&
+#'   requireNamespace("jsonlite", quietly = TRUE)
+#' ) {
 #'   # Set providers to latest providers
 #'   use_providers(get_providers())
 #'
 #'   # Set providers to a custom providers object (specific version number)
-#'   use_providers(get_providers("1.4.0"))
-#'   use_providers("1.4.0")
+#'   use_providers(get_providers("1.8.0"))
+#'   use_providers("1.8.0")
 #' }
 #' }
 use_providers <- function(providers_info = NULL) {
@@ -183,8 +215,8 @@ use_providers <- function(providers_info = NULL) {
 #' Return currently loaded providers, providers_details, version, and HTML Dependency.
 #' @export
 #'
-#' @return `leaflet_providers` object containing `providers_version_num`, `providers`,
-#'   `providers_details`, and `src`
+#' @return A list containing `version_num`, `providers`,
+#'   `providers_details`, `src`, and `dep`.
 #'
 #' @examples
 #' str(providers_loaded(), max = 3, list.len = 4)

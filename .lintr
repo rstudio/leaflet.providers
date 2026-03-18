@@ -1,4 +1,6 @@
 linters: linters_with_defaults(
-    line_length_linter(100)
+    line_length_linter(100),
+    return_linter = NULL,
+    object_length_linter = NULL
   )
 exclusions: "R/providers_data.R"

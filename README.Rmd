@@ -141,3 +141,15 @@ str(providers_loaded()$providers_details, list.len = 200)
 ```
 
 </div>
+
+## Developer
+
+### Updating to a new leaflet-providers version
+
+To update this package to a new upstream release of [leaflet-providers.js](https://github.com/leaflet-extras/leaflet-providers), run the following [Claude Code](https://docs.anthropic.com/en/docs/claude-code) skill:
+
+``` bash
+/update-leaflet-providers
+```
+
+This walks through the full update workflow: fetching the new JS, regenerating package data, bumping the version, running checks, and creating a PR.

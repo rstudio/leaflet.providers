@@ -1,8 +1,10 @@
-# leaflet.providers (development version)
+# leaflet.providers 3.0.0
+
+* Updated leaflet.providers data on 2026-03-17 from https://unpkg.com/leaflet-providers using version 3.0.0 of leaflet-providers.js
 
 # leaflet.providers 2.0.0
 
-* Updated leaflet.providers data on 2023-10-05 from https://unpkg.com/leaflet-providers using version 2.0.0 of leaflet.js
+* Updated leaflet.providers data on 2023-10-05 from https://unpkg.com/leaflet-providers using version 2.0.0 of leaflet-providers.js
 
 * `get_providers()` and `default_providers()` both include a stable `htmltools::htmlDependency()` in the `dep` slot of the returned object. The default dependency uses the static `leaflet-providers.js` file included in the `leaflet.providers` package, while the `get_providers()` dependency uses the `leaflet-providers.js` file from the `unpkg.com` CDN. This makes it possible for `leaflet::addProviderTiles()` to use the stable HTML dependency that can be cached by knitr (#36).
 
@@ -10,11 +12,11 @@
 
 # leaflet.providers 1.13.0
 
-* Updated leaflet.providers data on 2023-08-07 from https://unpkg.com/leaflet-providers using version 1.13.0 of leaflet.js
+* Updated leaflet.providers data on 2023-08-07 from https://unpkg.com/leaflet-providers using version 1.13.0 of leaflet-providers.js
 
 
 # leaflet.providers 1.9.0
-* Updated leaflet.providers data on 2019-11-06 from https://unpkg.com/leaflet-providers using version 1.9.0 of leaflet.js
+* Updated leaflet.providers data on 2019-11-06 from https://unpkg.com/leaflet-providers using version 1.9.0 of leaflet-providers.js
 
 
 # leaflet.providers 1.8.0

@@ -6,3 +6,5 @@
 .V8history
 tests/spelling.R
 docs/
+README.html
+.playwright-mcp/
