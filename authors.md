@@ -11,11 +11,12 @@
   Leaflet Providers plugin
 
 - **Posit Software, PBC**. Copyright holder, funder.
+  [![ROR](https://raw.githubusercontent.com/ror-community/ror-logos/main/ror-icon-rgb.svg)](https://ror.org/https://ror.org/03wc8by49)
 
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/rstudio/leaflet.providers/blob/rc-v3.0.0/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/rstudio/leaflet.providers/blob/main/DESCRIPTION)
 
 Huang L (2026). *leaflet.providers: Leaflet Providers*. R package
 version 3.0.0, <https://rstudio.github.io/leaflet.providers/>.
