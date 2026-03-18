@@ -7,8 +7,8 @@
 providers_loaded()
 }
 \value{
-\code{leaflet_providers} object containing \code{providers_version_num}, \code{providers},
-\code{providers_details}, and \code{src}
+A list containing \code{version_num}, \code{providers},
+\code{providers_details}, \code{src}, and \code{dep}.
 }
 \description{
 Return currently loaded providers, providers_details, version, and HTML Dependency.
