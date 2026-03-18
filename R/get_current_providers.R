@@ -40,7 +40,8 @@ get_providers <- function(version_num = NULL) {
   if (
     package_version(version_num) == package_version(providers_version_num) &&
       nzchar(system.file(
-        "leaflet-providers", "leaflet-providers.js",
+        "leaflet-providers",
+        "leaflet-providers.js",
         package = "leaflet.providers"
       ))
   ) {
@@ -138,7 +139,8 @@ get_current_version_num <- function() {
 #'
 providers_default <- function() {
   js_path <- system.file(
-    "leaflet-providers", "leaflet-providers.js",
+    "leaflet-providers",
+    "leaflet-providers.js",
     package = "leaflet.providers"
   )
   if (!nzchar(js_path)) {

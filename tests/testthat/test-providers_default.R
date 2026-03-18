@@ -2,7 +2,10 @@ test_that("providers_default() returns valid leaflet_providers object", {
   result <- providers_default()
 
   expect_s3_class(result, "leaflet_providers")
-  expect_named(result, c("version_num", "providers", "providers_details", "src", "dep"))
+  expect_named(
+    result,
+    c("version_num", "providers", "providers_details", "src", "dep")
+  )
   expect_identical(result$version_num, providers_version_num)
   expect_identical(result$providers, providers_data)
   expect_identical(result$providers_details, providers_details_data)
