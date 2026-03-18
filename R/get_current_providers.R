@@ -123,15 +123,11 @@ get_current_version_num <- function() {
 #' str(providers_default(), max = 3, list.len = 4)
 #'
 providers_default <- function() {
-  # Move .js file from tmp to sysfile
-  js_filename_for_inst <- paste0(
-    "leaflet-providers_",
-    providers_version_num,
-    ".js"
-  )
-
   js_lines <- paste0(
-    readLines(system.file(js_filename_for_inst, package = "leaflet.providers")),
+    readLines(system.file(
+      "leaflet-providers", "leaflet-providers.js",
+      package = "leaflet.providers"
+    )),
     collapse = "\n"
   )
 

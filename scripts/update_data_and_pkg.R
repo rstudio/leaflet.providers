@@ -22,13 +22,6 @@ cat("providers_details_data <- ", file = providers_file)
 dput(todays_data$providers_details, file = providers_file)
 close(providers_file)
 
-# Delete old .js files
-old_files <- list.files(path = "inst", pattern = ".*\\.js", full.names = TRUE)
-
-if (length(old_files) > 0) {
-  unlink(old_files)
-}
-
 # Write .js file to inst/
 js_filename_for_inst <- "leaflet-providers.js"
 
