@@ -1213,7 +1213,7 @@ str(providers_loaded()$providers_details)
 To update this package to a new upstream release of
 [leaflet-providers.js](https://github.com/leaflet-extras/leaflet-providers),
 run the following [Claude
-Code](https://docs.anthropic.com/en/docs/claude-code) skill:
+Code](https://platform.claude.com/docs/en/docs/claude-code) skill:
 
 ``` bash
 /update-leaflet-providers

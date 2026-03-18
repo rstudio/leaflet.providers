@@ -16,7 +16,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/rstudio/leaflet.providers/blob/main/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/rstudio/leaflet.providers/blob/rc-v3.0.0/DESCRIPTION)
 
 Huang L (2026). *leaflet.providers: Leaflet Providers*. R package
 version 3.0.0, <https://rstudio.github.io/leaflet.providers/>.
