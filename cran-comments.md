@@ -1,6 +1,6 @@
-# 2026-03-17
+# 2026-03-18
 
-This submission updates `providers` and `providers.details`.
+This submission updates the bundled leaflet-providers.js from v2.0.0 to v3.0.0.
 
 ## R CMD check results
 

@@ -1,6 +1,17 @@
 # leaflet.providers 3.0.0
 
-* Updated leaflet.providers data on 2026-03-17 from https://unpkg.com/leaflet-providers using version 3.0.0 of leaflet-providers.js
+## New features
+
+* Updated bundled leaflet-providers.js from v2.0.0 to v3.0.0 (#44).
+
+* `get_providers()` now validates `version_num` and errors if the
+  version is less than `"1.0.10"` (#44).
+
+## Bug fixes and minor improvements
+
+* `providers_default()` now returns an `htmltools::htmlDependency()`
+  that points to the packaged file directly, rather than a temporary
+  copy (#43).
 
 # leaflet.providers 2.0.0
 

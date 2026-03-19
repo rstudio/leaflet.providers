@@ -7,8 +7,8 @@
 |system   |aarch64, darwin20              |
 |ui       |X11                            |
 |language |(EN)                           |
-|collate  |en_US.UTF-8                    |
-|ctype    |en_US.UTF-8                    |
+|collate  |C.UTF-8                        |
+|ctype    |C.UTF-8                        |
 |tz       |America/New_York               |
 |date     |2026-03-18                     |
 |pandoc   |3.9 @ /opt/homebrew/bin/pandoc |
@@ -26,12 +26,4 @@
 |rlang             |1.1.7  |1.1.7  |   |
 
 # Revdeps
-
-## All (3)
-
-|package |version |error |warning |note |
-|:-------|:-------|:-----|:-------|:----|
-|leaflet |2.2.3   |      |        |     |
-|ursa    |3.11.5  |      |        |     |
-|wpeR    |0.1.0   |      |        |     |
 
