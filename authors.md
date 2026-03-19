@@ -19,12 +19,12 @@ Source:
 [`DESCRIPTION`](https://github.com/rstudio/leaflet.providers/blob/main/DESCRIPTION)
 
 Huang L (2026). *leaflet.providers: Leaflet Providers*. R package
-version 3.0.0, <https://rstudio.github.io/leaflet.providers/>.
+version 3.0.0.9000, <https://rstudio.github.io/leaflet.providers/>.
 
     @Manual{,
       title = {leaflet.providers: Leaflet Providers},
       author = {Leslie Huang},
       year = {2026},
-      note = {R package version 3.0.0},
+      note = {R package version 3.0.0.9000},
       url = {https://rstudio.github.io/leaflet.providers/},
     }
