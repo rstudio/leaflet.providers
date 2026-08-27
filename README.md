@@ -931,12 +931,13 @@ str(providers_loaded()$providers_details)
     #>   ..$ options:List of 1
     #>   .. ..$ attribution: chr "{attribution.OpenStreetMap} &amp; USGS"
     #>  $ CartoDB              :List of 3
-    #>   ..$ url     : chr "https://{s}.basemaps.cartocdn.com/{variant}/{z}/{x}/{y}{r}.png"
-    #>   ..$ options :List of 4
+    #>   ..$ url     : chr "https://{s}.basemaps.cartocdn.com/{variant}/{z}/{x}/{y}{r}.png?key={key}"
+    #>   ..$ options :List of 5
     #>   .. ..$ attribution: chr "{attribution.OpenStreetMap} &copy; <a href=\"https://carto.com/attributions\">CARTO</a>"
     #>   .. ..$ subdomains : chr "abcd"
     #>   .. ..$ maxZoom    : int 20
     #>   .. ..$ variant    : chr "light_all"
+    #>   .. ..$ key        : chr "<insert your API key here>"
     #>   ..$ variants:List of 10
     #>   .. ..$ Positron            : chr "light_all"
     #>   .. ..$ PositronNoLabels    : chr "light_nolabels"

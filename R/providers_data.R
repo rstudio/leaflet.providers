@@ -731,12 +731,13 @@ providers_details_data <- list(
     options = list(attribution = "{attribution.OpenStreetMap} &amp; USGS")
   ),
   CartoDB = list(
-    url = "https://{s}.basemaps.cartocdn.com/{variant}/{z}/{x}/{y}{r}.png",
+    url = "https://{s}.basemaps.cartocdn.com/{variant}/{z}/{x}/{y}{r}.png?key={key}",
     options = list(
       attribution = "{attribution.OpenStreetMap} &copy; <a href=\"https://carto.com/attributions\">CARTO</a>",
       subdomains = "abcd",
       maxZoom = 20L,
-      variant = "light_all"
+      variant = "light_all",
+      key = "<insert your API key here>"
     ),
     variants = list(
       Positron = "light_all",
