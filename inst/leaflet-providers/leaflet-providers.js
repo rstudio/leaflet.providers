@@ -63,8 +63,9 @@
 					}
 				);
 			};
-			provider.options.attribution = attributionReplacer(provider.options.attribution);
-
+			if (provider.options.attribution) {
+				provider.options.attribution = attributionReplacer(provider.options.attribution);
+			}
 			// Compute final options combining provider options with any user overrides
 			var layerOpts = L.Util.extend({}, provider.options, options);
 			L.TileLayer.prototype.initialize.call(this, provider.url, layerOpts);
@@ -186,13 +187,6 @@
 				attribution: 'Map data: {attribution.OpenStreetMap} | Map style: &copy; <a href="https://www.OpenRailwayMap.org">OpenRailwayMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
 			}
 		},
-		OpenFireMap: {
-			url: 'http://openfiremap.org/hytiles/{z}/{x}/{y}.png',
-			options: {
-				maxZoom: 19,
-				attribution: 'Map data: {attribution.OpenStreetMap} | Map style: &copy; <a href="http://www.openfiremap.org">OpenFireMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
-			}
-		},
 		SafeCast: {
 			url: 'https://s3.amazonaws.com/te512.safecast.org/{z}/{x}/{y}.png',
 			options: {
@@ -278,6 +272,26 @@
 						variant: 'stamen_toner_lite'
 					}
 				},
+				StamenTonerDark: {
+					options: {
+						attribution:
+							'&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> ' +
+							'&copy; <a href="https://www.stamen.com/" target="_blank">Stamen Design</a> ' +
+							'&copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> ' +
+							'{attribution.OpenStreetMap}',
+						variant: 'stamen_toner_dark'
+					}
+				},
+				StamenTonerBlacklite: {
+					options: {
+						attribution:
+							'&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> ' +
+							'&copy; <a href="https://www.stamen.com/" target="_blank">Stamen Design</a> ' +
+							'&copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> ' +
+							'{attribution.OpenStreetMap}',
+						variant: 'stamen_toner_blacklite'
+					}
+				},
 				StamenWatercolor: {
 					url: 'https://tiles.stadiamaps.com/tiles/{variant}/{z}/{x}/{y}.{ext}',
 					options: {
@@ -343,7 +357,7 @@
 			}
 		},
 		Thunderforest: {
-			url: 'https://{s}.tile.thunderforest.com/{variant}/{z}/{x}/{y}{r}.png?apikey={apikey}',
+			url: 'https://api.thunderforest.com/{variant}/{z}/{x}/{y}{r}.png?apikey={apikey}',
 			options: {
 				attribution:
 					'&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, {attribution.OpenStreetMap}',
@@ -372,7 +386,8 @@
 				Outdoors: 'outdoors',
 				Pioneer: 'pioneer',
 				MobileAtlas: 'mobile-atlas',
-				Neighbourhood: 'neighbourhood'
+				Neighbourhood: 'neighbourhood',
+				Atlas: 'atlas'
 			}
 		},
 		BaseMapDE: {
@@ -616,7 +631,7 @@
 			url:
 				'https://maps.hereapi.com/v3/base/mc/' + // new base url for HERE maptile v3 api
 				'{z}/{x}/{y}/{format}?style={variant}&size={size}' + // slightly modified parameters
-				'&apiKey={app_id}&lg={language}', // replacing app-id with apikey
+				'&apiKey={apiKey}&lg={language}', // replacing app-id with apikey
 			options: {
 				attribution:
 					'Map &copy; 1987-' + new Date().getFullYear() + ' <a href="http://platform.here.com">HERE</a>',
@@ -914,9 +929,10 @@
 		},
 		JusticeMap: {
 			// Justice Map (http://www.justicemap.org/)
+			// Raster map tiles migrated to (https://maptile3.org/) in 2023
 			// Visualize race and income data for your community, county and country.
 			// Includes tools for data journalists, bloggers and community activists.
-			url: 'https://www.justicemap.org/tile/{size}/{variant}/{z}/{x}/{y}.png',
+			url: 'https://maptile3.org/2020/{size}/{variant}/{z}/{x}/{y}.png',
 			options: {
 				attribution: '<a href="http://www.justicemap.org/terms.php">Justice Map</a>',
 				// one of 'county', 'tract', 'block'
@@ -1110,10 +1126,80 @@
 				Color: 'web',
 				Grey: 'web_grau'
 			}
+		},
+		OpenFreeMap: {
+			url: 'https://tiles.openfreemap.org/styles/{variant}',
+			type: 'vector',
+			options: {
+				variant: 'liberty'
+			},
+			variants: {
+				Positron: 'positron',
+				Bright: 'bright',
+				Liberty: 'liberty',
+				Dark: 'dark',
+				Fiord: 'fiord'
+			}
+		},
+		StadiaVector: {
+			url: 'https://tiles.stadiamaps.com/styles/{variant}.json',
+			type: 'vector',
+			options: {
+				variant: 'alidade_smooth'
+			},
+			variants: {
+				AlidadeSmooth: 'alidade_smooth',
+				AlidadeSmoothDark: 'alidade_smooth_dark',
+				AlidadeSatellite: 'alidade_satellite',
+				OSMBright: 'osm_bright',
+				Outdoors: 'outdoors',
+				StamenToner: 'stamen_toner',
+				StamenTonerBackground: 'stamen_toner_background',
+				StamenTonerLines: 'stamen_toner_lines',
+				StamenTonerLabels: 'stamen_toner_labels',
+				StamenTonerLite: 'stamen_toner_lite',
+				StamenTonerDark: 'stamen_toner_dark',
+				StamenTonerBlacklite: 'stamen_toner_blacklite',
+				StamenWatercolor: 'stamen_watercolor',
+				StamenTerrain: 'stamen_terrain',
+				StamenTerrainBackground: 'stamen_terrain_background',
+				StamenTerrainLabels: 'stamen_terrain_labels',
+				StamenTerrainLines: 'stamen_terrain_lines'
+			}
+		},
+		Protomaps: {
+			url: 'https://api.protomaps.com/styles/v5/{variant}/en.json?key={apiKey}',
+			type: 'vector',
+			options: {
+				variant: 'light',
+				apiKey: '<insert your API key here>'
+			},
+			variants: {
+				Light: 'light',
+				Dark: 'dark',
+				White: 'white',
+				Grayscale: 'grayscale',
+				Black: 'black'
+			}
 		}
 	};
 
 	L.tileLayer.provider = function(provider, options) {
+		var parts = provider.split('.');
+		var providerName = parts[0];
+		var providerDef = L.TileLayer.Provider.providers[providerName];
+
+		if (providerDef && providerDef.type === 'vector') {
+			if (!L.maplibreGL) {
+				throw 'maplibre-gl-leaflet is required for vector tile providers. ' +
+				'See https://github.com/maplibre/maplibre-gl-leaflet';
+			}
+			var layer = new L.TileLayer.Provider(provider, options);
+			return L.maplibreGL({
+				style: L.Util.template(layer._url, layer.options),
+				attribution: layer.options.attribution
+			});
+		}
 		return new L.TileLayer.Provider(provider, options);
 	};
 

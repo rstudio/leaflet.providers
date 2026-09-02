@@ -223,7 +223,37 @@ providers_data <- list(
   SwissFederalGeoportal.SWISSIMAGE = "SwissFederalGeoportal.SWISSIMAGE",
   TopPlusOpen = "TopPlusOpen",
   TopPlusOpen.Color = "TopPlusOpen.Color",
-  TopPlusOpen.Grey = "TopPlusOpen.Grey"
+  TopPlusOpen.Grey = "TopPlusOpen.Grey",
+  OpenFreeMap = "OpenFreeMap",
+  OpenFreeMap.Positron = "OpenFreeMap.Positron",
+  OpenFreeMap.Bright = "OpenFreeMap.Bright",
+  OpenFreeMap.Liberty = "OpenFreeMap.Liberty",
+  OpenFreeMap.Dark = "OpenFreeMap.Dark",
+  OpenFreeMap.Fiord = "OpenFreeMap.Fiord",
+  StadiaVector = "StadiaVector",
+  StadiaVector.AlidadeSmooth = "StadiaVector.AlidadeSmooth",
+  StadiaVector.AlidadeSmoothDark = "StadiaVector.AlidadeSmoothDark",
+  StadiaVector.AlidadeSatellite = "StadiaVector.AlidadeSatellite",
+  StadiaVector.OSMBright = "StadiaVector.OSMBright",
+  StadiaVector.Outdoors = "StadiaVector.Outdoors",
+  StadiaVector.StamenToner = "StadiaVector.StamenToner",
+  StadiaVector.StamenTonerBackground = "StadiaVector.StamenTonerBackground",
+  StadiaVector.StamenTonerLines = "StadiaVector.StamenTonerLines",
+  StadiaVector.StamenTonerLabels = "StadiaVector.StamenTonerLabels",
+  StadiaVector.StamenTonerLite = "StadiaVector.StamenTonerLite",
+  StadiaVector.StamenTonerDark = "StadiaVector.StamenTonerDark",
+  StadiaVector.StamenTonerBlacklite = "StadiaVector.StamenTonerBlacklite",
+  StadiaVector.StamenWatercolor = "StadiaVector.StamenWatercolor",
+  StadiaVector.StamenTerrain = "StadiaVector.StamenTerrain",
+  StadiaVector.StamenTerrainBackground = "StadiaVector.StamenTerrainBackground",
+  StadiaVector.StamenTerrainLabels = "StadiaVector.StamenTerrainLabels",
+  StadiaVector.StamenTerrainLines = "StadiaVector.StamenTerrainLines",
+  Protomaps = "Protomaps",
+  Protomaps.Light = "Protomaps.Light",
+  Protomaps.Dark = "Protomaps.Dark",
+  Protomaps.White = "Protomaps.White",
+  Protomaps.Grayscale = "Protomaps.Grayscale",
+  Protomaps.Black = "Protomaps.Black"
 )
 
 providers_details_data <- list(
@@ -1070,5 +1100,63 @@ providers_details_data <- list(
       variant = "web"
     ),
     variants = list(Color = "web", Grey = "web_grau")
+  ),
+  OpenFreeMap = list(
+    url = "https://tiles.openfreemap.org/styles/{variant}",
+    type = "vector",
+    options = list(
+      attribution = "&copy; <a href=\"https://openfreemap.org\" target=\"_blank\">OpenFreeMap</a> &copy; <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">OpenStreetMap</a> contributors",
+      variant = "liberty"
+    ),
+    variants = list(
+      Positron = "positron",
+      Bright = "bright",
+      Liberty = "liberty",
+      Dark = "dark",
+      Fiord = "fiord"
+    )
+  ),
+  StadiaVector = list(
+    url = "https://tiles.stadiamaps.com/styles/{variant}.json",
+    type = "vector",
+    options = list(
+      attribution = "&copy; <a href=\"https://www.stadiamaps.com/\" target=\"_blank\">Stadia Maps</a> &copy; <a href=\"https://openmaptiles.org/\" target=\"_blank\">OpenMapTiles</a> {attribution.OpenStreetMap}",
+      variant = "alidade_smooth"
+    ),
+    variants = list(
+      AlidadeSmooth = "alidade_smooth",
+      AlidadeSmoothDark = "alidade_smooth_dark",
+      AlidadeSatellite = "alidade_satellite",
+      OSMBright = "osm_bright",
+      Outdoors = "outdoors",
+      StamenToner = "stamen_toner",
+      StamenTonerBackground = "stamen_toner_background",
+      StamenTonerLines = "stamen_toner_lines",
+      StamenTonerLabels = "stamen_toner_labels",
+      StamenTonerLite = "stamen_toner_lite",
+      StamenTonerDark = "stamen_toner_dark",
+      StamenTonerBlacklite = "stamen_toner_blacklite",
+      StamenWatercolor = "stamen_watercolor",
+      StamenTerrain = "stamen_terrain",
+      StamenTerrainBackground = "stamen_terrain_background",
+      StamenTerrainLabels = "stamen_terrain_labels",
+      StamenTerrainLines = "stamen_terrain_lines"
+    )
+  ),
+  Protomaps = list(
+    url = "https://api.protomaps.com/styles/v5/{variant}/en.json?key={apiKey}",
+    type = "vector",
+    options = list(
+      attribution = "<a href=\"https://protomaps.com\" target=\"_blank\">Protomaps</a> {attribution.OpenStreetMap}",
+      variant = "light",
+      apiKey = "<insert your API key here>"
+    ),
+    variants = list(
+      Light = "light",
+      Dark = "dark",
+      White = "white",
+      Grayscale = "grayscale",
+      Black = "black"
+    )
   )
 )
